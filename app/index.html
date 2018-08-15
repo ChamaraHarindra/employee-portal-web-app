@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Personal Information</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css">
+    <!-- build:css css/main.min.css -->
+    <link rel="stylesheet" type="text/css" media="screen" href="css/main.css" />
+    <!-- endbuild -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+</head>
+<body>
+    <!-- Header Include -->
+    <header class="container-fluid">
+        <nav class="navbar">
+            <a class="navbar-brand" href="#">
+                <img alt="Store Analyzer" data-src-base="images/" data-src="<768:logo__round.svg, >768:logo.svg" />
+            </a>
+            <a class="log-out" href="">
+                <div class="icon-link">
+                    <i class="material-icons">power_settings_new</i>
+                    <span>Log Out</span>
+                </div>
+            </a>
+        </nav>
+    </header>
+
+    <main class="custom-wrapper">
+        <div class="container-fluid">
+            <!-- color card Include -->
+            <div class="c-card multi-color">
+        <div class="c-card__inner">
+            <div class="row align-items-center">
+                <div class="col-12 col-lg-5">
+                    <h1>353397 - Market Street</h1>
+                    <h2 class="icon-link">
+                        <i class="material-icons h2-size hide-mobile">place</i>
+                        <span>2700 E Market St East York, PA 17402</span>
+                    </h2>
+                    <a href="#" class="btn btn-dark-blue">Get Directions</a>
+                </div>
+                <div class="col-12 col-lg-2">
+                    <h2 class="big-date">08 August, 2018</h2>
+                </div>
+                <div class="col-12 col-lg-5 justify-content-lg-between">
+                    <div class="positions-review">
+                        <div class="form-group text-left">
+                            <label for="selectPosition">Applying Position</label>
+                            <select name="position-select" id="selectPosition" class="position selectpicker" data-style="btn-outlined">
+                                <option value="1">Crew Member</option>
+                                <option value="2">Manager</option>
+                            </select>
+                        </div>
+                        <a href="#" class="btn btn-dark-blue mt-2">Add Reviews</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+            <div class="row">
+                <div class="col-12">
+                    <ol class="step-indicator">
+    <li 
+    class="active"
+    >
+        <div class="step">
+            <i class="fas fa-user"></i>
+        </div>
+        <div class="caption">Personal Information</div>
+    </li>
+    <li 
+    >
+        <div class="step">
+            <i class="fas fa-dollar-sign"></i>
+        </div>
+        <div class="caption">Billing Information</div>
+    </li>
+    <li 
+    >
+        <div class="step">
+            <i class="fas fa-pencil-alt"></i>
+        </div>
+        <div class="caption">Review Questions</div>
+    </li>
+</ol>
+                </div>
+            </div>
+            <!-- body content -->
+             
+
+<div class="row">
+    <div class="col-12">
+        <div class="c-card">
+            <div class="c-card__header">
+                <h3>Personal Information</h3>
+            </div>
+            <div class="c-card__inner">
+                <div class="row">
+                    <!-- First Name -->
+                    
+<div class="col-12 col-lg-4">
+    <div class="form-group ">
+        <label for="f-name" class="field__label">First Name</label>
+        <input type="text" value="" name="f-name" class="form-control " placeholder="First Name" required/>
+    </div>
+</div>
+
+                    <!-- Middle Name -->
+                    
+<div class="col-12 col-lg-4">
+    <div class="form-group ">
+        <label for="m-name" class="field__label">Middle Name (optional)</label>
+        <input type="text" value="" name="m-name" class="form-control " placeholder="Middle Name (optional)" />
+    </div>
+</div>
+
+                    <!-- Last Name -->
+                    
+<div class="col-12 col-lg-4">
+    <div class="form-group ">
+        <label for="l-name" class="field__label">Last Name</label>
+        <input type="text" value="" name="l-name" class="form-control " placeholder="Last Name" required/>
+    </div>
+</div>
+
+                    <!-- Email -->
+                    
+<div class="col-12 col-lg-6">
+    <div class="form-group ">
+        <label for="email" class="field__label">Email Address</label>
+        <input type="email" value="" name="email" class="form-control " placeholder="Email Address" required/>
+    </div>
+</div>
+
+                    <!-- Confirm Email -->
+                    
+<div class="col-12 col-lg-6">
+    <div class="form-group ">
+        <label for="confirm-email" class="field__label">Confirm Email Address</label>
+        <input type="email" value="" name="confirm-email" class="form-control " placeholder="Confirm Email Address" required/>
+    </div>
+</div>
+
+                    <div class="col-12 col-lg-9">
+                        <div class="row">
+                            <!-- Mobile Number -->
+                            
+<div class="col-12 col-lg-4">
+    <div class="form-group mb-2">
+        <label for="m-no" class="field__label">Mobile Number</label>
+        <input type="text" value="" name="m-no" class="form-control phone" placeholder="Mobile Number" required/>
+    </div>
+</div>
+
+                            <!-- home Number -->
+                            
+<div class="col-12 col-lg-4">
+    <div class="form-group mb-2">
+        <label for="h-no" class="field__label">Home Number</label>
+        <input type="text" value="" name="h-no" class="form-control phone" placeholder="Home Number" required/>
+    </div>
+</div>
+
+                            <!-- business Number -->
+                            
+<div class="col-12 col-lg-4">
+    <div class="form-group mb-2">
+        <label for="b-no" class="field__label">Business Number</label>
+        <input type="text" value="" name="b-no" class="form-control phone" placeholder="Business Number" required/>
+    </div>
+</div>
+
+                        </div>
+                        <small id="phoneHelp" class="form-text text-muted customized">We need at least one Phone number to process your application</small>
+                    </div>
+                    <div class="col-12 col-lg-3">
+                        <label for="work" class="d-block">May we contact you at work?</label>
+                        <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                            <label class="btn btn-outline-primary active">
+                                <input type="radio" name="options" id="option1" autocomplete="off" checked> Yes
+                            </label>
+                            <label class="btn btn-outline-primary">
+                                <input type="radio" name="options" id="option2" autocomplete="off"> No
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-12 col-lg-6">
+        <div class="c-card mt-5">
+            <div class="c-card__header">
+                <h3>Home Address</h3>
+            </div>
+            <div class="c-card__inner">
+                <div class="row">
+                    <!-- Address Line 01 -->
+                    
+<div class="col-12 col-lg-12">
+    <div class="form-group ">
+        <label for="address1" class="field__label">Address Line 01</label>
+        <input type="text" value="" name="address1" class="form-control " placeholder="Address Line 01" required/>
+    </div>
+</div>
+
+                    <!-- Address Line 02 -->
+                    
+<div class="col-12 col-lg-12">
+    <div class="form-group ">
+        <label for="address2" class="field__label">Address Line 02 (optional)</label>
+        <input type="text" value="" name="address2" class="form-control " placeholder="Address Line 02 (optional)" />
+    </div>
+</div>
+
+                    <!-- Apartment No -->
+                    
+<div class="col-12 col-lg-4">
+    <div class="form-group ">
+        <label for="apartment" class="field__label">Apartment # (optional)</label>
+        <input type="text" value="" name="apartment" class="form-control " placeholder="Apartment # (optional)" />
+    </div>
+</div>
+
+                    <!-- City -->
+                    
+<div class="col-12 col-lg-8">
+    <div class="form-group ">
+        <label for="city" class="field__label">City</label>
+        <input type="city" value="" name="city" class="form-control " placeholder="City" required/>
+    </div>
+</div>
+
+                    <!-- State -->
+                    
+<div class="col-12 col-lg-8">
+    <div class="form-group">
+        <label for="state" class="field__label">State</label>
+        <select name="state" id="selectPosition" class="selectpicker form-select" required>
+                <option value="0">State</option>
+            <option value="1">State1</option>
+            <option value="2">State2</option>
+        </select>
+    </div>
+</div>
+
+                    <!-- Zipcode -->
+                    
+<div class="col-12 col-lg-4">
+    <div class="form-group ">
+        <label for="city" class="field__label">City</label>
+        <input type="city" value="" name="city" class="form-control " placeholder="City" required/>
+    </div>
+</div>
+
+                    <!-- Country -->
+                    
+<div class="col-12 col-lg-12">
+    <div class="form-group">
+        <label for="country" class="field__label">Country</label>
+        <select name="country" id="selectPosition" class="selectpicker form-select" required>
+                <option value="0">Country</option>
+            <option value="1">Country 1</option>
+            <option value="2">Country 2</option>
+        </select>
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-12 col-lg-6">
+        <div class="c-card mt-5">
+            <div class="c-card__header">
+                <h3>Postal Address</h3>
+                <div class="switch d-flex align-items-center">
+                    <input type="checkbox" class="js-switch" checked/>
+                    <span class="ml-2 small">Same as Home Address</span>
+                </div>
+            </div>
+            <div class="c-card__inner">
+                <div class="row">
+                    <!-- Address Line 01 -->
+                    
+<div class="col-12 col-lg-12">
+    <div class="form-group ">
+        <label for="address1" class="field__label">Address Line 01</label>
+        <input type="text" value="" name="address1" class="form-control " placeholder="Address Line 01" required/>
+    </div>
+</div>
+
+                    <!-- Address Line 02 -->
+                    
+<div class="col-12 col-lg-12">
+    <div class="form-group ">
+        <label for="address2" class="field__label">Address Line 02 (optional)</label>
+        <input type="text" value="" name="address2" class="form-control " placeholder="Address Line 02 (optional)" />
+    </div>
+</div>
+
+                    <!-- Apartment No -->
+                    
+<div class="col-12 col-lg-4">
+    <div class="form-group ">
+        <label for="apartment" class="field__label">Apartment # (optional)</label>
+        <input type="text" value="" name="apartment" class="form-control " placeholder="Apartment # (optional)" />
+    </div>
+</div>
+
+                    <!-- City -->
+                    
+<div class="col-12 col-lg-8">
+    <div class="form-group ">
+        <label for="city" class="field__label">City</label>
+        <input type="city" value="" name="city" class="form-control " placeholder="City" required/>
+    </div>
+</div>
+
+                    <!-- State -->
+                    
+<div class="col-12 col-lg-8">
+    <div class="form-group">
+        <label for="state" class="field__label">State</label>
+        <select name="state" id="selectPosition" class="selectpicker form-select" required>
+                <option value="0">State</option>
+            <option value="1">State1</option>
+            <option value="2">State2</option>
+        </select>
+    </div>
+</div>
+
+                    <!-- Zipcode -->
+                    
+<div class="col-12 col-lg-4">
+    <div class="form-group ">
+        <label for="city" class="field__label">City</label>
+        <input type="city" value="" name="city" class="form-control " placeholder="City" required/>
+    </div>
+</div>
+
+                    <!-- Country -->
+                    
+<div class="col-12 col-lg-12">
+    <div class="form-group">
+        <label for="country" class="field__label">Country</label>
+        <select name="country" id="selectPosition" class="selectpicker form-select" required>
+                <option value="0">Country</option>
+            <option value="1">Country 1</option>
+            <option value="2">Country 2</option>
+        </select>
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-12">
+        <div class="c-card mt-5 mb-3">
+            <div class="c-card__header">
+                <h3>Job Preference</h3>
+            </div>
+            <div class="c-card__inner">
+                <div class="row justify-content-between">
+                    <div class="col-12 col-lg-5">
+                        <p>Weekly Schedule preference</p>
+                        <table class="table v-align-center">
+                            <thead>
+                                <th>Day</th>
+                                <th>From</th>
+                                <th>To</th>
+                            </thead>
+                            <tbody>
+                                
+                                <tr>
+                                    <td>
+                                        <div class="custom-control custom-checkbox">
+                                            <input type="checkbox" class="custom-control-input" id="sunday">
+                                            <label class="custom-control-label" for="sunday">Sunday</label>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <input type="text" class="time_element form-control smaller" />
+                                    </td>
+                                    <td>
+                                        <input type="text" class="time_element form-control smaller" />
+                                    </td>
+                                </tr>
+                                
+                                <tr>
+                                    <td>
+                                        <div class="custom-control custom-checkbox">
+                                            <input type="checkbox" class="custom-control-input" id="monday">
+                                            <label class="custom-control-label" for="monday">Monday</label>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <input type="text" class="time_element form-control smaller" />
+                                    </td>
+                                    <td>
+                                        <input type="text" class="time_element form-control smaller" />
+                                    </td>
+                                </tr>
+                                
+                                <tr>
+                                    <td>
+                                        <div class="custom-control custom-checkbox">
+                                            <input type="checkbox" class="custom-control-input" id="tuesday">
+                                            <label class="custom-control-label" for="tuesday">Tuesday</label>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <input type="text" class="time_element form-control smaller" />
+                                    </td>
+                                    <td>
+                                        <input type="text" class="time_element form-control smaller" />
+                                    </td>
+                                </tr>
+                                
+                                <tr>
+                                    <td>
+                                        <div class="custom-control custom-checkbox">
+                                            <input type="checkbox" class="custom-control-input" id="wednesday">
+                                            <label class="custom-control-label" for="wednesday">Wednesday</label>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <input type="text" class="time_element form-control smaller" />
+                                    </td>
+                                    <td>
+                                        <input type="text" class="time_element form-control smaller" />
+                                    </td>
+                                </tr>
+                                
+                                <tr>
+                                    <td>
+                                        <div class="custom-control custom-checkbox">
+                                            <input type="checkbox" class="custom-control-input" id="thursday">
+                                            <label class="custom-control-label" for="thursday">Thursday</label>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <input type="text" class="time_element form-control smaller" />
+                                    </td>
+                                    <td>
+                                        <input type="text" class="time_element form-control smaller" />
+                                    </td>
+                                </tr>
+                                
+                                <tr>
+                                    <td>
+                                        <div class="custom-control custom-checkbox">
+                                            <input type="checkbox" class="custom-control-input" id="friday">
+                                            <label class="custom-control-label" for="friday">Friday</label>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <input type="text" class="time_element form-control smaller" />
+                                    </td>
+                                    <td>
+                                        <input type="text" class="time_element form-control smaller" />
+                                    </td>
+                                </tr>
+                                
+                                <tr>
+                                    <td>
+                                        <div class="custom-control custom-checkbox">
+                                            <input type="checkbox" class="custom-control-input" id="saturday">
+                                            <label class="custom-control-label" for="saturday">Saturday</label>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <input type="text" class="time_element form-control smaller" />
+                                    </td>
+                                    <td>
+                                        <input type="text" class="time_element form-control smaller" />
+                                    </td>
+                                </tr>
+                                
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="col-12 col-lg-6">
+                        <div class="d-block mb-5">
+                            <label for="work" class="d-block">May we contact you at work?</label>
+                            <div class="btn-group btn-group-toggle long-list" data-toggle="buttons">
+                                <label class="btn btn-outline-primary active">
+                                    <input type="radio" name="options" id="fullTime" autocomplete="off" checked> Full Time
+                                </label>
+                                <label class="btn btn-outline-primary">
+                                    <input type="radio" name="options" id="partTime" autocomplete="off"> Part Time
+                                </label>
+                                <label class="btn btn-outline-primary">
+                                    <input type="radio" name="options" id="temporary" autocomplete="off"> Temporary
+                                </label>
+                                <label class="btn btn-outline-primary">
+                                    <input type="radio" name="options" id="summer" autocomplete="off"> Summer
+                                </label>
+                            </div>
+                        </div>
+                        <div class="d-block mb-5">
+                            <label for="work" class="d-block">Are you willing to relocate?</label>
+                            <div class="btn-group btn-group-toggle long-list" data-toggle="buttons">
+                                <label class="btn btn-outline-primary active">
+                                    <input type="radio" name="options" id="relocateYes" autocomplete="off" checked> Yes
+                                </label>
+                                <label class="btn btn-outline-primary">
+                                    <input type="radio" name="options" id="RelocateNo" autocomplete="off"> No
+                                </label>
+                            </div>
+                        </div>
+                        <div class="d-block">
+                                <label for="work" class="d-block">Have you ever worked in KPV franchise before?</label>
+                                <div class="btn-group btn-group-toggle long-list" data-toggle="buttons">
+                                    <label class="btn btn-outline-primary active">
+                                        <input type="radio" name="options" id="kpvYes" autocomplete="off" checked> Yes
+                                    </label>
+                                    <label class="btn btn-outline-primary">
+                                        <input type="radio" name="options" id="kpvNo" autocomplete="off"> No
+                                    </label>
+                                </div>
+                            </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+        </div>
+    </main>
+    <!-- color card Include -->
+    <footer>
+
+</footer>
+</body>
+<!-- build:js js/scripts.min.js -->
+<script src="js/bootstrap.bundle.js"></script>
+<script src="js/bootstrap-select.js"></script>
+<script src="js/jquery.mask.js"></script>
+<script src="js/switchery.js"></script>
+<script src="js/timepicki.js"></script>
+<script src="js/responsive-img.js"></script>
+<!-- endbuild -->
+<script src="js/main.js"></script>
+</html>

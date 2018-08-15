@@ -1,0 +1,50 @@
+body {
+    background: $light-blue-color;
+}
+
+a {
+    transition: all ease-in .2s;
+    &:hover {
+        transition: all ease-out .2s;
+        text-decoration: none;
+    }
+}
+
+.custom-wrapper {
+    max-width: 1500px;
+    display: block;
+    @include margin(null auto null auto);
+}
+
+main {
+    @include margin(20px null 20px null);
+}
+
+.positions-review {
+    @media(min-width:768px) {
+        float: right;
+        min-width: 300px;
+    }
+}
+
+.hide-mobile {
+    @media(max-width:768px) {
+        display: none !important;
+    }
+}
+
+.big-date {
+    margin: 30px 0;
+    display: block;
+    @media(min-width:768px) {
+        display: none !important;
+        text-align: center;
+        margin: 0;
+    }
+}
+
+table.v-align-center {
+    td {
+        vertical-align: middle;
+    }
+}

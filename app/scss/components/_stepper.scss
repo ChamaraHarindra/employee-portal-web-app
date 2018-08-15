@@ -1,0 +1,84 @@
+.step-indicator {
+    border-collapse: separate;
+    display: table;
+    margin-left: 0px;
+    position: relative;
+    table-layout: fixed;
+    text-align: center;
+    vertical-align: middle;
+    padding-left: 0;
+    padding-top: 20px;
+}
+
+.step-indicator li {
+    display: table-cell;
+    position: relative;
+    float: none;
+    padding: 0;
+    width: 1%;
+}
+
+.step-indicator li:after {
+    background-color: $gray-2-color;
+    content: "";
+    display: block;
+    height: 2px;
+    position: absolute;
+    width: 100%;
+    top: 32px;
+}
+
+.step-indicator li:after {
+    left: 50%;
+}
+
+.step-indicator li:last-child:after {
+    display: none;
+}
+
+.step-indicator li.active .step {
+    border-color: $primary-color;
+    color: $primary-color;
+}
+
+.step-indicator li.active .caption {
+    color: $primary-color;
+    font-weight: bold;
+}
+
+.step-indicator li.complete:after {
+    background-color: $primary-color;
+}
+
+.step-indicator li.complete .step {
+    border-color: $primary-color;
+    color: $white-color;
+    background: $primary-color;
+}
+
+.step-indicator li.complete .caption {
+    color: $primary-color;
+}
+
+.step-indicator .step {
+    background-color: #ecf1f5;
+    border-radius: 50%;
+    border: 2px solid $gray-2-color;
+    color: $gray-2-color;
+    font-size: 24px;
+    height: 64px;
+    line-height: 64px;
+    margin: 0 auto;
+    position: relative;
+    width: 64px;
+    z-index: 1;
+}
+
+.step-indicator .step:hover {
+    cursor: pointer;
+}
+
+.step-indicator .caption {
+    color: $gray-2-color;
+    padding: 12px 16px;
+}

@@ -1,0 +1,42 @@
+header {
+    background: $primary-color;
+    padding: 0;
+}
+
+.navbar {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.navbar-brand {
+    padding: 10px 0;
+    img {
+        height: 30px;
+    }
+}
+
+.log-out {
+    @extend .color-white;
+    display: block;
+    height: 50px;
+    display: flex;
+    padding: 0 15px;
+    position: relative;
+    align-items: center;
+    &:before {
+        content: '';
+        @include position(absolute, null null 0 50%);
+        transform: translateX(-50%);
+        height: 3px;
+        width: 0;
+        background: $red-color;
+        transition: all ease-in .2s;
+    }
+    &:hover,
+    &:focus {
+        &:before {
+            width: 100%;
+            transition: all ease-in .2s;
+        }
+    }
+}

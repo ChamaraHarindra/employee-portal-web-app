@@ -1,0 +1,26 @@
+// Vendor Styles
+@import './node_modules/bootstrap/scss/bootstrap';
+@import './node_modules/bootstrap-select/sass/bootstrap-select';
+@import './node_modules/bourbon/core/bourbon';
+
+// Variables
+@import 'variables';
+
+// mixins
+@import 'mixins';
+
+// base styles
+@import 'base';
+
+// typography
+@import 'typography/typography';
+
+// components
+@import 'components/header';
+@import 'components/stepper';
+@import 'components/card';
+@import 'components/footer';
+@import 'components/buttons';
+@import 'components/form';
+@import 'components/ios-switch';
+@import 'components/timepicker';

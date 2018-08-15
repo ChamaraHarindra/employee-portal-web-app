@@ -1,0 +1,30 @@
+{% macro formText( columnSize, labelFor, type, value, name, placeholder, required, class, formGroupClass ) %}
+<div class="col-12 {{columnSize}}">
+    <div class="form-group {{formGroupClass}}">
+        <label for="{{labelFor}}" class="field__label">{{name}}</label>
+        <input type="{{type}}" value="{{value | escape}}" name="{{labelFor}}" class="form-control {{class}}" placeholder="{{placeholder}}" {{required}}/>
+    </div>
+</div>
+{% endmacro %}
+
+{% macro formTextarea( columnSize, labelFor, type, value, name, placeholder ) %}
+<div class="col-12 {{columnSize}}">
+    <div class="form-group">
+        <label for="{{labelFor}}" class="field__label">{{name}}</label>
+        <textarea name="{{labelFor}}" class="form-control" placeholder="{{placeholder}}">{{value | escape}}</textarea>
+    </div>
+</div>
+{% endmacro %}
+
+{% macro formSelect( columnSize, labelFor, type, value, name, placeholder, required, class, value1, value2 ) %}
+<div class="col-12 {{columnSize}}">
+    <div class="form-group">
+        <label for="{{labelFor}}" class="field__label">{{name}}</label>
+        <select name="{{labelFor}}" id="selectPosition" class="selectpicker {{class}}" {{required}}>
+                <option value="0">{{name}}</option>
+            <option value="1">{{value1}}</option>
+            <option value="2">{{value2}}</option>
+        </select>
+    </div>
+</div>
+{% endmacro %}

@@ -1,0 +1,116 @@
+.position {
+    display: block !important;
+}
+
+// Floating Labels
+.form-group {
+    position: relative;
+    margin-bottom: 25px;
+}
+
+.field__label {
+    color: #919293;
+    box-sizing: border-box;
+    display: block;
+    font-size: .8125em;
+    line-height: 1;
+    opacity: 0;
+    overflow: hidden;
+    padding: .5em 1em;
+    pointer-events: none;
+    position: absolute;
+    text-overflow: ellipsis;
+    top: 0;
+    text-align: left;
+    transform: translateY(3px);
+    transition: all .2s ease-out;
+    user-select: none;
+    white-space: nowrap;
+    width: 100%;
+    z-index: 1;
+    .field--not-empty & {
+        opacity: 1;
+        transform: none;
+        font-weight: 600;
+        font-size: 10px;
+        color: $dark-blue-color;
+        top: 3px;
+    }
+}
+
+.form-control {
+    transition: all .2s ease-out;
+    width: 100%;
+    height: 50px;
+    font-weight: 500;
+    &.smaller {
+        height: 35px;
+    }
+    .field--not-empty & {
+        padding-bottom: 2px;
+        padding-top: 12px;
+    }
+}
+
+::-webkit-input-placeholder {
+    /* Chrome/Opera/Safari */
+    color: #919293;
+}
+
+::-moz-placeholder {
+    /* Firefox 19+ */
+    color: #919293;
+}
+
+:-ms-input-placeholder {
+    /* IE 10+ */
+    color: #919293;
+}
+
+:-moz-placeholder {
+    /* Firefox 18- */
+    color: #919293;
+}
+
+.form-text {
+    &.customized {
+        background: $light-blue-color;
+        text-align: center;
+        padding: 10px 5px;
+        line-height: 1;
+        margin: 0;
+        color: $black-color !important;
+    }
+}
+
+.form-select {
+    width: 100% !important;
+    .btn {
+        @extend .form-control;
+        transition: all .2s ease-out;
+        width: 100%;
+        height: 50px;
+        font-weight: 500;
+        &:hover,
+        &:focus,
+        &:active {
+            background: transparent !important;
+        }
+    }
+}
+
+.form-select .filter-option-inner {
+    height:  100%;
+}
+
+.form-select .filter-option-inner {
+    display: flex;
+    align-items: center;
+}
+
+.btn-group.btn-group-toggle.long-list {
+    @media(max-width:768px) {
+        flex-direction: column;
+        display: flex;
+    }
+}

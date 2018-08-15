@@ -1,0 +1,65 @@
+html, body {
+    font-family: $default-font;
+    font-size: $font-size-base;
+}
+
+h1 {
+    font-weight: bold;
+    color: $white-color;
+    line-height: 1;
+    font-size: 22px;
+    margin: 0 0 15px;
+}
+
+h2 {
+    @extend h1;
+    font-size: 18px;
+    font-weight: normal;
+}
+
+h3 {
+    @extend h1;
+    color: $black-color;
+    font-size: 16px;
+}
+
+@media(min-width:768px) {
+    h1 {
+        font-size: 30px
+    }
+    h2 {
+        font-size: 20px;
+    }
+    h3 {
+        font-size: 18px;
+    }
+}
+
+.icon-link {
+.material-icons {
+    font-size: 18px;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 8px;
+    &.h2-size {
+        font-size: 22px;
+    }
+}
+span {
+    display: inline-block;
+    vertical-align: middle;
+}
+}
+
+// colors
+.color-white {
+    color: $white-color !important;
+}
+
+.color-black {
+    color: $black-color !important;
+}
+
+.color-red {
+    color: $red-color !important;
+}

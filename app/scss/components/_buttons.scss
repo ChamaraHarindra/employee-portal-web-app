@@ -1,0 +1,20 @@
+.btn {
+    // Button size change
+    @include button-size($padding-y, $padding-x, $font-size-base, 1, 5px);
+}
+
+.btn-dark-blue {
+    background: $dark-blue-color;
+    @extend .color-white;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1); 
+    &:hover {
+        background: lighten($dark-blue-color, 2%);
+        box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3);
+    }
+}
+
+.btn-outlined {
+    border: 2px solid $white-color;
+    background: transparent;
+    color: $white-color;
+}
