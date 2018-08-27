@@ -1,0 +1,143 @@
+<!-- import Forms macro file -->
+{% import "macros/forms.html" as forms %} {% macro modalPop(id, ariaLabel, modalTitle, modalSize, modal=1, btnText ) %}
+<div class="modal fade" id="{{ id }}" tabindex="-1" role="dialog" aria-labelledby="{{ ariaLabel }}" aria-hidden="true">
+    <div class="modal-dialog {{ modalSize }} modal-default" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="{{ ariaLabel }}">{{ modalTitle }}</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">
+                        <i class="fas fa-times color-white"></i>
+                    </span>
+                </button>
+            </div>
+            <!-- Get directions modal -->
+            {% if modal==1 %}
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-12 col-lg-5">
+                        <div class="form-group mb-4">
+                            <label for="YourLocation" class="field__label">Your Location</label>
+                            <input type="text" class="form-control" id="YourLocation" aria-describedby="yourLocation" placeholder="Your Location">
+                        </div>
+                        <div class="form-group mb-4">
+                            <label for="Destination" class="field__label">Destination</label>
+                            <input type="text" class="form-control" id="Destination" aria-describedby="destination" placeholder="Destination" value="2700 E Market St East York, PA 17402">
+                        </div>
+                        <button type="button" class="btn btn-primary submit-btn">{{ btnText }}</button>
+                    </div>
+                    <div class="col-12 col-lg-7">
+                        <iframe src="https://goo.gl/NiJHnP" width="100%" height="400" frameborder="0" style="border:0" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+            <!-- Add reference modal -->
+            {% elif modal==2 %}
+            <div class="modal-body">
+                <table class="table data-tables" id="reviewTable">
+                    <thead>
+                        <tr>
+                            <th>Reference Name</th>
+                            <th>Phone No</th>
+                            <th>Email</th>
+                        </tr>
+                    </thead>
+                </table>
+
+            </div>
+            {% elif modal==3 %}
+            <div class="modal-body">
+                <div class="row mb-4">
+                    <div class="col-12 col-lg-6">
+                        <div class="d-block">
+                            <label for="work" class="d-block">Experience Type</label>
+                            <div class="btn-group btn-group-toggle long-list" data-toggle="buttons">
+                                <label class="btn btn-outline-primary">
+                                    <input type="radio" name="options" id="fullTime" autocomplete="off"> Dunkin Donuts
+                                </label>
+                                <label class="btn btn-outline-primary">
+                                    <input type="radio" name="options" id="partTime" autocomplete="off"> Other
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-6">
+                        <div class="d-block">
+                            <label for="work" class="d-block">Currently Working?</label>
+                            <div class="btn-group btn-group-toggle long-list" data-toggle="buttons">
+                                <label class="btn btn-outline-primary">
+                                    <input type="radio" name="options" id="fullTime" autocomplete="off"> Yes
+                                </label>
+                                <label class="btn btn-outline-primary">
+                                    <input type="radio" name="options" id="partTime" autocomplete="off"> No
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mb-2">
+                    {{ forms.formText('col-lg-6', 'fromDate', 'text', '', 'From Date', 'From Date', 'required', '', '', 'datepicker' ) }} {{
+                    forms.formText('col-lg-6', 'toDate', 'text', '', 'To Date', 'To Date', '', '', '', 'datepicker' ) }}
+                </div>
+                <div class="row mb-2">
+                    {{ forms.formText('col-lg-4', 'jobTitle', 'text', '', 'Job Title', 'Job Title', 'required', '', '', '' ) }} {{ forms.formText('col-lg-4',
+                    'employerName', 'text', '', 'Employer Name', 'Employer Name', 'required', '', '', '' ) }} {{ forms.formText('col-lg-4',
+                    'phoneNo', 'text', '', 'Phone Number', 'Phone Number', 'required', 'phone', '', '' ) }}
+                </div>
+                <div class="row mb-2">
+                    {{ forms.formText('col-lg-6', 'startSalary', 'text', '', 'Start Salary ($)', 'Start Salary', '', 'money', '', '' ) }} {{
+                    forms.formText('col-lg-6', 'endSalary', 'text', '', 'End Salary ($)', 'End Salary', '', 'money', '',
+                    '' ) }}
+                </div>
+                <div class="row">
+                    {{ forms.formText('col-lg-4', 'address', 'text', '', 'Address', 'Address', '', '', '', '' ) }} {{ forms.formText('col-lg-3',
+                    'city', 'text', '', 'City', 'City', '', '', '', '' ) }} {{ forms.formSelect('col-lg-3', 'state', 'state',
+                    '', 'State', 'State', '', 'form-select', 'State 1', 'State 2') }} {{ forms.formText('col-lg-2', 'zip',
+                    'text', '', 'Zip', 'Zip', '', 'zip', '', '' ) }}
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <hr/>
+                        <h4>References</h4>
+                        <p class="small d-block">If you have reference to this position, you can add it by filling below fields</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <div class="mt-2">
+                            <div class="row mb-2">
+                                <div class="col-12 col-lg-12">
+                                    <div class="form-group">
+                                        <label for="referenceName">Reference Name</label>
+                                        <input type="text" class="form-control" id="referenceName" aria-describedby="referenceName" placeholder="Reference Name">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row mb-2">
+                                <div class="col-12 col-lg-6">
+                                    <div class="form-group">
+                                        <label for="referencePhone">Reference Phone</label>
+                                        <input type="text" class="form-control phone" id="referencePhone" aria-describedby="referencePhone" placeholder="Reference Phone">
+                                    </div>
+                                </div>
+                                <div class="col-12 col-lg-6">
+                                    <div class="form-group">
+                                        <label for="referenceEmail">Reference Email</label>
+                                        <input type="text" class="form-control" id="referenceEmail" aria-describedby="referenceEmail" placeholder="Reference Email">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-link" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary submit-btn">{{ btnText }}</button>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+</div>
+
+{% endmacro %}

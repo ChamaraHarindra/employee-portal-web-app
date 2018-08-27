@@ -1,13 +1,15 @@
-<header class="container-fluid">
+<header class="container-fluid shadow">
         <nav class="navbar">
             <a class="navbar-brand" href="#">
-                <img alt="Store Analyzer" data-src-base="images/" data-src="<768:logo__round.svg, >768:logo.svg" />
+                <img alt="KPV" src="images/logo-kpv.svg"/>
             </a>
+            {% if not StoreMap %}
             <a class="log-out" href="">
                 <div class="icon-link">
                     <i class="material-icons">power_settings_new</i>
                     <span>Log Out</span>
                 </div>
             </a>
+            {% endif %}
         </nav>
     </header>

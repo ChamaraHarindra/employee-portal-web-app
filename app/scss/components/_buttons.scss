@@ -1,12 +1,38 @@
 .btn {
     // Button size change
     @include button-size($padding-y, $padding-x, $font-size-base, 1, 5px);
+    &.btn-navigate {
+        @include button-variant($purple-color, darken($purple-color, 5%), darken($purple-color, 10%));
+        font-weight: 500;
+        @include button-size(15px, 25px, 1.2rem, 1, 5px);
+        @media(min-width:768px) {
+            float: right;
+        }
+    }
+    &.btn-navigate-back {
+        @include button-variant(transparent, transparent, transparent);
+        color: $purple-color;
+        font-weight: 500;
+        box-shadow: none;
+        @include button-size(15px, 25px, 1.2rem, 1, 5px);
+        @media(min-width:768px) {
+            float: left;
+        }
+        &:hover,
+        &:focus,
+        &:active {
+            color: $purple-color;
+        }
+    }
+    &.btn-sm {
+        @include button-size(0.5rem, 0.85rem, 0.875rem, 1, 5px);
+    }
 }
 
 .btn-dark-blue {
     background: $dark-blue-color;
     @extend .color-white;
-    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1); 
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
     &:hover {
         background: lighten($dark-blue-color, 2%);
         box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3);

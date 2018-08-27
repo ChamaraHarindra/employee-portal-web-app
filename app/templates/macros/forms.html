@@ -1,17 +1,17 @@
-{% macro formText( columnSize, labelFor, type, value, name, placeholder, required, class, formGroupClass ) %}
+{% macro formText( columnSize, labelFor, type, value, name, placeholder, required, class, formGroupClass, dataToggle ) %}
 <div class="col-12 {{columnSize}}">
     <div class="form-group {{formGroupClass}}">
-        <label for="{{labelFor}}" class="field__label">{{name}}</label>
-        <input type="{{type}}" value="{{value | escape}}" name="{{labelFor}}" class="form-control {{class}}" placeholder="{{placeholder}}" {{required}}/>
+        <label for="{{labelFor}}">{{name}}</label>
+        <input type="{{type}}" value="{{value | escape}}" data-toggle="{{dataToggle}}" name="{{labelFor}}" id="{{labelFor}}" class="form-control {{class}}" placeholder="{{placeholder}}" {{required}}/>
     </div>
 </div>
 {% endmacro %}
 
-{% macro formTextarea( columnSize, labelFor, type, value, name, placeholder ) %}
+{% macro formTextarea( columnSize, labelFor, id, name, placeholder, class ) %}
 <div class="col-12 {{columnSize}}">
     <div class="form-group">
-        <label for="{{labelFor}}" class="field__label">{{name}}</label>
-        <textarea name="{{labelFor}}" class="form-control" placeholder="{{placeholder}}">{{value | escape}}</textarea>
+        <label for="{{id}}">{{placeholder}}</label>
+        <textarea name="{{labelFor}}" class="form-control textarea {{class}}" id="{{id}}" placeholder="{{placeholder}}" rows="5"></textarea>
     </div>
 </div>
 {% endmacro %}
@@ -19,8 +19,8 @@
 {% macro formSelect( columnSize, labelFor, type, value, name, placeholder, required, class, value1, value2 ) %}
 <div class="col-12 {{columnSize}}">
     <div class="form-group">
-        <label for="{{labelFor}}" class="field__label">{{name}}</label>
-        <select name="{{labelFor}}" id="selectPosition" class="selectpicker {{class}}" {{required}}>
+        <label for="{{labelFor}}" id="{{labelFor}}">{{name}}</label>
+        <select name="{{labelFor}}"  id="{{labelFor}}" class="form-control {{class}}" {{required}}>
                 <option value="0">{{name}}</option>
             <option value="1">{{value1}}</option>
             <option value="2">{{value2}}</option>

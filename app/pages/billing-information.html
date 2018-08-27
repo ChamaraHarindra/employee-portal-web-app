@@ -1,0 +1,222 @@
+{% set title = 'Billing Information' %} {% set BillingInfo = true %}
+<!-- base layout file inheritance -->
+{% extends "layout.html" %} {% block content %}
+
+<!-- import Forms macro file -->
+{% import "macros/forms.html" as forms %}
+<!-- import Modal macro file -->
+{% import "macros/modal.html" as macroModals %}
+
+
+<div class="row">
+    <div class="col-12 col-lg-12">
+        <div class="c-card">
+            <div class="c-card__header">
+                <h3>Education Qualification</h3>
+            </div>
+            <div class="c-card__inner">
+                <div class="row">
+                    <div class="col-12 mb-5">
+                        <label for="work" class="d-block">What is your highest education qualification? </label>
+                        <div class="btn-group btn-group-toggle long-list" data-toggle="buttons">
+                            <label class="btn btn-outline-primary active">
+                                <input type="radio" name="options" id="gedLess" autocomplete="off" checked> GED or Less
+                            </label>
+                            <label class="btn btn-outline-primary">
+                                <input type="radio" name="options" id="highSchoolDiploma" autocomplete="off"> High School Diploma
+                            </label>
+                            <label class="btn btn-outline-primary">
+                                <input type="radio" name="options" id="College" autocomplete="off"> College
+                            </label>
+                            <label class="btn btn-outline-primary">
+                                <input type="radio" name="options" id="beyondCollege" autocomplete="off"> Beyond College
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-12 col-lg-12">
+        <div class="c-card mt-5">
+            <div class="c-card__header">
+                <h3>Employment History</h3>
+                <div class="d-flex align-items-center">
+                    <button class="btn btn-dark-blue btn-sm" id="addExperience" data-toggle="modal" data-target="#AddExperience">
+                        <i class="fas fa-plus mr-2"></i>Add Experience</button>
+                    <div class="switch d-flex align-items-center">
+                        <input type="checkbox" class="js-switch" id="experienceCheck" />
+                        <span class="ml-2 small">I have no experience</span>
+                    </div>
+                </div>
+            </div>
+            <div class="c-card__inner">
+                <div class="row">
+                    {{ forms.formTextarea('col-lg-12', 'experienceReason', 'experienceReason', 'experienceReason', 'Please enter a reasons',
+                    'hidden' ) }}
+                </div>
+                <div class="row" id="experienceTable">
+                    <div class="col-12">
+                        <div class="table-responsive">
+                            <table class="table data-tables mb-4">
+                                <thead>
+                                    <tr>
+                                        <th>Duration</th>
+                                        <th>Employer Name</th>
+                                        <th>Job Title</th>
+                                        <th>Salary or Wages</th>
+                                        <th>Reference</th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <td>
+                                        4 months
+                                    </td>
+                                    <td>
+                                        ABC Companies
+                                    </td>
+                                    <td>Cashier</td>
+                                    <td>$120,000 per annum</td>
+                                    <td><button class="btn btn-sm btn-outline-primary">View</button></td>
+                                    <td class="text-center">
+                                        <button class="btn btn-sm btn-outline-secondary mr-3" data-toggle="modal" data-target="#AddExperience"><i class="fas fa-edit"></i></button>
+                                        <button id="deleteExperience" class="btn btn-sm btn-outline-danger"><i class="fas fa-trash-alt"></i></button>
+                                    </td>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-12">
+        <div class="c-card mt-5 mb-3">
+            <div class="c-card__header">
+                <h3>U.S. Military Service</h3>
+            </div>
+            <div class="c-card__inner">
+                <div class="row">
+                    {{ forms.formText('col-lg-4', 'serviceBranch', 'text', '', 'Branch of Service', 'Branch of Service', '', '', '', '' ) }}
+                    {{ forms.formText('col-lg-4', 'specialization', 'text', '', 'Technical Specialization', 'Technical Specialization', '', '', '', '' ) }}
+                    {{ forms.formText('col-lg-4', 'rankAttained', 'text', '', 'Rank Attained', 'Rank Attained', '', '', '', '' ) }}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-12">
+        <div class="c-card mt-5 mb-3">
+            <div class="c-card__header">
+                <h3>Legal</h3>
+            </div>
+            <div class="c-card__inner">
+                <div class="row">
+                    <div class="col-12 col-lg-6">
+                        <div class="mb-5">
+                            <label for="work" class="d-block">Are you legally authorized to work in United States? </label>
+                            <div class="btn-group btn-group-toggle long-list" data-toggle="buttons">
+                                <label class="btn btn-outline-primary active">
+                                    <input type="radio" name="options" id="gedLess" autocomplete="off" checked> Yes
+                                </label>
+                                <label class="btn btn-outline-primary">
+                                    <input type="radio" name="options" id="highSchoolDiploma" autocomplete="off"> No
+                                </label>
+                            </div>
+                        </div>
+                        <div class="mb-5">
+                            <label for="work" class="d-block">Were you ever discharged by any company? If Yes, give name of company(ies) </label>
+                            <div class="btn-group btn-group-toggle long-list" data-toggle="buttons">
+                                <label class="btn btn-outline-primary active">
+                                    <input type="radio" name="options" id="gedLess" autocomplete="off" checked> Yes
+                                </label>
+                                <label class="btn btn-outline-primary">
+                                    <input type="radio" name="options" id="highSchoolDiploma" autocomplete="off"> No
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-6">
+                        <div class="row mb-5">
+                            {{ forms.formText('col-lg-12', 'companyName', 'text', '', 'Company Name', 'Company Name', '', '', '', '' ) }}
+                        </div>
+                        <div class="row">
+                            {{ forms.formTextarea('col-lg-12', 'dischargeReason', 'dischargeReason', 'dischargeReason', 'Reasons for Discharge', '' ) }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-12">
+        <div class="c-card mt-5 mb-3">
+            <div class="c-card__header">
+                <h3>Disclaimer</h3>
+            </div>
+            <div class="c-card__inner">
+                <div class="row">
+                    <div class="col-12">
+                        <strong>Please read carefully</strong><br/><br/>
+                        <p>In the events of employment, I understand that false or misleading information given in my application or interview(s) may result in immediate dismissal. I understand, also that I am required to abide by all rules and regulations of the Franchisee of Dunkin Donuts. I understand and agree that if employed, employment will be AT WILL that is, either I or the employer may end the employment relationship at any time, for any reason, and I understand that receipt of this application does not imply employment and that this application and/or any other documents are not a contract of employment.</p>
+                        <br/>
+                        <strong class="color-red">BY TYPING IN THIS SIGNATURE FIELD YOU ARE ELECTRONICALLY SIGNING THIS FORM</strong>
+                    </div>
+                </div>
+                <div class="row mt-5">
+                        {{ forms.formText('col-lg-6', 'companyName', 'text', '', 'Applicants Signature', 'Applicants Signature', '', '', '', '' ) }}
+                        {{ forms.formText('col-lg-6', 'dateSigned', 'text', '08/30/2018', 'Date Signed', 'Date Signed', '', '', '', 'datepicker' ) }}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-12 navigate-wrapper">
+
+        <a href="index.html" class="btn btn-lg btn-navigate-back mt-3 mb-2">
+            <i class="fas fa-angle-double-left ml-2"></i>
+            Go to Personal Information
+
+        </a>
+        <a href="review-questions.html" class="btn btn-lg btn-navigate mt-3 mb-2">
+            Go to Review Questions
+            <i class="fas fa-angle-double-right ml-2"></i>
+        </a>
+    </div>
+</div>
+
+<!-- show add experience -->
+{{ macroModals.modalPop( 'AddExperience', '#AddExperience', 'Add Employment History', 'modal-lg', modal=3, 'Save Employment
+History' ) }}
+<script>
+
+
+    $(document).ready(function () {
+        // Add experience button toggle
+        var changeCheckbox = document.querySelector('#experienceCheck'),
+            changeButton = document.querySelector('#addExperience');
+        changeTextArea = document.querySelector('#experienceReason');
+        changeTable = document.querySelector('#experienceTable');
+
+        changeCheckbox.onchange = function () {
+            if (changeCheckbox.checked == true) {
+                changeButton.classList.add('hidden');
+                changeTable.classList.add('hidden');
+                changeTextArea.classList.remove('hidden');
+            } else {
+                changeButton.classList.remove('hidden');
+                changeTable.classList.remove('hidden');
+                changeTextArea.classList.add('hidden');
+            }
+        };
+    })
+</script> {% endblock %}

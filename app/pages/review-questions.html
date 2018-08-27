@@ -1,0 +1,763 @@
+{% set title = 'Review Questions' %} {% set ReviewQuestions = true %}
+<!-- base layout file inheritance -->
+{% extends "layout.html" %} {% block content %}
+
+<!-- import Forms macro file -->
+{% import "macros/forms.html" as forms %}
+<!-- import Modal macro file -->
+{% import "macros/modal.html" as macroModals %}
+
+
+<div class="row">
+    <div class="col-12 col-lg-12">
+        <div class="c-card">
+            <div class="c-card__header">
+                <h3>Review Questions</h3>
+            </div>
+            <div class="c-card__inner">
+                <div class="row">
+                    <div class="col-12">
+                        <p class="mb-5">This is not a Pass/Fail process. This is simply a series of questions designed to determine your
+                            current attributes as compared to others in the position for which you are being considered.
+                            Questionnaire coupled with interviews and prior work experience helps to ensure a match between
+                            candidates and the company.</p>
+                        <div class="table-responsive">
+                            <div class="questions">
+                                <div>
+                                    <table class="table">
+                                        <thead>
+                                            <tr>
+                                                <th>#</th>
+                                                <th>Question</th>
+                                                <th class="text-center" width="150">
+                                                    <img src="images/emoji_27.gif" alt="Strongly Disagree">
+                                                    <span>Strongly Disagree</span>
+                                                </th>
+                                                <th class="text-center" width="150">
+                                                    <img src="images/emoji_12.gif" alt="Disagree">
+                                                    <span>Disagree</span>
+                                                </th class="text-center" width="150">
+                                                <th class="text-center" width="70">
+                                                    <img src="images/emoji_7.gif" alt="Neutral">
+                                                    <span>Neutral</span>
+                                                </th class="text-center" width="150">
+                                                <th class="text-center" width="150">
+                                                    <img src="images/emoji_13.gif" alt="Agree">
+                                                    <span>Agree</span>
+                                                </th class="text-center" width="150">
+                                                <th class="text-center" width="150">
+                                                    <img src="images/emoji_1.gif" alt="Strongly Agree">
+                                                    <span>Strongly Agree</span>
+                                                </th class="text-center" width="150">
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>1</td>
+                                                <td>I prefer to work independently</td>
+                                                <td>
+
+                                                    <div class="d-block mx-auto radio"><input name="test3" type="radio"><span class="customRadio"></span></div>
+
+                                                </td>
+                                                <td>
+                                                    <div class="d-block mx-auto radio"><input name="test3" type="radio"><span class="customRadio"></span></div>
+                                                    
+                                                    
+                                                </td>
+                                                <td>
+
+                                                    <div class="d-block mx-auto radio"><input name="test3" type="radio"><span class="customRadio"></span></div>
+
+                                                </td>
+                                                <td>
+
+                                                    <div class="d-block mx-auto radio"><input name="test3" type="radio"><span class="customRadio"></span></div>
+
+                                                </td>
+                                                <td>
+
+                                                    <div class="d-block mx-auto radio"><input name="test3" type="radio"><span class="customRadio"></span></div>
+
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>2</td>
+                                                <td>I tend to keep my ideas to myself in group discussion.</td>
+                                                <td>
+
+                                                    <div class="d-block mx-auto radio"><input name="test3" type="radio"><span class="customRadio"></span></div>
+
+                                                </td>
+                                                <td>
+
+                                                    <div class="d-block mx-auto radio"><input name="test3" type="radio"><span class="customRadio"></span></div>
+
+                                                </td>
+                                                <td>
+
+                                                    <div class="d-block mx-auto radio"><input name="test3" type="radio"><span class="customRadio"></span></div>
+
+                                                </td>
+                                                <td>
+
+                                                    <div class="d-block mx-auto radio"><input name="test3" type="radio"><span class="customRadio"></span></div>
+
+                                                </td>
+                                                <td>
+
+                                                    <div class="d-block mx-auto radio"><input name="test3" type="radio"><span class="customRadio"></span></div>
+
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>3</td>
+                                                <td>If I am given the responsibility for task. Then I should be held accountable
+                                                    for the outcomes</td>
+                                                <td>
+
+                                                    <div class="d-block mx-auto radio"><input name="test3" type="radio"><span class="customRadio"></span></div>
+
+                                                </td>
+                                                <td>
+
+                                                    <div class="d-block mx-auto radio"><input name="test3" type="radio"><span class="customRadio"></span></div>
+
+                                                </td>
+                                                <td>
+
+                                                    <div class="d-block mx-auto radio"><input name="test3" type="radio"><span class="customRadio"></span></div>
+
+                                                </td>
+                                                <td>
+
+                                                    <div class="d-block mx-auto radio"><input name="test3" type="radio"><span class="customRadio"></span></div>
+
+                                                </td>
+                                                <td>
+
+                                                    <div class="d-block mx-auto radio"><input name="test3" type="radio"><span class="customRadio"></span></div>
+
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>4</td>
+                                                <td> People would describe me as cooperative.</td>
+                                                <td>
+
+                                                    <div class="d-block mx-auto radio"><input name="test3" type="radio"><span class="customRadio"></span></div>
+
+                                                </td>
+                                                <td>
+
+                                                    <div class="d-block mx-auto radio"><input name="test3" type="radio"><span class="customRadio"></span></div>
+
+                                                </td>
+                                                <td>
+
+                                                    <div class="d-block mx-auto radio"><input name="test3" type="radio"><span class="customRadio"></span></div>
+
+                                                </td>
+                                                <td>
+
+                                                    <div class="d-block mx-auto radio"><input name="test3" type="radio"><span class="customRadio"></span></div>
+
+                                                </td>
+                                                <td>
+
+                                                    <div class="d-block mx-auto radio"><input name="test3" type="radio"><span class="customRadio"></span></div>
+
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>5</td>
+                                                <td>When working in group I prefer greater influence</td>
+                                                <td>
+
+                                                    <div class="d-block mx-auto radio"><input name="test3" type="radio"><span class="customRadio"></span></div>
+
+                                                </td>
+                                                <td>
+
+                                                    <div class="d-block mx-auto radio"><input name="test3" type="radio"><span class="customRadio"></span></div>
+
+                                                </td>
+                                                <td>
+
+                                                    <div class="d-block mx-auto radio"><input name="test3" type="radio"><span class="customRadio"></span></div>
+
+                                                </td>
+                                                <td>
+
+                                                    <div class="d-block mx-auto radio"><input name="test3" type="radio"><span class="customRadio"></span></div>
+
+                                                </td>
+                                                <td>
+
+                                                    <div class="d-block mx-auto radio"><input name="test3" type="radio"><span class="customRadio"></span></div>
+
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div>
+                                    <table class="table">
+                                        <thead>
+                                            <tr>
+                                                <th>#</th>
+                                                <th>Question</th>
+                                                <th class="text-center" width="150">
+                                                    <img src="images/emoji_27.gif" alt="Strongly Disagree">
+                                                    <span>Strongly Disagree</span>
+                                                </th>
+                                                <th class="text-center" width="150">
+                                                    <img src="images/emoji_12.gif" alt="Disagree">
+                                                    <span>Disagree</span>
+                                                </th class="text-center" width="150">
+                                                <th class="text-center" width="70">
+                                                    <img src="images/emoji_7.gif" alt="Neutral">
+                                                    <span>Neutral</span>
+                                                </th class="text-center" width="150">
+                                                <th class="text-center" width="150">
+                                                    <img src="images/emoji_13.gif" alt="Agree">
+                                                    <span>Agree</span>
+                                                </th class="text-center" width="150">
+                                                <th class="text-center" width="150">
+                                                    <img src="images/emoji_1.gif" alt="Agree">
+                                                    <span>Strongly Agree</span>
+                                                </th class="text-center" width="150">
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>1</td>
+                                                <td>Coworkers would say I am on of the hardest working people they know</td>
+                                                <td>
+
+                                                    <div class="d-block mx-auto radio"><input name="test3" type="radio"><span class="customRadio"></span></div>
+
+                                                </td>
+                                                <td>
+
+                                                    <div class="d-block mx-auto radio"><input name="test3" type="radio"><span class="customRadio"></span></div>
+
+                                                </td>
+                                                <td>
+
+                                                    <div class="d-block mx-auto radio"><input name="test3" type="radio"><span class="customRadio"></span></div>
+
+                                                </td>
+                                                <td>
+
+                                                    <div class="d-block mx-auto radio"><input name="test3" type="radio"><span class="customRadio"></span></div>
+
+                                                </td>
+                                                <td>
+
+                                                    <div class="d-block mx-auto radio"><input name="test3" type="radio"><span class="customRadio"></span></div>
+
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>2</td>
+                                                <td>I believe that I have strong leadership qualities.</td>
+                                                <td>
+
+                                                    <div class="d-block mx-auto radio"><input name="test3" type="radio"><span class="customRadio"></span></div>
+
+                                                </td>
+                                                <td>
+
+                                                    <div class="d-block mx-auto radio"><input name="test3" type="radio"><span class="customRadio"></span></div>
+
+                                                </td>
+                                                <td>
+
+                                                    <div class="d-block mx-auto radio"><input name="test3" type="radio"><span class="customRadio"></span></div>
+
+                                                </td>
+                                                <td>
+
+                                                    <div class="d-block mx-auto radio"><input name="test3" type="radio"><span class="customRadio"></span></div>
+
+                                                </td>
+                                                <td>
+
+                                                    <div class="d-block mx-auto radio"><input name="test3" type="radio"><span class="customRadio"></span></div>
+
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>3</td>
+                                                <td>People would describe me as someone who follows the rules</td>
+                                                <td>
+
+                                                    <div class="d-block mx-auto radio"><input name="test3" type="radio"><span class="customRadio"></span></div>
+
+                                                </td>
+                                                <td>
+
+                                                    <div class="d-block mx-auto radio"><input name="test3" type="radio"><span class="customRadio"></span></div>
+
+                                                </td>
+                                                <td>
+
+                                                    <div class="d-block mx-auto radio"><input name="test3" type="radio"><span class="customRadio"></span></div>
+
+                                                </td>
+                                                <td>
+
+                                                    <div class="d-block mx-auto radio"><input name="test3" type="radio"><span class="customRadio"></span></div>
+
+                                                </td>
+                                                <td>
+
+                                                    <div class="d-block mx-auto radio"><input name="test3" type="radio"><span class="customRadio"></span></div>
+
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>4</td>
+                                                <td>I can get a lot of work done in a very short period of time.</td>
+                                                <td>
+
+                                                    <div class="d-block mx-auto radio"><input name="test3" type="radio"><span class="customRadio"></span></div>
+
+                                                </td>
+                                                <td>
+
+                                                    <div class="d-block mx-auto radio"><input name="test3" type="radio"><span class="customRadio"></span></div>
+
+                                                </td>
+                                                <td>
+
+                                                    <div class="d-block mx-auto radio"><input name="test3" type="radio"><span class="customRadio"></span></div>
+
+                                                </td>
+                                                <td>
+
+                                                    <div class="d-block mx-auto radio"><input name="test3" type="radio"><span class="customRadio"></span></div>
+
+                                                </td>
+                                                <td>
+
+                                                    <div class="d-block mx-auto radio"><input name="test3" type="radio"><span class="customRadio"></span></div>
+
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>5</td>
+                                                <td>	People would describe me as very dependable</td>
+                                                <td>
+
+                                                    <div class="d-block mx-auto radio"><input name="test3" type="radio"><span class="customRadio"></span></div>
+
+                                                </td>
+                                                <td>
+
+                                                    <div class="d-block mx-auto radio"><input name="test3" type="radio"><span class="customRadio"></span></div>
+
+                                                </td>
+                                                <td>
+
+                                                    <div class="d-block mx-auto radio"><input name="test3" type="radio"><span class="customRadio"></span></div>
+
+                                                </td>
+                                                <td>
+
+                                                    <div class="d-block mx-auto radio"><input name="test3" type="radio"><span class="customRadio"></span></div>
+
+                                                </td>
+                                                <td>
+
+                                                    <div class="d-block mx-auto radio"><input name="test3" type="radio"><span class="customRadio"></span></div>
+
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div>
+                                    <table class="table">
+                                        <thead>
+                                            <tr>
+                                                <th>#</th>
+                                                <th>Question</th>
+                                                <th class="text-center" width="150">
+                                                    <img src="images/emoji_27.gif" alt="Strongly Disagree">
+                                                    <span>Strongly Disagree</span>
+                                                </th>
+                                                <th class="text-center" width="150">
+                                                    <img src="images/emoji_12.gif" alt="Disagree">
+                                                    <span>Disagree</span>
+                                                </th class="text-center" width="150">
+                                                <th class="text-center" width="70">
+                                                    <img src="images/emoji_7.gif" alt="Neutral">
+                                                    <span>Neutral</span>
+                                                </th class="text-center" width="150">
+                                                <th class="text-center" width="150">
+                                                    <img src="images/emoji_13.gif" alt="Agree">
+                                                    <span>Agree</span>
+                                                </th class="text-center" width="150">
+                                                <th class="text-center" width="150">
+                                                    <img src="images/emoji_1.gif" alt="Agree">
+                                                    <span>Strongly Agree</span>
+                                                </th class="text-center" width="150">
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>1</td>
+                                                <td>I am always looking for a chance to advance to a higher level job</td>
+                                                <td>
+
+                                                    <div class="d-block mx-auto radio"><input name="test3" type="radio"><span class="customRadio"></span></div>
+
+                                                </td>
+                                                <td>
+
+                                                    <div class="d-block mx-auto radio"><input name="test3" type="radio"><span class="customRadio"></span></div>
+
+                                                </td>
+                                                <td>
+
+                                                    <div class="d-block mx-auto radio"><input name="test3" type="radio"><span class="customRadio"></span></div>
+
+                                                </td>
+                                                <td>
+
+                                                    <div class="d-block mx-auto radio"><input name="test3" type="radio"><span class="customRadio"></span></div>
+
+                                                </td>
+                                                <td>
+
+                                                    <div class="d-block mx-auto radio"><input name="test3" type="radio"><span class="customRadio"></span></div>
+
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>2</td>
+                                                <td>I try to be very logical when solving work problems.</td>
+                                                <td>
+
+                                                    <div class="d-block mx-auto radio"><input name="test3" type="radio"><span class="customRadio"></span></div>
+
+                                                </td>
+                                                <td>
+
+                                                    <div class="d-block mx-auto radio"><input name="test3" type="radio"><span class="customRadio"></span></div>
+
+                                                </td>
+                                                <td>
+
+                                                    <div class="d-block mx-auto radio"><input name="test3" type="radio"><span class="customRadio"></span></div>
+
+                                                </td>
+                                                <td>
+
+                                                    <div class="d-block mx-auto radio"><input name="test3" type="radio"><span class="customRadio"></span></div>
+
+                                                </td>
+                                                <td>
+
+                                                    <div class="d-block mx-auto radio"><input name="test3" type="radio"><span class="customRadio"></span></div>
+
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>3</td>
+                                                <td>I have been known to lose my temper when I am upset.</td>
+                                                <td>
+
+                                                    <div class="d-block mx-auto radio"><input name="test3" type="radio"><span class="customRadio"></span></div>
+
+                                                </td>
+                                                <td>
+
+                                                    <div class="d-block mx-auto radio"><input name="test3" type="radio"><span class="customRadio"></span></div>
+
+                                                </td>
+                                                <td>
+
+                                                    <div class="d-block mx-auto radio"><input name="test3" type="radio"><span class="customRadio"></span></div>
+
+                                                </td>
+                                                <td>
+
+                                                    <div class="d-block mx-auto radio"><input name="test3" type="radio"><span class="customRadio"></span></div>
+
+                                                </td>
+                                                <td>
+
+                                                    <div class="d-block mx-auto radio"><input name="test3" type="radio"><span class="customRadio"></span></div>
+
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>4</td>
+                                                <td>	When I am in a bad mood, it effects my work.</td>
+                                                <td>
+
+                                                    <div class="d-block mx-auto radio"><input name="test3" type="radio"><span class="customRadio"></span></div>
+
+                                                </td>
+                                                <td>
+
+                                                    <div class="d-block mx-auto radio"><input name="test3" type="radio"><span class="customRadio"></span></div>
+
+                                                </td>
+                                                <td>
+
+                                                    <div class="d-block mx-auto radio"><input name="test3" type="radio"><span class="customRadio"></span></div>
+
+                                                </td>
+                                                <td>
+
+                                                    <div class="d-block mx-auto radio"><input name="test3" type="radio"><span class="customRadio"></span></div>
+
+                                                </td>
+                                                <td>
+
+                                                    <div class="d-block mx-auto radio"><input name="test3" type="radio"><span class="customRadio"></span></div>
+
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>5</td>
+                                                <td>I will spend personal time if neccessary to make up for mistakes I have made</td>
+                                                <td>
+
+                                                    <div class="d-block mx-auto radio"><input name="test3" type="radio"><span class="customRadio"></span></div>
+
+                                                </td>
+                                                <td>
+
+                                                    <div class="d-block mx-auto radio"><input name="test3" type="radio"><span class="customRadio"></span></div>
+
+                                                </td>
+                                                <td>
+
+                                                    <div class="d-block mx-auto radio"><input name="test3" type="radio"><span class="customRadio"></span></div>
+
+                                                </td>
+                                                <td>
+
+                                                    <div class="d-block mx-auto radio"><input name="test3" type="radio"><span class="customRadio"></span></div>
+
+                                                </td>
+                                                <td>
+
+                                                    <div class="d-block mx-auto radio"><input name="test3" type="radio"><span class="customRadio"></span></div>
+
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div>
+                                    <table class="table">
+                                        <thead>
+                                            <tr>
+                                                <th>#</th>
+                                                <th>Question</th>
+                                                <th class="text-center" width="150">
+                                                    <img src="images/emoji_27.gif" alt="Strongly Disagree">
+                                                    <span>Strongly Disagree</span>
+                                                </th>
+                                                <th class="text-center" width="150">
+                                                    <img src="images/emoji_12.gif" alt="Disagree">
+                                                    <span>Disagree</span>
+                                                </th class="text-center" width="150">
+                                                <th class="text-center" width="70">
+                                                    <img src="images/emoji_7.gif" alt="Neutral">
+                                                    <span>Neutral</span>
+                                                </th class="text-center" width="150">
+                                                <th class="text-center" width="150">
+                                                    <img src="images/emoji_13.gif" alt="Agree">
+                                                    <span>Agree</span>
+                                                </th class="text-center" width="150">
+                                                <th class="text-center" width="150">
+                                                    <img src="images/emoji_1.gif" alt="Agree">
+                                                    <span>Strongly Agree</span>
+                                                </th class="text-center" width="150">
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>1</td>
+                                                <td>I think everyone should obey those in positions of authority</td>
+                                                <td>
+
+                                                    <div class="d-block mx-auto radio"><input name="test3" type="radio"><span class="customRadio"></span></div>
+
+                                                </td>
+                                                <td>
+
+                                                    <div class="d-block mx-auto radio"><input name="test3" type="radio"><span class="customRadio"></span></div>
+
+                                                </td>
+                                                <td>
+
+                                                    <div class="d-block mx-auto radio"><input name="test3" type="radio"><span class="customRadio"></span></div>
+
+                                                </td>
+                                                <td>
+
+                                                    <div class="d-block mx-auto radio"><input name="test3" type="radio"><span class="customRadio"></span></div>
+
+                                                </td>
+                                                <td>
+
+                                                    <div class="d-block mx-auto radio"><input name="test3" type="radio"><span class="customRadio"></span></div>
+
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>2</td>
+                                                <td>Sometimes criticism of my work will hurt my feelings</td>
+                                                <td>
+
+                                                    <div class="d-block mx-auto radio"><input name="test3" type="radio"><span class="customRadio"></span></div>
+
+                                                </td>
+                                                <td>
+
+                                                    <div class="d-block mx-auto radio"><input name="test3" type="radio"><span class="customRadio"></span></div>
+
+                                                </td>
+                                                <td>
+
+                                                    <div class="d-block mx-auto radio"><input name="test3" type="radio"><span class="customRadio"></span></div>
+
+                                                </td>
+                                                <td>
+
+                                                    <div class="d-block mx-auto radio"><input name="test3" type="radio"><span class="customRadio"></span></div>
+
+                                                </td>
+                                                <td>
+
+                                                    <div class="d-block mx-auto radio"><input name="test3" type="radio"><span class="customRadio"></span></div>
+
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>3</td>
+                                                <td>I feel disappointed when my achievements go un noticed</td>
+                                                <td>
+
+                                                    <div class="d-block mx-auto radio"><input name="test3" type="radio"><span class="customRadio"></span></div>
+
+                                                </td>
+                                                <td>
+
+                                                    <div class="d-block mx-auto radio"><input name="test3" type="radio"><span class="customRadio"></span></div>
+
+                                                </td>
+                                                <td>
+
+                                                    <div class="d-block mx-auto radio"><input name="test3" type="radio"><span class="customRadio"></span></div>
+
+                                                </td>
+                                                <td>
+
+                                                    <div class="d-block mx-auto radio"><input name="test3" type="radio"><span class="customRadio"></span></div>
+
+                                                </td>
+                                                <td>
+
+                                                    <div class="d-block mx-auto radio"><input name="test3" type="radio"><span class="customRadio"></span></div>
+
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>4</td>
+                                                <td>I have never been late for work</td>
+                                                <td>
+
+                                                    <div class="d-block mx-auto radio"><input name="test3" type="radio"><span class="customRadio"></span></div>
+
+                                                </td>
+                                                <td>
+
+                                                    <div class="d-block mx-auto radio"><input name="test3" type="radio"><span class="customRadio"></span></div>
+
+                                                </td>
+                                                <td>
+
+                                                    <div class="d-block mx-auto radio"><input name="test3" type="radio"><span class="customRadio"></span></div>
+
+                                                </td>
+                                                <td>
+
+                                                    <div class="d-block mx-auto radio"><input name="test3" type="radio"><span class="customRadio"></span></div>
+
+                                                </td>
+                                                <td>
+
+                                                    <div class="d-block mx-auto radio"><input name="test3" type="radio"><span class="customRadio"></span></div>
+
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>5</td>
+                                                <td>I am willing to take a risk in order to achieve a higher payout</td>
+                                                <td>
+
+                                                    <div class="d-block mx-auto radio"><input name="test3" type="radio"><span class="customRadio"></span></div>
+
+                                                </td>
+                                                <td>
+
+                                                    <div class="d-block mx-auto radio"><input name="test3" type="radio"><span class="customRadio"></span></div>
+
+                                                </td>
+                                                <td>
+
+                                                    <div class="d-block mx-auto radio"><input name="test3" type="radio"><span class="customRadio"></span></div>
+
+                                                </td>
+                                                <td>
+
+                                                    <div class="d-block mx-auto radio"><input name="test3" type="radio"><span class="customRadio"></span></div>
+
+                                                </td>
+                                                <td>
+
+                                                    <div class="d-block mx-auto radio"><input name="test3" type="radio"><span class="customRadio"></span></div>
+
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+<div class="row mt-5">
+    <div class="col-12 navigate-wrapper">
+
+        <a href="billing-information.html" class="btn btn-lg btn-navigate-back mt-3 mb-2">
+            <i class="fas fa-angle-double-left ml-2"></i>
+            Go to Billing Information
+
+        </a>
+        <a href="billing-information.html" class="btn btn-lg btn-navigate mt-3 mb-2">
+            <i class="fas fa-paper-plane mr-2"></i>
+            Send the Application
+
+        </a>
+    </div>
+</div>
+
+<script>
+
+</script> {% endblock %}

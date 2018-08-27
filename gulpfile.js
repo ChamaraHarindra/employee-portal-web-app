@@ -70,8 +70,8 @@ gulp.task('watch', function () {
     gulp.watch('./app/scss/**/*.scss', ['sass']);
     gulp.watch('./app/css/**/*.css', browserSync.reload);
     gulp.watch('./app/js/**/*.js', browserSync.reload);
-    gulp.watch('./app/**/*.html', browserSync.reload);
-    gulp.watch(('./app/pages/**/*.html','./app/templates/**/*.html'), ['nunjucks']);
+    gulp.watch('./app/**/*.html', ['nunjucks']);
+    gulp.watch('./app/templates/**/*.html', ['nunjucks']);
 })
 
 

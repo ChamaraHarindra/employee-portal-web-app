@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Personal Information</title>
+    <title>Store Map</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -25,153 +25,11 @@
                 <img alt="KPV" src="images/logo-kpv.svg"/>
             </a>
             
-            <a class="log-out" href="">
-                <div class="icon-link">
-                    <i class="material-icons">power_settings_new</i>
-                    <span>Log Out</span>
-                </div>
-            </a>
-            
         </nav>
     </header>
 
     <main class="custom-wrapper">
         <div class="container-fluid">
-            <!-- color card Include -->
-            <!-- import Modal macro file -->
-
-<div class="c-card multi-color">
-        <div class="c-card__inner">
-            <div class="row align-items-center">
-                <div class="col-12 col-lg-5">
-                    <h1>353397 - Market Street</h1>
-                    <h2 class="icon-link">
-                        <i class="material-icons h2-size hide-mobile">place</i>
-                        <span>2700 E Market St East York, PA 17402</span>
-                    </h2>
-                    <a  href="javascript:void(0)" data-toggle="modal" data-target="#GetDirections" class="btn btn-dark-blue">Get Directions</a>
-                </div>
-                <div class="col-12 col-lg-2">
-                    <h2 class="big-date">08 August, 2018</h2>
-                </div>
-                <div class="col-12 col-lg-5 justify-content-lg-between">
-                    <div class="positions-review">
-                        <div class="form-group text-left">
-                            <label for="Position">Applying Position</label>
-                            <select name="position-select" id="selectPosition" class="position selectpicker" data-style="btn-outlined">
-                                <option value="1">Crew Member</option>
-                                <option value="2">Manager</option>
-                            </select>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- show directions modal -->
-
-<div class="modal fade" id="GetDirections" tabindex="-1" role="dialog" aria-labelledby="#GetDirections" aria-hidden="true">
-    <div class="modal-dialog modal-lg modal-default" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="#GetDirections">Get Directions</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">
-                        <i class="fas fa-times color-white"></i>
-                    </span>
-                </button>
-            </div>
-            <!-- Get directions modal -->
-            
-            <div class="modal-body">
-                <div class="row">
-                    <div class="col-12 col-lg-5">
-                        <div class="form-group mb-4">
-                            <label for="YourLocation" class="field__label">Your Location</label>
-                            <input type="text" class="form-control" id="YourLocation" aria-describedby="yourLocation" placeholder="Your Location">
-                        </div>
-                        <div class="form-group mb-4">
-                            <label for="Destination" class="field__label">Destination</label>
-                            <input type="text" class="form-control" id="Destination" aria-describedby="destination" placeholder="Destination" value="2700 E Market St East York, PA 17402">
-                        </div>
-                        <button type="button" class="btn btn-primary submit-btn">Get Directions</button>
-                    </div>
-                    <div class="col-12 col-lg-7">
-                        <iframe src="https://goo.gl/NiJHnP" width="100%" height="400" frameborder="0" style="border:0" allowfullscreen></iframe>
-                    </div>
-                </div>
-            </div>
-            <!-- Add reference modal -->
-            
-        </div>
-    </div>
-</div>
-
-
-
-<!-- show directions modal -->
-
-<div class="modal fade" id="AddReviews" tabindex="-1" role="dialog" aria-labelledby="#AddReviews" aria-hidden="true">
-    <div class="modal-dialog modal-lg modal-default" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="#AddReviews">Add Reviews</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">
-                        <i class="fas fa-times color-white"></i>
-                    </span>
-                </button>
-            </div>
-            <!-- Get directions modal -->
-            
-            <div class="modal-body">
-                <table class="table data-tables" id="reviewTable">
-                    <thead>
-                        <tr>
-                            <th>Reference Name</th>
-                            <th>Phone No</th>
-                            <th>Email</th>
-                        </tr>
-                    </thead>
-                </table>
-
-            </div>
-            
-        </div>
-    </div>
-</div>
-
-
-
-            <div class="row">
-                <div class="col-12">
-                    <ol class="step-indicator">
-    <li 
-    class="active"
-    >
-        <div class="step">
-            <i class="fas fa-user"></i>
-        </div>
-        <div class="caption">Personal Information</div>
-    </li>
-    <li 
-    >
-        <div class="step">
-            <i class="fas fa-dollar-sign"></i>
-        </div>
-        <div class="caption">Billing Information</div>
-    </li>
-    <li 
-    >
-        <div class="step">
-            <i class="fas fa-pencil-alt"></i>
-        </div>
-        <div class="caption">Review Questions</div>
-    </li>
-</ol>
-                </div>
-            </div>
             <!-- body content -->
             
 

@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Billing Information</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <!-- build:css css/main.min.css -->
+    <link rel="stylesheet" type="text/css" media="screen" href="css/main.css" />
+    <!-- endbuild -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+</head>
+
+<body>
+    <!-- Header Include -->
+    <header class="container-fluid shadow">
+        <nav class="navbar">
+            <a class="navbar-brand" href="#">
+                <img alt="KPV" src="images/logo-kpv.svg"/>
+            </a>
+            
+            <a class="log-out" href="">
+                <div class="icon-link">
+                    <i class="material-icons">power_settings_new</i>
+                    <span>Log Out</span>
+                </div>
+            </a>
+            
+        </nav>
+    </header>
+
+    <main class="custom-wrapper">
+        <div class="container-fluid">
+            <!-- color card Include -->
+            <!-- import Modal macro file -->
+
+<div class="c-card multi-color">
+        <div class="c-card__inner">
+            <div class="row align-items-center">
+                <div class="col-12 col-lg-5">
+                    <h1>353397 - Market Street</h1>
+                    <h2 class="icon-link">
+                        <i class="material-icons h2-size hide-mobile">place</i>
+                        <span>2700 E Market St East York, PA 17402</span>
+                    </h2>
+                    <a  href="javascript:void(0)" data-toggle="modal" data-target="#GetDirections" class="btn btn-dark-blue">Get Directions</a>
+                </div>
+                <div class="col-12 col-lg-2">
+                    <h2 class="big-date">08 August, 2018</h2>
+                </div>
+                <div class="col-12 col-lg-5 justify-content-lg-between">
+                    <div class="positions-review">
+                        <div class="form-group text-left">
+                            <label for="Position">Applying Position</label>
+                            <select name="position-select" id="selectPosition" class="position selectpicker" data-style="btn-outlined">
+                                <option value="1">Crew Member</option>
+                                <option value="2">Manager</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- show directions modal -->
+
+<div class="modal fade" id="GetDirections" tabindex="-1" role="dialog" aria-labelledby="#GetDirections" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-default" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="#GetDirections">Get Directions</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">
+                        <i class="fas fa-times color-white"></i>
+                    </span>
+                </button>
+            </div>
+            <!-- Get directions modal -->
+            
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-12 col-lg-5">
+                        <div class="form-group mb-4">
+                            <label for="YourLocation" class="field__label">Your Location</label>
+                            <input type="text" class="form-control" id="YourLocation" aria-describedby="yourLocation" placeholder="Your Location">
+                        </div>
+                        <div class="form-group mb-4">
+                            <label for="Destination" class="field__label">Destination</label>
+                            <input type="text" class="form-control" id="Destination" aria-describedby="destination" placeholder="Destination" value="2700 E Market St East York, PA 17402">
+                        </div>
+                        <button type="button" class="btn btn-primary submit-btn">Get Directions</button>
+                    </div>
+                    <div class="col-12 col-lg-7">
+                        <iframe src="https://goo.gl/NiJHnP" width="100%" height="400" frameborder="0" style="border:0" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+            <!-- Add reference modal -->
+            
+        </div>
+    </div>
+</div>
+
+
+
+<!-- show directions modal -->
+
+<div class="modal fade" id="AddReviews" tabindex="-1" role="dialog" aria-labelledby="#AddReviews" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-default" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="#AddReviews">Add Reviews</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">
+                        <i class="fas fa-times color-white"></i>
+                    </span>
+                </button>
+            </div>
+            <!-- Get directions modal -->
+            
+            <div class="modal-body">
+                <table class="table data-tables" id="reviewTable">
+                    <thead>
+                        <tr>
+                            <th>Reference Name</th>
+                            <th>Phone No</th>
+                            <th>Email</th>
+                        </tr>
+                    </thead>
+                </table>
+
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+
+
+            <div class="row">
+                <div class="col-12">
+                    <ol class="step-indicator">
+    <li 
+    class="complete"
+    >
+        <div class="step">
+            <i class="fas fa-user"></i>
+        </div>
+        <div class="caption">Personal Information</div>
+    </li>
+    <li 
+    class="active"
+    >
+        <div class="step">
+            <i class="fas fa-dollar-sign"></i>
+        </div>
+        <div class="caption">Billing Information</div>
+    </li>
+    <li 
+    >
+        <div class="step">
+            <i class="fas fa-pencil-alt"></i>
+        </div>
+        <div class="caption">Review Questions</div>
+    </li>
+</ol>
+                </div>
+            </div>
+            <!-- body content -->
+            
+
+<!-- import Forms macro file -->
+
+<!-- import Modal macro file -->
+
+
+
+<div class="row">
+    <div class="col-12 col-lg-12">
+        <div class="c-card">
+            <div class="c-card__header">
+                <h3>Education Qualification</h3>
+            </div>
+            <div class="c-card__inner">
+                <div class="row">
+                    <div class="col-12 mb-5">
+                        <label for="work" class="d-block">What is your highest education qualification? </label>
+                        <div class="btn-group btn-group-toggle long-list" data-toggle="buttons">
+                            <label class="btn btn-outline-primary active">
+                                <input type="radio" name="options" id="gedLess" autocomplete="off" checked> GED or Less
+                            </label>
+                            <label class="btn btn-outline-primary">
+                                <input type="radio" name="options" id="highSchoolDiploma" autocomplete="off"> High School Diploma
+                            </label>
+                            <label class="btn btn-outline-primary">
+                                <input type="radio" name="options" id="College" autocomplete="off"> College
+                            </label>
+                            <label class="btn btn-outline-primary">
+                                <input type="radio" name="options" id="beyondCollege" autocomplete="off"> Beyond College
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-12 col-lg-12">
+        <div class="c-card mt-5">
+            <div class="c-card__header">
+                <h3>Employment History</h3>
+                <div class="d-flex align-items-center">
+                    <button class="btn btn-dark-blue btn-sm" id="addExperience" data-toggle="modal" data-target="#AddExperience">
+                        <i class="fas fa-plus mr-2"></i>Add Experience</button>
+                    <div class="switch d-flex align-items-center">
+                        <input type="checkbox" class="js-switch" id="experienceCheck" />
+                        <span class="ml-2 small">I have no experience</span>
+                    </div>
+                </div>
+            </div>
+            <div class="c-card__inner">
+                <div class="row">
+                    
+<div class="col-12 col-lg-12">
+    <div class="form-group">
+        <label for="experienceReason">Please enter a reasons</label>
+        <textarea name="experienceReason" class="form-control textarea hidden" id="experienceReason" placeholder="Please enter a reasons" rows="5"></textarea>
+    </div>
+</div>
+
+                </div>
+                <div class="row" id="experienceTable">
+                    <div class="col-12">
+                        <div class="table-responsive">
+                            <table class="table data-tables mb-4">
+                                <thead>
+                                    <tr>
+                                        <th>Duration</th>
+                                        <th>Employer Name</th>
+                                        <th>Job Title</th>
+                                        <th>Salary or Wages</th>
+                                        <th>Reference</th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <td>
+                                        4 months
+                                    </td>
+                                    <td>
+                                        ABC Companies
+                                    </td>
+                                    <td>Cashier</td>
+                                    <td>$120,000 per annum</td>
+                                    <td><button class="btn btn-sm btn-outline-primary">View</button></td>
+                                    <td class="text-center">
+                                        <button class="btn btn-sm btn-outline-secondary mr-3" data-toggle="modal" data-target="#AddExperience"><i class="fas fa-edit"></i></button>
+                                        <button id="deleteExperience" class="btn btn-sm btn-outline-danger"><i class="fas fa-trash-alt"></i></button>
+                                    </td>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-12">
+        <div class="c-card mt-5 mb-3">
+            <div class="c-card__header">
+                <h3>U.S. Military Service</h3>
+            </div>
+            <div class="c-card__inner">
+                <div class="row">
+                    
+<div class="col-12 col-lg-4">
+    <div class="form-group ">
+        <label for="serviceBranch">Branch of Service</label>
+        <input type="text" value="" data-toggle="" name="serviceBranch" id="serviceBranch" class="form-control " placeholder="Branch of Service" />
+    </div>
+</div>
+
+                    
+<div class="col-12 col-lg-4">
+    <div class="form-group ">
+        <label for="specialization">Technical Specialization</label>
+        <input type="text" value="" data-toggle="" name="specialization" id="specialization" class="form-control " placeholder="Technical Specialization" />
+    </div>
+</div>
+
+                    
+<div class="col-12 col-lg-4">
+    <div class="form-group ">
+        <label for="rankAttained">Rank Attained</label>
+        <input type="text" value="" data-toggle="" name="rankAttained" id="rankAttained" class="form-control " placeholder="Rank Attained" />
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-12">
+        <div class="c-card mt-5 mb-3">
+            <div class="c-card__header">
+                <h3>Legal</h3>
+            </div>
+            <div class="c-card__inner">
+                <div class="row">
+                    <div class="col-12 col-lg-6">
+                        <div class="mb-5">
+                            <label for="work" class="d-block">Are you legally authorized to work in United States? </label>
+                            <div class="btn-group btn-group-toggle long-list" data-toggle="buttons">
+                                <label class="btn btn-outline-primary active">
+                                    <input type="radio" name="options" id="gedLess" autocomplete="off" checked> Yes
+                                </label>
+                                <label class="btn btn-outline-primary">
+                                    <input type="radio" name="options" id="highSchoolDiploma" autocomplete="off"> No
+                                </label>
+                            </div>
+                        </div>
+                        <div class="mb-5">
+                            <label for="work" class="d-block">Were you ever discharged by any company? If Yes, give name of company(ies) </label>
+                            <div class="btn-group btn-group-toggle long-list" data-toggle="buttons">
+                                <label class="btn btn-outline-primary active">
+                                    <input type="radio" name="options" id="gedLess" autocomplete="off" checked> Yes
+                                </label>
+                                <label class="btn btn-outline-primary">
+                                    <input type="radio" name="options" id="highSchoolDiploma" autocomplete="off"> No
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-6">
+                        <div class="row mb-5">
+                            
+<div class="col-12 col-lg-12">
+    <div class="form-group ">
+        <label for="companyName">Company Name</label>
+        <input type="text" value="" data-toggle="" name="companyName" id="companyName" class="form-control " placeholder="Company Name" />
+    </div>
+</div>
+
+                        </div>
+                        <div class="row">
+                            
+<div class="col-12 col-lg-12">
+    <div class="form-group">
+        <label for="dischargeReason">Reasons for Discharge</label>
+        <textarea name="dischargeReason" class="form-control textarea " id="dischargeReason" placeholder="Reasons for Discharge" rows="5"></textarea>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-12">
+        <div class="c-card mt-5 mb-3">
+            <div class="c-card__header">
+                <h3>Disclaimer</h3>
+            </div>
+            <div class="c-card__inner">
+                <div class="row">
+                    <div class="col-12">
+                        <strong>Please read carefully</strong><br/><br/>
+                        <p>In the events of employment, I understand that false or misleading information given in my application or interview(s) may result in immediate dismissal. I understand, also that I am required to abide by all rules and regulations of the Franchisee of Dunkin Donuts. I understand and agree that if employed, employment will be AT WILL that is, either I or the employer may end the employment relationship at any time, for any reason, and I understand that receipt of this application does not imply employment and that this application and/or any other documents are not a contract of employment.</p>
+                        <br/>
+                        <strong class="color-red">BY TYPING IN THIS SIGNATURE FIELD YOU ARE ELECTRONICALLY SIGNING THIS FORM</strong>
+                    </div>
+                </div>
+                <div class="row mt-5">
+                        
+<div class="col-12 col-lg-6">
+    <div class="form-group ">
+        <label for="companyName">Applicants Signature</label>
+        <input type="text" value="" data-toggle="" name="companyName" id="companyName" class="form-control " placeholder="Applicants Signature" />
+    </div>
+</div>
+
+                        
+<div class="col-12 col-lg-6">
+    <div class="form-group ">
+        <label for="dateSigned">Date Signed</label>
+        <input type="text" value="08/30/2018" data-toggle="datepicker" name="dateSigned" id="dateSigned" class="form-control " placeholder="Date Signed" />
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-12 navigate-wrapper">
+
+        <a href="index.html" class="btn btn-lg btn-navigate-back mt-3 mb-2">
+            <i class="fas fa-angle-double-left ml-2"></i>
+            Go to Personal Information
+
+        </a>
+        <a href="review-questions.html" class="btn btn-lg btn-navigate mt-3 mb-2">
+            Go to Review Questions
+            <i class="fas fa-angle-double-right ml-2"></i>
+        </a>
+    </div>
+</div>
+
+<!-- show add experience -->
+
+<div class="modal fade" id="AddExperience" tabindex="-1" role="dialog" aria-labelledby="#AddExperience" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-default" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="#AddExperience">Add Employment History</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">
+                        <i class="fas fa-times color-white"></i>
+                    </span>
+                </button>
+            </div>
+            <!-- Get directions modal -->
+            
+            <div class="modal-body">
+                <div class="row mb-4">
+                    <div class="col-12 col-lg-6">
+                        <div class="d-block">
+                            <label for="work" class="d-block">Experience Type</label>
+                            <div class="btn-group btn-group-toggle long-list" data-toggle="buttons">
+                                <label class="btn btn-outline-primary">
+                                    <input type="radio" name="options" id="fullTime" autocomplete="off"> Dunkin Donuts
+                                </label>
+                                <label class="btn btn-outline-primary">
+                                    <input type="radio" name="options" id="partTime" autocomplete="off"> Other
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-6">
+                        <div class="d-block">
+                            <label for="work" class="d-block">Currently Working?</label>
+                            <div class="btn-group btn-group-toggle long-list" data-toggle="buttons">
+                                <label class="btn btn-outline-primary">
+                                    <input type="radio" name="options" id="fullTime" autocomplete="off"> Yes
+                                </label>
+                                <label class="btn btn-outline-primary">
+                                    <input type="radio" name="options" id="partTime" autocomplete="off"> No
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mb-2">
+                    
+<div class="col-12 col-lg-6">
+    <div class="form-group ">
+        <label for="fromDate">From Date</label>
+        <input type="text" value="" data-toggle="datepicker" name="fromDate" id="fromDate" class="form-control " placeholder="From Date" required/>
+    </div>
+</div>
+ 
+<div class="col-12 col-lg-6">
+    <div class="form-group ">
+        <label for="toDate">To Date</label>
+        <input type="text" value="" data-toggle="datepicker" name="toDate" id="toDate" class="form-control " placeholder="To Date" />
+    </div>
+</div>
+
+                </div>
+                <div class="row mb-2">
+                    
+<div class="col-12 col-lg-4">
+    <div class="form-group ">
+        <label for="jobTitle">Job Title</label>
+        <input type="text" value="" data-toggle="" name="jobTitle" id="jobTitle" class="form-control " placeholder="Job Title" required/>
+    </div>
+</div>
+ 
+<div class="col-12 col-lg-4">
+    <div class="form-group ">
+        <label for="employerName">Employer Name</label>
+        <input type="text" value="" data-toggle="" name="employerName" id="employerName" class="form-control " placeholder="Employer Name" required/>
+    </div>
+</div>
+ 
+<div class="col-12 col-lg-4">
+    <div class="form-group ">
+        <label for="phoneNo">Phone Number</label>
+        <input type="text" value="" data-toggle="" name="phoneNo" id="phoneNo" class="form-control phone" placeholder="Phone Number" required/>
+    </div>
+</div>
+
+                </div>
+                <div class="row mb-2">
+                    
+<div class="col-12 col-lg-6">
+    <div class="form-group ">
+        <label for="startSalary">Start Salary ($)</label>
+        <input type="text" value="" data-toggle="" name="startSalary" id="startSalary" class="form-control money" placeholder="Start Salary" />
+    </div>
+</div>
+ 
+<div class="col-12 col-lg-6">
+    <div class="form-group ">
+        <label for="endSalary">End Salary ($)</label>
+        <input type="text" value="" data-toggle="" name="endSalary" id="endSalary" class="form-control money" placeholder="End Salary" />
+    </div>
+</div>
+
+                </div>
+                <div class="row">
+                    
+<div class="col-12 col-lg-4">
+    <div class="form-group ">
+        <label for="address">Address</label>
+        <input type="text" value="" data-toggle="" name="address" id="address" class="form-control " placeholder="Address" />
+    </div>
+</div>
+ 
+<div class="col-12 col-lg-3">
+    <div class="form-group ">
+        <label for="city">City</label>
+        <input type="text" value="" data-toggle="" name="city" id="city" class="form-control " placeholder="City" />
+    </div>
+</div>
+ 
+<div class="col-12 col-lg-3">
+    <div class="form-group">
+        <label for="state" id="state">State</label>
+        <select name="state"  id="state" class="form-control form-select" >
+                <option value="0">State</option>
+            <option value="1">State 1</option>
+            <option value="2">State 2</option>
+        </select>
+    </div>
+</div>
+ 
+<div class="col-12 col-lg-2">
+    <div class="form-group ">
+        <label for="zip">Zip</label>
+        <input type="text" value="" data-toggle="" name="zip" id="zip" class="form-control zip" placeholder="Zip" />
+    </div>
+</div>
+
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <hr/>
+                        <h4>References</h4>
+                        <p class="small d-block">If you have reference to this position, you can add it by filling below fields</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <div class="mt-2">
+                            <div class="row mb-2">
+                                <div class="col-12 col-lg-12">
+                                    <div class="form-group">
+                                        <label for="referenceName">Reference Name</label>
+                                        <input type="text" class="form-control" id="referenceName" aria-describedby="referenceName" placeholder="Reference Name">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row mb-2">
+                                <div class="col-12 col-lg-6">
+                                    <div class="form-group">
+                                        <label for="referencePhone">Reference Phone</label>
+                                        <input type="text" class="form-control phone" id="referencePhone" aria-describedby="referencePhone" placeholder="Reference Phone">
+                                    </div>
+                                </div>
+                                <div class="col-12 col-lg-6">
+                                    <div class="form-group">
+                                        <label for="referenceEmail">Reference Email</label>
+                                        <input type="text" class="form-control" id="referenceEmail" aria-describedby="referenceEmail" placeholder="Reference Email">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-link" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary submit-btn">Save Employment
+History</button>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+
+<script>
+
+
+    $(document).ready(function () {
+        // Add experience button toggle
+        var changeCheckbox = document.querySelector('#experienceCheck'),
+            changeButton = document.querySelector('#addExperience');
+        changeTextArea = document.querySelector('#experienceReason');
+        changeTable = document.querySelector('#experienceTable');
+
+        changeCheckbox.onchange = function () {
+            if (changeCheckbox.checked == true) {
+                changeButton.classList.add('hidden');
+                changeTable.classList.add('hidden');
+                changeTextArea.classList.remove('hidden');
+            } else {
+                changeButton.classList.remove('hidden');
+                changeTable.classList.remove('hidden');
+                changeTextArea.classList.add('hidden');
+            }
+        };
+    })
+</script> 
+        </div>
+    </main>
+    <!-- color card Include --> 
+    <footer>
+        2018 © KPV LLC, Inc.
+</footer>
+</body>
+<!-- build:js js/scripts.min.js -->
+<script src="js/bootstrap.bundle.js"></script>
+<script src="js/bootstrap-select.js"></script>
+<script src="js/jquery.mask.js"></script>
+<script src="js/float-labels.min.js"></script>
+<script src="js/switchery.js"></script>
+<script src="js/datepicker.js"></script>
+<script src="js/timepicki.js"></script>
+<script src="js/slick.js"></script>
+<script src="js/responsive-img.js"></script>
+<script src="js/sweetalert2.all.min.js"></script>
+<!-- endbuild -->
+<script type="text/javascript" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
+<script src="js/main.js"></script>
+
+</html>

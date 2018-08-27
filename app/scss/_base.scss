@@ -48,3 +48,52 @@ table.v-align-center {
         vertical-align: middle;
     }
 }
+
+.modal-default .modal-header {
+    background: $primary-color;
+    color: $white-color;
+}
+
+.navigate-wrapper {
+    @media(max-width:768px) {
+        text-align: center;
+    }
+}
+
+#addReferenceCollapse {
+    background: $gray-1-color;
+    padding: 25px;
+}
+
+footer {
+    background: #dce3e8;
+    padding: 20px 10px;
+    text-align: center;
+    font-weight: 500;
+    margin-top: 20px;
+    font-size: 12px;
+}
+
+.switch {
+        margin-left: 15px;
+}
+
+.hidden {
+    display: none !important;
+    transition: all ease-in .3s;
+}
+
+.questions {
+    th {
+        word-break: break-word;
+        line-height: 1.2;
+    img {
+        display: block;
+        margin: auto;
+    }
+    span {
+        min-height: 35px;
+        display: block;
+    }
+}
+}
