@@ -9,26 +9,22 @@
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css">
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css">
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
     <!-- build:css css/main.min.css -->
     <link rel="stylesheet" type="text/css" media="screen" href="css/main.css" />
     <!-- endbuild -->
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 </head>
 
-<body>
+<body class="mapped">
     <!-- Header Include -->
     {% include "partials/header.html" %}
 
-    <main class="custom-wrapper">
-        <div class="container-fluid">
+    <main>
             <!-- body content -->
             {% block content %} {% endblock %}
-        </div>
     </main>
     <!-- color card Include --> 
-    {% include "partials/footer.html" %}
+    {#{% include "partials/footer.html" %}#}
 </body>
 <!-- build:js js/scripts.min.js -->
 <script src="js/bootstrap.bundle.js"></script>
@@ -36,14 +32,6 @@
 <script src="js/jquery.mask.js"></script>
 <script src="js/float-labels.min.js"></script>
 <script src="js/switchery.js"></script>
-<script src="js/datepicker.js"></script>
-<script src="js/timepicki.js"></script>
-<script src="js/slick.js"></script>
-<script src="js/responsive-img.js"></script>
-<script src="js/sweetalert2.all.min.js"></script>
 <!-- endbuild -->
-<script type="text/javascript" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.js"></script>
-<script type="text/javascript" src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
-<script src="js/main.js"></script>
 
 </html>

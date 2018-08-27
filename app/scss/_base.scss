@@ -97,3 +97,22 @@ footer {
     }
 }
 }
+
+#map {
+    height: 100%;
+  }
+
+.sidebar-filter {
+    height: 55px;
+    width: 100%;
+    background: $white-color;
+    position: absolute;
+    left: 0;
+    top: 70px;
+    box-shadow: -1px 0rem 1rem rgba(0, 0, 0, 0.15);
+    @media(min-width:768px) {
+        max-width: 400px;
+        height: calc( 100% - 70px );
+        box-shadow: 0px 2rem 1rem rgba(0, 0, 0, 0.15);
+    }
+}

@@ -1,218 +1,48 @@
 {% set title = 'Store Map' %} {% set StoreMap = true %}
 <!-- base layout file inheritance -->
 {% extends "layout-map.html" %} {% block content %}
+<style>
+    html,
+    body,
+    main {
+        height: 100%;
+    }
 
-<!-- import Forms macro file -->
-{% import "macros/forms.html" as forms %}
-<!-- import Modal macro file -->
-{% import "macros/modal.html" as macroModals %}
-
-<div class="row">
-    <div class="col-12">
-        <div class="c-card">
-            <div class="c-card__header">
-                <h3>Personal Information</h3>
-            </div>
-            <div class="c-card__inner">
-                <div class="row">
-                    <!-- First Name -->
-                    {{ forms.formText('col-lg-4', 'f-name', 'text', '', 'First Name', 'First Name', 'required' ) }}
-                    <!-- Middle Name -->
-                    {{ forms.formText('col-lg-4', 'm-name', 'text', '', 'Middle Name (optional)', 'Middle Name (optional)', '' ) }}
-                    <!-- Last Name -->
-                    {{ forms.formText('col-lg-4', 'l-name', 'text', '', 'Last Name', 'Last Name', 'required' ) }}
-                    <!-- Email -->
-                    {{ forms.formText('col-lg-6', 'email', 'email', '', 'Email Address', 'Email Address', 'required' ) }}
-                    <!-- Confirm Email -->
-                    {{ forms.formText('col-lg-6', 'confirm-email', 'email', '', 'Confirm Email Address', 'Confirm Email Address', 'required')
-                    }}
-                    <div class="col-12 col-lg-9">
-                        <div class="row">
-                            <!-- Mobile Number -->
-                            {{ forms.formText('col-lg-4', 'm-no', 'text', '', 'Mobile Number', 'Mobile Number', 'required', 'phone', 'mb-2' ) }}
-                            <!-- home Number -->
-                            {{ forms.formText('col-lg-4', 'h-no', 'text', '', 'Home Number', 'Home Number', 'required', 'phone', 'mb-2' ) }}
-                            <!-- business Number -->
-                            {{ forms.formText('col-lg-4', 'b-no', 'text', '', 'Business Number', 'Business Number','required', 'phone', 'mb-2' ) }}
-                        </div>
-                        <small id="phoneHelp" class="form-text text-muted customized mb-2">We need at least one Phone number to process your application</small>
-                    </div>
-                    <div class="col-12 col-lg-3">
-                        <label for="work" class="d-block">May we contact you at work?</label>
-                        <div class="btn-group btn-group-toggle" data-toggle="buttons">
-                            <label class="btn btn-outline-primary active">
-                                <input type="radio" name="options" id="option1" autocomplete="off" checked> Yes
-                            </label>
-                            <label class="btn btn-outline-primary">
-                                <input type="radio" name="options" id="option2" autocomplete="off"> No
-                            </label>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+    main {
+        margin: 0;
+    }
+</style>
+<div id="map"></div>
+<div class="sidebar-filter">
+    <div class="btn-group btn-group-toggle long-list" data-toggle="buttons">
+        <label class="btn btn-outline-primary active">
+            <input type="radio" name="options" id="kpvYes" autocomplete="off" checked> Map
+        </label>
+        <label class="btn btn-outline-primary">
+            <input type="radio" name="options" id="kpvNo" autocomplete="off"> Location List
+        </label>
     </div>
+    <h1>Find Your Store</h1>
 </div>
-
-<div class="row">
-    <div class="col-12 col-lg-6">
-        <div class="c-card mt-5">
-            <div class="c-card__header">
-                <h3>Home Address</h3>
-            </div>
-            <div class="c-card__inner">
-                <div class="row">
-                    <!-- Address Line 01 -->
-                    {{ forms.formText('col-lg-12', 'address1', 'text', '', 'Address Line 01', 'Address Line 01', 'required' ) }}
-                    <!-- Address Line 02 -->
-                    {{ forms.formText('col-lg-12', 'address2', 'text', '', 'Address Line 02 (optional)', 'Address Line 02 (optional)', '' ) }}
-                    <!-- Apartment No -->
-                    {{ forms.formText('col-lg-4', 'apartment', 'text', '', 'Apartment # (optional)', 'Apartment # (optional)', '' ) }}
-                    <!-- City -->
-                    {{ forms.formText('col-lg-8', 'city', 'text', '', 'City', 'City', 'required' ) }}
-                    <!-- State -->
-                    {{ forms.formSelect('col-lg-8', 'state', 'state', '', 'State', 'State', 'required', 'form-select', 'State1', 'State2') }}
-                    <!-- Zipcode -->
-                    {{ forms.formText('col-lg-4', 'zipCode', 'text', '', 'Zip Code', 'Zip Code', 'required' ) }}
-                    <!-- Country -->
-                    {{ forms.formSelect('col-lg-12', 'country', 'country', '', 'Country', 'Country', 'required', 'form-select', 'Country 1',
-                    'Country 2') }}
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="col-12 col-lg-6">
-        <div class="c-card mt-5">
-            <div class="c-card__header">
-                <h3>Postal Address</h3>
-                <div class="switch d-flex align-items-center">
-                    <input type="checkbox" class="js-switch" checked/>
-                    <span class="ml-2 small">Same as Home Address</span>
-                </div>
-            </div>
-            <div class="c-card__inner">
-                <div class="row">
-                    <!-- Address Line 01 -->
-                    {{ forms.formText('col-lg-12', 'Postaladdress1', 'text', '', 'Address Line 01', 'Address Line 01', 'required' ) }}
-                    <!-- Address Line 02 -->
-                    {{ forms.formText('col-lg-12', 'Postaladdress2', 'text', '', 'Address Line 02 (optional)', 'Address Line 02 (optional)',
-                    '' ) }}
-                    <!-- Apartment No -->
-                    {{ forms.formText('col-lg-4', 'Postalapartment', 'text', '', 'Apartment # (optional)', 'Apartment # (optional)', '' ) }}
-                    <!-- City -->
-                    {{ forms.formText('col-lg-8', 'Postalcity', 'text', '', 'City', 'City', 'required' ) }}
-                    <!-- State -->
-                    {{ forms.formSelect('col-lg-8', 'Postalstate', 'state', '', 'State', 'State', 'required', 'form-select', 'State1', 'State2')
-                    }}
-                    <!-- Zipcode -->
-                    {{ forms.formText('col-lg-4', 'PostalzipCode', 'text', '', 'Zip Code', 'Zip Code', 'required' ) }}
-                    <!-- Country -->
-                    {{ forms.formSelect('col-lg-12', 'Postalcountry', 'country', '', 'Country', 'Country', 'required', 'form-select', 'Country
-                    1', 'Country 2') }}
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="row">
-    <div class="col-12">
-        <div class="c-card mt-5 mb-3">
-            <div class="c-card__header">
-                <h3>Job Preference</h3>
-            </div>
-            <div class="c-card__inner">
-                <div class="row justify-content-between">
-                    <div class="col-12 col-lg-5">
-                        <p>Weekly Schedule preference</p>
-                        <table class="table v-align-center">
-                            <thead>
-                                <th>Day</th>
-                                <th>From</th>
-                                <th>To</th>
-                            </thead>
-                            <tbody>
-                                {% for schedule in week_select_table %}
-                                <tr>
-                                    <td>
-                                        <div class="custom-control custom-checkbox">
-                                            <input type="checkbox" class="custom-control-input" id="{{ schedule.day | lower }}">
-                                            <label class="custom-control-label" for="{{ schedule.day | lower }}">{{ schedule.day }}</label>
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <input type="text" class="time_element form-control smaller" />
-                                    </td>
-                                    <td>
-                                        <input type="text" class="time_element form-control smaller" />
-                                    </td>
-                                </tr>
-                                {% endfor %}
-                            </tbody>
-                        </table>
-                    </div>
-                    <div class="col-12 col-lg-6">
-                        <div class="d-block mb-5">
-                            <label for="work" class="d-block">May we contact you at work?</label>
-                            <div class="btn-group btn-group-toggle long-list" data-toggle="buttons">
-                                <label class="btn btn-outline-primary active">
-                                    <input type="radio" name="options" id="fullTime" autocomplete="off" checked> Full Time
-                                </label>
-                                <label class="btn btn-outline-primary">
-                                    <input type="radio" name="options" id="partTime" autocomplete="off"> Part Time
-                                </label>
-                                <label class="btn btn-outline-primary">
-                                    <input type="radio" name="options" id="temporary" autocomplete="off"> Temporary
-                                </label>
-                                <label class="btn btn-outline-primary">
-                                    <input type="radio" name="options" id="summer" autocomplete="off"> Summer
-                                </label>
-                            </div>
-                        </div>
-                        <div class="d-block mb-5">
-                            <label for="work" class="d-block">Are you willing to relocate?</label>
-                            <div class="btn-group btn-group-toggle long-list" data-toggle="buttons">
-                                <label class="btn btn-outline-primary active">
-                                    <input type="radio" name="options" id="relocateYes" autocomplete="off" checked> Yes
-                                </label>
-                                <label class="btn btn-outline-primary">
-                                    <input type="radio" name="options" id="RelocateNo" autocomplete="off"> No
-                                </label>
-                            </div>
-                        </div>
-                        <div class="d-block">
-                            <label for="work" class="d-block">Have you ever worked in KPV franchise before?</label>
-                            <div class="btn-group btn-group-toggle long-list" data-toggle="buttons">
-                                <label class="btn btn-outline-primary active">
-                                    <input type="radio" name="options" id="kpvYes" autocomplete="off" checked> Yes
-                                </label>
-                                <label class="btn btn-outline-primary">
-                                    <input type="radio" name="options" id="kpvNo" autocomplete="off"> No
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="row">
-    <div class="col-12 navigate-wrapper">
-        <a href="billing-information.html" class="btn btn-lg btn-navigate mt-3 mb-2">
-            Go to Billing Information
-            <i class="fas fa-angle-double-right ml-2"></i>
-        </a>
-    </div>
-</div>
-
-<!-- show directions modal -->
-{{ macroModals.modalPop( 'GetDirections', '#GetDirections', 'Get Directions', 'modal-lg', modal=1, 'Get Directions' ) }}
-
-<!-- show directions modal -->
-{{ macroModals.modalPop( 'AddReviews', '#AddReviews', 'Add Reviews', 'modal-lg', modal=2, 'Add Reviews' ) }} 
-
-
-{% endblock
-%}
+<script>
+    function initMap() {
+        // Styles a map in night mode.
+        var map = new google.maps.Map(document.getElementById('map'), {
+            center: { lat: 40.674, lng: -73.945 }, // Configure your latitude and longitude
+            zoom: 12,
+            styles: // Please paste the generated code from Style Wizard here. 
+                [
+                    {
+                        "featureType": "water",
+                        "stylers": [
+                            {
+                                "color": "#a1c2ff"
+                            }
+                        ]
+                    }
+                ]
+        });
+    }
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBGqRxQFGDLiXbfcZvXCrv85q9rJjNM49g&callback=initMap" async
+    defer></script> {% endblock %}

@@ -7760,6 +7760,26 @@ footer {
     min-height: 35px;
     display: block; }
 
+#map {
+  height: 100%; }
+
+.sidebar-filter {
+  height: 55px;
+  width: 100%;
+  background: #ffffff;
+  position: absolute;
+  left: 0;
+  top: 70px;
+  -webkit-box-shadow: -1px 0rem 1rem rgba(0, 0, 0, 0.15);
+          box-shadow: -1px 0rem 1rem rgba(0, 0, 0, 0.15); }
+  @media (min-width: 768px) {
+    .sidebar-filter {
+      max-width: 400px;
+      height: -webkit-calc( 100% - 70px);
+      height: calc( 100% - 70px);
+      -webkit-box-shadow: 0px 2rem 1rem rgba(0, 0, 0, 0.15);
+              box-shadow: 0px 2rem 1rem rgba(0, 0, 0, 0.15); } }
+
 html, body {
   font-family: "Montserrat", sans-serif;
   font-size: 14px; }

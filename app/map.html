@@ -9,17 +9,15 @@
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css">
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css">
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
     <!-- build:css css/main.min.css -->
     <link rel="stylesheet" type="text/css" media="screen" href="css/main.css" />
     <!-- endbuild -->
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 </head>
 
-<body>
+<body class="mapped">
     <!-- Header Include -->
-    <header class="container-fluid shadow">
+    <header class="container-fluid   fixed-top ">
         <nav class="navbar">
             <a class="navbar-brand" href="#">
                 <img alt="KPV" src="images/logo-kpv.svg"/>
@@ -28,555 +26,57 @@
         </nav>
     </header>
 
-    <main class="custom-wrapper">
-        <div class="container-fluid">
+    <main>
             <!-- body content -->
             
+<style>
+    html,
+    body,
+    main {
+        height: 100%;
+    }
 
-<!-- import Forms macro file -->
-
-<!-- import Modal macro file -->
-
-
-<div class="row">
-    <div class="col-12">
-        <div class="c-card">
-            <div class="c-card__header">
-                <h3>Personal Information</h3>
-            </div>
-            <div class="c-card__inner">
-                <div class="row">
-                    <!-- First Name -->
-                    
-<div class="col-12 col-lg-4">
-    <div class="form-group ">
-        <label for="f-name">First Name</label>
-        <input type="text" value="" data-toggle="" name="f-name" id="f-name" class="form-control " placeholder="First Name" required/>
+    main {
+        margin: 0;
+    }
+</style>
+<div id="map"></div>
+<div class="sidebar-filter">
+    <div class="btn-group btn-group-toggle long-list" data-toggle="buttons">
+        <label class="btn btn-outline-primary active">
+            <input type="radio" name="options" id="kpvYes" autocomplete="off" checked> Map
+        </label>
+        <label class="btn btn-outline-primary">
+            <input type="radio" name="options" id="kpvNo" autocomplete="off"> Location List
+        </label>
     </div>
+    <h1>Find Your Store</h1>
 </div>
-
-                    <!-- Middle Name -->
-                    
-<div class="col-12 col-lg-4">
-    <div class="form-group ">
-        <label for="m-name">Middle Name (optional)</label>
-        <input type="text" value="" data-toggle="" name="m-name" id="m-name" class="form-control " placeholder="Middle Name (optional)" />
-    </div>
-</div>
-
-                    <!-- Last Name -->
-                    
-<div class="col-12 col-lg-4">
-    <div class="form-group ">
-        <label for="l-name">Last Name</label>
-        <input type="text" value="" data-toggle="" name="l-name" id="l-name" class="form-control " placeholder="Last Name" required/>
-    </div>
-</div>
-
-                    <!-- Email -->
-                    
-<div class="col-12 col-lg-6">
-    <div class="form-group ">
-        <label for="email">Email Address</label>
-        <input type="email" value="" data-toggle="" name="email" id="email" class="form-control " placeholder="Email Address" required/>
-    </div>
-</div>
-
-                    <!-- Confirm Email -->
-                    
-<div class="col-12 col-lg-6">
-    <div class="form-group ">
-        <label for="confirm-email">Confirm Email Address</label>
-        <input type="email" value="" data-toggle="" name="confirm-email" id="confirm-email" class="form-control " placeholder="Confirm Email Address" required/>
-    </div>
-</div>
-
-                    <div class="col-12 col-lg-9">
-                        <div class="row">
-                            <!-- Mobile Number -->
-                            
-<div class="col-12 col-lg-4">
-    <div class="form-group mb-2">
-        <label for="m-no">Mobile Number</label>
-        <input type="text" value="" data-toggle="" name="m-no" id="m-no" class="form-control phone" placeholder="Mobile Number" required/>
-    </div>
-</div>
-
-                            <!-- home Number -->
-                            
-<div class="col-12 col-lg-4">
-    <div class="form-group mb-2">
-        <label for="h-no">Home Number</label>
-        <input type="text" value="" data-toggle="" name="h-no" id="h-no" class="form-control phone" placeholder="Home Number" required/>
-    </div>
-</div>
-
-                            <!-- business Number -->
-                            
-<div class="col-12 col-lg-4">
-    <div class="form-group mb-2">
-        <label for="b-no">Business Number</label>
-        <input type="text" value="" data-toggle="" name="b-no" id="b-no" class="form-control phone" placeholder="Business Number" required/>
-    </div>
-</div>
-
-                        </div>
-                        <small id="phoneHelp" class="form-text text-muted customized mb-2">We need at least one Phone number to process your application</small>
-                    </div>
-                    <div class="col-12 col-lg-3">
-                        <label for="work" class="d-block">May we contact you at work?</label>
-                        <div class="btn-group btn-group-toggle" data-toggle="buttons">
-                            <label class="btn btn-outline-primary active">
-                                <input type="radio" name="options" id="option1" autocomplete="off" checked> Yes
-                            </label>
-                            <label class="btn btn-outline-primary">
-                                <input type="radio" name="options" id="option2" autocomplete="off"> No
-                            </label>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="row">
-    <div class="col-12 col-lg-6">
-        <div class="c-card mt-5">
-            <div class="c-card__header">
-                <h3>Home Address</h3>
-            </div>
-            <div class="c-card__inner">
-                <div class="row">
-                    <!-- Address Line 01 -->
-                    
-<div class="col-12 col-lg-12">
-    <div class="form-group ">
-        <label for="address1">Address Line 01</label>
-        <input type="text" value="" data-toggle="" name="address1" id="address1" class="form-control " placeholder="Address Line 01" required/>
-    </div>
-</div>
-
-                    <!-- Address Line 02 -->
-                    
-<div class="col-12 col-lg-12">
-    <div class="form-group ">
-        <label for="address2">Address Line 02 (optional)</label>
-        <input type="text" value="" data-toggle="" name="address2" id="address2" class="form-control " placeholder="Address Line 02 (optional)" />
-    </div>
-</div>
-
-                    <!-- Apartment No -->
-                    
-<div class="col-12 col-lg-4">
-    <div class="form-group ">
-        <label for="apartment">Apartment # (optional)</label>
-        <input type="text" value="" data-toggle="" name="apartment" id="apartment" class="form-control " placeholder="Apartment # (optional)" />
-    </div>
-</div>
-
-                    <!-- City -->
-                    
-<div class="col-12 col-lg-8">
-    <div class="form-group ">
-        <label for="city">City</label>
-        <input type="text" value="" data-toggle="" name="city" id="city" class="form-control " placeholder="City" required/>
-    </div>
-</div>
-
-                    <!-- State -->
-                    
-<div class="col-12 col-lg-8">
-    <div class="form-group">
-        <label for="state" id="state">State</label>
-        <select name="state"  id="state" class="form-control form-select" required>
-                <option value="0">State</option>
-            <option value="1">State1</option>
-            <option value="2">State2</option>
-        </select>
-    </div>
-</div>
-
-                    <!-- Zipcode -->
-                    
-<div class="col-12 col-lg-4">
-    <div class="form-group ">
-        <label for="zipCode">Zip Code</label>
-        <input type="text" value="" data-toggle="" name="zipCode" id="zipCode" class="form-control " placeholder="Zip Code" required/>
-    </div>
-</div>
-
-                    <!-- Country -->
-                    
-<div class="col-12 col-lg-12">
-    <div class="form-group">
-        <label for="country" id="country">Country</label>
-        <select name="country"  id="country" class="form-control form-select" required>
-                <option value="0">Country</option>
-            <option value="1">Country 1</option>
-            <option value="2">Country 2</option>
-        </select>
-    </div>
-</div>
-
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="col-12 col-lg-6">
-        <div class="c-card mt-5">
-            <div class="c-card__header">
-                <h3>Postal Address</h3>
-                <div class="switch d-flex align-items-center">
-                    <input type="checkbox" class="js-switch" checked/>
-                    <span class="ml-2 small">Same as Home Address</span>
-                </div>
-            </div>
-            <div class="c-card__inner">
-                <div class="row">
-                    <!-- Address Line 01 -->
-                    
-<div class="col-12 col-lg-12">
-    <div class="form-group ">
-        <label for="Postaladdress1">Address Line 01</label>
-        <input type="text" value="" data-toggle="" name="Postaladdress1" id="Postaladdress1" class="form-control " placeholder="Address Line 01" required/>
-    </div>
-</div>
-
-                    <!-- Address Line 02 -->
-                    
-<div class="col-12 col-lg-12">
-    <div class="form-group ">
-        <label for="Postaladdress2">Address Line 02 (optional)</label>
-        <input type="text" value="" data-toggle="" name="Postaladdress2" id="Postaladdress2" class="form-control " placeholder="Address Line 02 (optional)" />
-    </div>
-</div>
-
-                    <!-- Apartment No -->
-                    
-<div class="col-12 col-lg-4">
-    <div class="form-group ">
-        <label for="Postalapartment">Apartment # (optional)</label>
-        <input type="text" value="" data-toggle="" name="Postalapartment" id="Postalapartment" class="form-control " placeholder="Apartment # (optional)" />
-    </div>
-</div>
-
-                    <!-- City -->
-                    
-<div class="col-12 col-lg-8">
-    <div class="form-group ">
-        <label for="Postalcity">City</label>
-        <input type="text" value="" data-toggle="" name="Postalcity" id="Postalcity" class="form-control " placeholder="City" required/>
-    </div>
-</div>
-
-                    <!-- State -->
-                    
-<div class="col-12 col-lg-8">
-    <div class="form-group">
-        <label for="Postalstate" id="Postalstate">State</label>
-        <select name="Postalstate"  id="Postalstate" class="form-control form-select" required>
-                <option value="0">State</option>
-            <option value="1">State1</option>
-            <option value="2">State2</option>
-        </select>
-    </div>
-</div>
-
-                    <!-- Zipcode -->
-                    
-<div class="col-12 col-lg-4">
-    <div class="form-group ">
-        <label for="PostalzipCode">Zip Code</label>
-        <input type="text" value="" data-toggle="" name="PostalzipCode" id="PostalzipCode" class="form-control " placeholder="Zip Code" required/>
-    </div>
-</div>
-
-                    <!-- Country -->
-                    
-<div class="col-12 col-lg-12">
-    <div class="form-group">
-        <label for="Postalcountry" id="Postalcountry">Country</label>
-        <select name="Postalcountry"  id="Postalcountry" class="form-control form-select" required>
-                <option value="0">Country</option>
-            <option value="1">Country
-                    1</option>
-            <option value="2">Country 2</option>
-        </select>
-    </div>
-</div>
-
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="row">
-    <div class="col-12">
-        <div class="c-card mt-5 mb-3">
-            <div class="c-card__header">
-                <h3>Job Preference</h3>
-            </div>
-            <div class="c-card__inner">
-                <div class="row justify-content-between">
-                    <div class="col-12 col-lg-5">
-                        <p>Weekly Schedule preference</p>
-                        <table class="table v-align-center">
-                            <thead>
-                                <th>Day</th>
-                                <th>From</th>
-                                <th>To</th>
-                            </thead>
-                            <tbody>
-                                
-                                <tr>
-                                    <td>
-                                        <div class="custom-control custom-checkbox">
-                                            <input type="checkbox" class="custom-control-input" id="sunday">
-                                            <label class="custom-control-label" for="sunday">Sunday</label>
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <input type="text" class="time_element form-control smaller" />
-                                    </td>
-                                    <td>
-                                        <input type="text" class="time_element form-control smaller" />
-                                    </td>
-                                </tr>
-                                
-                                <tr>
-                                    <td>
-                                        <div class="custom-control custom-checkbox">
-                                            <input type="checkbox" class="custom-control-input" id="monday">
-                                            <label class="custom-control-label" for="monday">Monday</label>
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <input type="text" class="time_element form-control smaller" />
-                                    </td>
-                                    <td>
-                                        <input type="text" class="time_element form-control smaller" />
-                                    </td>
-                                </tr>
-                                
-                                <tr>
-                                    <td>
-                                        <div class="custom-control custom-checkbox">
-                                            <input type="checkbox" class="custom-control-input" id="tuesday">
-                                            <label class="custom-control-label" for="tuesday">Tuesday</label>
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <input type="text" class="time_element form-control smaller" />
-                                    </td>
-                                    <td>
-                                        <input type="text" class="time_element form-control smaller" />
-                                    </td>
-                                </tr>
-                                
-                                <tr>
-                                    <td>
-                                        <div class="custom-control custom-checkbox">
-                                            <input type="checkbox" class="custom-control-input" id="wednesday">
-                                            <label class="custom-control-label" for="wednesday">Wednesday</label>
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <input type="text" class="time_element form-control smaller" />
-                                    </td>
-                                    <td>
-                                        <input type="text" class="time_element form-control smaller" />
-                                    </td>
-                                </tr>
-                                
-                                <tr>
-                                    <td>
-                                        <div class="custom-control custom-checkbox">
-                                            <input type="checkbox" class="custom-control-input" id="thursday">
-                                            <label class="custom-control-label" for="thursday">Thursday</label>
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <input type="text" class="time_element form-control smaller" />
-                                    </td>
-                                    <td>
-                                        <input type="text" class="time_element form-control smaller" />
-                                    </td>
-                                </tr>
-                                
-                                <tr>
-                                    <td>
-                                        <div class="custom-control custom-checkbox">
-                                            <input type="checkbox" class="custom-control-input" id="friday">
-                                            <label class="custom-control-label" for="friday">Friday</label>
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <input type="text" class="time_element form-control smaller" />
-                                    </td>
-                                    <td>
-                                        <input type="text" class="time_element form-control smaller" />
-                                    </td>
-                                </tr>
-                                
-                                <tr>
-                                    <td>
-                                        <div class="custom-control custom-checkbox">
-                                            <input type="checkbox" class="custom-control-input" id="saturday">
-                                            <label class="custom-control-label" for="saturday">Saturday</label>
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <input type="text" class="time_element form-control smaller" />
-                                    </td>
-                                    <td>
-                                        <input type="text" class="time_element form-control smaller" />
-                                    </td>
-                                </tr>
-                                
-                            </tbody>
-                        </table>
-                    </div>
-                    <div class="col-12 col-lg-6">
-                        <div class="d-block mb-5">
-                            <label for="work" class="d-block">May we contact you at work?</label>
-                            <div class="btn-group btn-group-toggle long-list" data-toggle="buttons">
-                                <label class="btn btn-outline-primary active">
-                                    <input type="radio" name="options" id="fullTime" autocomplete="off" checked> Full Time
-                                </label>
-                                <label class="btn btn-outline-primary">
-                                    <input type="radio" name="options" id="partTime" autocomplete="off"> Part Time
-                                </label>
-                                <label class="btn btn-outline-primary">
-                                    <input type="radio" name="options" id="temporary" autocomplete="off"> Temporary
-                                </label>
-                                <label class="btn btn-outline-primary">
-                                    <input type="radio" name="options" id="summer" autocomplete="off"> Summer
-                                </label>
-                            </div>
-                        </div>
-                        <div class="d-block mb-5">
-                            <label for="work" class="d-block">Are you willing to relocate?</label>
-                            <div class="btn-group btn-group-toggle long-list" data-toggle="buttons">
-                                <label class="btn btn-outline-primary active">
-                                    <input type="radio" name="options" id="relocateYes" autocomplete="off" checked> Yes
-                                </label>
-                                <label class="btn btn-outline-primary">
-                                    <input type="radio" name="options" id="RelocateNo" autocomplete="off"> No
-                                </label>
-                            </div>
-                        </div>
-                        <div class="d-block">
-                            <label for="work" class="d-block">Have you ever worked in KPV franchise before?</label>
-                            <div class="btn-group btn-group-toggle long-list" data-toggle="buttons">
-                                <label class="btn btn-outline-primary active">
-                                    <input type="radio" name="options" id="kpvYes" autocomplete="off" checked> Yes
-                                </label>
-                                <label class="btn btn-outline-primary">
-                                    <input type="radio" name="options" id="kpvNo" autocomplete="off"> No
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="row">
-    <div class="col-12 navigate-wrapper">
-        <a href="billing-information.html" class="btn btn-lg btn-navigate mt-3 mb-2">
-            Go to Billing Information
-            <i class="fas fa-angle-double-right ml-2"></i>
-        </a>
-    </div>
-</div>
-
-<!-- show directions modal -->
-
-<div class="modal fade" id="GetDirections" tabindex="-1" role="dialog" aria-labelledby="#GetDirections" aria-hidden="true">
-    <div class="modal-dialog modal-lg modal-default" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="#GetDirections">Get Directions</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">
-                        <i class="fas fa-times color-white"></i>
-                    </span>
-                </button>
-            </div>
-            <!-- Get directions modal -->
-            
-            <div class="modal-body">
-                <div class="row">
-                    <div class="col-12 col-lg-5">
-                        <div class="form-group mb-4">
-                            <label for="YourLocation" class="field__label">Your Location</label>
-                            <input type="text" class="form-control" id="YourLocation" aria-describedby="yourLocation" placeholder="Your Location">
-                        </div>
-                        <div class="form-group mb-4">
-                            <label for="Destination" class="field__label">Destination</label>
-                            <input type="text" class="form-control" id="Destination" aria-describedby="destination" placeholder="Destination" value="2700 E Market St East York, PA 17402">
-                        </div>
-                        <button type="button" class="btn btn-primary submit-btn">Get Directions</button>
-                    </div>
-                    <div class="col-12 col-lg-7">
-                        <iframe src="https://goo.gl/NiJHnP" width="100%" height="400" frameborder="0" style="border:0" allowfullscreen></iframe>
-                    </div>
-                </div>
-            </div>
-            <!-- Add reference modal -->
-            
-        </div>
-    </div>
-</div>
-
-
-
-<!-- show directions modal -->
-
-<div class="modal fade" id="AddReviews" tabindex="-1" role="dialog" aria-labelledby="#AddReviews" aria-hidden="true">
-    <div class="modal-dialog modal-lg modal-default" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="#AddReviews">Add Reviews</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">
-                        <i class="fas fa-times color-white"></i>
-                    </span>
-                </button>
-            </div>
-            <!-- Get directions modal -->
-            
-            <div class="modal-body">
-                <table class="table data-tables" id="reviewTable">
-                    <thead>
-                        <tr>
-                            <th>Reference Name</th>
-                            <th>Phone No</th>
-                            <th>Email</th>
-                        </tr>
-                    </thead>
-                </table>
-
-            </div>
-            
-        </div>
-    </div>
-</div>
-
- 
-
-
-
-        </div>
+<script>
+    function initMap() {
+        // Styles a map in night mode.
+        var map = new google.maps.Map(document.getElementById('map'), {
+            center: { lat: 40.674, lng: -73.945 }, // Configure your latitude and longitude
+            zoom: 12,
+            styles: // Please paste the generated code from Style Wizard here. 
+                [
+                    {
+                        "featureType": "water",
+                        "stylers": [
+                            {
+                                "color": "#a1c2ff"
+                            }
+                        ]
+                    }
+                ]
+        });
+    }
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBGqRxQFGDLiXbfcZvXCrv85q9rJjNM49g&callback=initMap" async
+    defer></script> 
     </main>
     <!-- color card Include --> 
-    <footer>
-        2018 © KPV LLC, Inc.
-</footer>
+    
 </body>
 <!-- build:js js/scripts.min.js -->
 <script src="js/bootstrap.bundle.js"></script>
@@ -584,14 +84,6 @@
 <script src="js/jquery.mask.js"></script>
 <script src="js/float-labels.min.js"></script>
 <script src="js/switchery.js"></script>
-<script src="js/datepicker.js"></script>
-<script src="js/timepicki.js"></script>
-<script src="js/slick.js"></script>
-<script src="js/responsive-img.js"></script>
-<script src="js/sweetalert2.all.min.js"></script>
 <!-- endbuild -->
-<script type="text/javascript" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.js"></script>
-<script type="text/javascript" src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
-<script src="js/main.js"></script>
 
 </html>
