@@ -16,26 +16,40 @@
 </head>
 
 <body class="mapped">
-    <!-- Header Include --> 
+    <!-- Header Include -->
     {# {% include "partials/header.html" %} #}
 
     <main>
-            <!-- body content -->
-            {% block content %} {% endblock %}
+        <!-- body content -->
+        {% block content %} {% endblock %}
     </main>
-    <!-- color card Include --> 
+    <!-- color card Include -->
     {#{% include "partials/footer.html" %}#}
 </body>
-<!-- build:js js/scripts.min.js -->
+<!-- build:js js/scripts-map.min.js -->
 <script src="js/bootstrap.bundle.js"></script>
 <script src="js/bootstrap-select.js"></script>
-<script src="js/jquery.mask.js"></script>
 <script src="js/float-labels.min.js"></script>
-<script src="js/switchery.js"></script>
+<script src="js/simple-scrollbar.js"></script>
 <!-- endbuild -->
 <script>
 
-// Floating label plugin
+    // Popover
+    $('.pin[data-toggle="popover"]').each(function (i, obj) {
+        $(this).popover({
+            trigger: 'focus',
+            html: true,
+            content: function content() {
+                var id = $(this).attr('id');
+                return $('#popover-' + id).html();
+            }
+        });
+    });
+    $('.popover-dismiss').popover({
+        trigger: 'focus'
+    });
+
+    // Floating label plugin
     var floatlabels = new FloatLabels('body', {
         customEvent: null,
         customLabel: null,

@@ -16,12 +16,12 @@
 </head>
 
 <body class="mapped">
-    <!-- Header Include --> 
+    <!-- Header Include -->
     
 
     <main>
-            <!-- body content -->
-            
+        <!-- body content -->
+        
 <style>
     html,
     body,
@@ -33,27 +33,60 @@
         margin: 0;
     }
 </style>
-
+<!--  -->
 <div class="se-pre-con"></div>
 
 <div id="map"></div>
 
-<div class="sidebar-filter">
-    <div class="sidebar-fixed">
-         <a class="d-block mx-auto mb-4 map-logo" href="#">
-                <img alt="KPV" src="images/logo-kpv.svg" height="60"/>
-            </a>
-        
-        <ul class="nav map-switch" id="mapTab" role="tablist">
-            <li>
-                <a class="nav-link active" id="search-tab" data-toggle="tab" href="#search" role="tab" aria-controls="home" aria-selected="true"><i class="fas fa-map-marker mr-2"></i>Nearest Stores</a>
-            </li>
-            <li>
-                <a class="nav-link"  id="list-tab" data-toggle="tab" href="#list" role="tab" aria-controls="home" aria-selected="false"><i class="fas fa-store mr-2"></i>All Stores</a>
+<a class="pin" data-toggle="popover" data-container="body" data-placement="top" data-html="true" id="store1" href="javascript:void(0);">
+    <img src="images/pin.png" alt="DD" />
+</a>
+<a class="pin pin2" data-toggle="popover" data-container="body" data-placement="top" data-html="true" id="store2" href="javascript:void(0);">
+    <img src="images/pin.png" alt="DD" />
+</a>
+<!-- popovers -->
+<div id="popover-store1" class="hidden">
+    <div class="popover-body">
+        <ul class="nav store-list">
+            <li class="p-0">
+                <h3>Tournament Trail</h3>
+                <div class="store-address">950 Tournament Trail , Westfield, IN 46074</div>
+                <a href="#" class="get-directions"><i class="fas fa-directions mr-2"></i>Get Directions</a>
+                <button class="btn apply-now">We are Hiring - <strong>Apply Now!</strong></button>
             </li>
         </ul>
     </div>
-    <div class="tab-content px-4 pt-1" id="mapTabContent">
+</div>
+<div id="popover-store2" class="hidden">
+    <div class="popover-body">
+        <ul class="nav store-list">
+            <li class="p-0">
+                <h3>Tournament Trail</h3>
+                <div class="store-address">950 Tournament Trail , Westfield, IN 46074</div>
+                <a href="#" class="get-directions"><i class="fas fa-directions mr-2"></i>Get Directions</a>
+                <button class="btn apply-now">We are Hiring - <strong>Apply Now!</strong></button>
+            </li>
+        </ul>
+    </div>
+</div>
+<div class="sidebar-filter">
+    <div class="sidebar-fixed">
+        <a class="d-block mx-auto mb-4 map-logo" href="#">
+            <img alt="KPV" src="images/logo-kpv.svg" height="60" />
+        </a>
+        
+        <ul class="nav map-switch" id="mapTab" role="tablist">
+            <li>
+                <a class="nav-link active" id="search-tab" data-toggle="tab" href="#search" role="tab" aria-controls="home" aria-selected="true"><i
+                        class="fas fa-map-marker mr-2"></i>Nearest Stores</a>
+            </li>
+            <li>
+                <a class="nav-link" id="list-tab" data-toggle="tab" href="#list" role="tab" aria-controls="home" aria-selected="false"><i
+                        class="fas fa-store mr-2"></i>All Stores</a>
+            </li>
+        </ul>
+    </div>
+    <div class="tab-content pt-1" id="mapTabContent">
         <div class="tab-pane fade show active" id="search" role="tabpanel" aria-labelledby="search-tab">
             <div class="d-flex mb-2 mt-2">
                 <div class="form-group search-box">
@@ -74,133 +107,198 @@
             </div>
             <button type="button" class="my-location" id="myLocation"><i class="fas fa-map-marker-alt mr-2"></i>Get My Location</button>
         </div>
-        <div class="tab-pane fade" id="list" role="tabpanel" aria-labelledby="list-tab">
+        <div class="tab-pane fade" id="list" role="tabpanel" aria-labelledby="list-tab" ss-container>
             <ul class="nav store-list">
                 
-                <li>
-                    <h3>Tournament Trail</h3>
-                    <div class="store-address">950 Tournament Trail , Westfield, IN 46074</div>
-                    <a href="#" class="get-directions"><i class="fas fa-directions mr-2"></i>Get Directions</a>
-                    <button class="btn apply-now">We are Hiring - <strong>Apply Now!</strong></button>
+                <li class="d-flex">
+                    <div class="mr-3"><img src="https://via.placeholder.com/150x150" alt=""></div>
+                    <div>
+                        <h3>Tournament Trail</h3>
+                        <div class="store-address">950 Tournament Trail , Westfield, IN 46074</div>
+                        <a href="#" class="get-directions"><i class="fas fa-directions mr-2"></i>Get Directions</a>
+                        <button class="btn apply-now">We are Hiring - <strong>Apply Now!</strong></button>
+                    </div>
+
                 </li>
                 
-                <li>
-                    <h3>East 146th Street</h3>
-                    <div class="store-address">2560 East 146th Street, Carmel, IN 46033</div>
-                    <a href="#" class="get-directions"><i class="fas fa-directions mr-2"></i>Get Directions</a>
-                    <button class="btn apply-now">We are Hiring - <strong>Apply Now!</strong></button>
+                <li class="d-flex">
+                    <div class="mr-3"><img src="https://via.placeholder.com/150x150" alt=""></div>
+                    <div>
+                        <h3>East 146th Street</h3>
+                        <div class="store-address">2560 East 146th Street, Carmel, IN 46033</div>
+                        <a href="#" class="get-directions"><i class="fas fa-directions mr-2"></i>Get Directions</a>
+                        <button class="btn apply-now">We are Hiring - <strong>Apply Now!</strong></button>
+                    </div>
+
                 </li>
                 
-                <li>
-                    <h3>Lititz Pike</h3>
-                    <div class="store-address">1242 Lititz Pike Lancaster, PA 17601</div>
-                    <a href="#" class="get-directions"><i class="fas fa-directions mr-2"></i>Get Directions</a>
-                    <button class="btn apply-now">We are Hiring - <strong>Apply Now!</strong></button>
+                <li class="d-flex">
+                    <div class="mr-3"><img src="https://via.placeholder.com/150x150" alt=""></div>
+                    <div>
+                        <h3>Lititz Pike</h3>
+                        <div class="store-address">1242 Lititz Pike Lancaster, PA 17601</div>
+                        <a href="#" class="get-directions"><i class="fas fa-directions mr-2"></i>Get Directions</a>
+                        <button class="btn apply-now">We are Hiring - <strong>Apply Now!</strong></button>
+                    </div>
+
                 </li>
                 
-                <li>
-                    <h3>Kentucky Av / Camby</h3>
-                    <div class="store-address">7015 S Kentucky Ave, Indianapolis, IN 46113</div>
-                    <a href="#" class="get-directions"><i class="fas fa-directions mr-2"></i>Get Directions</a>
-                    <button class="btn apply-now">We are Hiring - <strong>Apply Now!</strong></button>
+                <li class="d-flex">
+                    <div class="mr-3"><img src="https://via.placeholder.com/150x150" alt=""></div>
+                    <div>
+                        <h3>Kentucky Av / Camby</h3>
+                        <div class="store-address">7015 S Kentucky Ave, Indianapolis, IN 46113</div>
+                        <a href="#" class="get-directions"><i class="fas fa-directions mr-2"></i>Get Directions</a>
+                        <button class="btn apply-now">We are Hiring - <strong>Apply Now!</strong></button>
+                    </div>
+
                 </li>
                 
-                <li>
-                    <h3>US 31 South</h3>
-                    <div class="store-address">7853 US 31 South Street, Indianapolis, IN 46227</div>
-                    <a href="#" class="get-directions"><i class="fas fa-directions mr-2"></i>Get Directions</a>
-                    <button class="btn apply-now">We are Hiring - <strong>Apply Now!</strong></button>
+                <li class="d-flex">
+                    <div class="mr-3"><img src="https://via.placeholder.com/150x150" alt=""></div>
+                    <div>
+                        <h3>US 31 South</h3>
+                        <div class="store-address">7853 US 31 South Street, Indianapolis, IN 46227</div>
+                        <a href="#" class="get-directions"><i class="fas fa-directions mr-2"></i>Get Directions</a>
+                        <button class="btn apply-now">We are Hiring - <strong>Apply Now!</strong></button>
+                    </div>
+
                 </li>
                 
-                <li>
-                    <h3>Stafford Road / Plainfield</h3>
-                    <div class="store-address">2120 Stafford Road, Plainfield, IN 46168</div>
-                    <a href="#" class="get-directions"><i class="fas fa-directions mr-2"></i>Get Directions</a>
-                    <button class="btn apply-now">We are Hiring - <strong>Apply Now!</strong></button>
+                <li class="d-flex">
+                    <div class="mr-3"><img src="https://via.placeholder.com/150x150" alt=""></div>
+                    <div>
+                        <h3>Stafford Road / Plainfield</h3>
+                        <div class="store-address">2120 Stafford Road, Plainfield, IN 46168</div>
+                        <a href="#" class="get-directions"><i class="fas fa-directions mr-2"></i>Get Directions</a>
+                        <button class="btn apply-now">We are Hiring - <strong>Apply Now!</strong></button>
+                    </div>
+
                 </li>
                 
-                <li>
-                    <h3>Avon</h3>
-                    <div class="store-address">9839 East US Hwy 36, Avon, IN 46123</div>
-                    <a href="#" class="get-directions"><i class="fas fa-directions mr-2"></i>Get Directions</a>
-                    <button class="btn apply-now">We are Hiring - <strong>Apply Now!</strong></button>
+                <li class="d-flex">
+                    <div class="mr-3"><img src="https://via.placeholder.com/150x150" alt=""></div>
+                    <div>
+                        <h3>Avon</h3>
+                        <div class="store-address">9839 East US Hwy 36, Avon, IN 46123</div>
+                        <a href="#" class="get-directions"><i class="fas fa-directions mr-2"></i>Get Directions</a>
+                        <button class="btn apply-now">We are Hiring - <strong>Apply Now!</strong></button>
+                    </div>
+
                 </li>
                 
-                <li>
-                    <h3>Smith Valley</h3>
-                    <div class="store-address">120 West Smith Valley Road, Greenwood, IN 46142</div>
-                    <a href="#" class="get-directions"><i class="fas fa-directions mr-2"></i>Get Directions</a>
-                    <button class="btn apply-now">We are Hiring - <strong>Apply Now!</strong></button>
+                <li class="d-flex">
+                    <div class="mr-3"><img src="https://via.placeholder.com/150x150" alt=""></div>
+                    <div>
+                        <h3>Smith Valley</h3>
+                        <div class="store-address">120 West Smith Valley Road, Greenwood, IN 46142</div>
+                        <a href="#" class="get-directions"><i class="fas fa-directions mr-2"></i>Get Directions</a>
+                        <button class="btn apply-now">We are Hiring - <strong>Apply Now!</strong></button>
+                    </div>
+
                 </li>
                 
-                <li>
-                    <h3>Brownsburg</h3>
-                    <div class="store-address">13 Commerce Drive, Brownsburg, IN 46112</div>
-                    <a href="#" class="get-directions"><i class="fas fa-directions mr-2"></i>Get Directions</a>
-                    <button class="btn apply-now">We are Hiring - <strong>Apply Now!</strong></button>
+                <li class="d-flex">
+                    <div class="mr-3"><img src="https://via.placeholder.com/150x150" alt=""></div>
+                    <div>
+                        <h3>Brownsburg</h3>
+                        <div class="store-address">13 Commerce Drive, Brownsburg, IN 46112</div>
+                        <a href="#" class="get-directions"><i class="fas fa-directions mr-2"></i>Get Directions</a>
+                        <button class="btn apply-now">We are Hiring - <strong>Apply Now!</strong></button>
+                    </div>
+
                 </li>
                 
-                <li>
-                    <h3>900 Library Plaza</h3>
-                    <div class="store-address">900 Library Plaza, Fort Wayne, IN 46802</div>
-                    <a href="#" class="get-directions"><i class="fas fa-directions mr-2"></i>Get Directions</a>
-                    <button class="btn apply-now">We are Hiring - <strong>Apply Now!</strong></button>
+                <li class="d-flex">
+                    <div class="mr-3"><img src="https://via.placeholder.com/150x150" alt=""></div>
+                    <div>
+                        <h3>900 Library Plaza</h3>
+                        <div class="store-address">900 Library Plaza, Fort Wayne, IN 46802</div>
+                        <a href="#" class="get-directions"><i class="fas fa-directions mr-2"></i>Get Directions</a>
+                        <button class="btn apply-now">We are Hiring - <strong>Apply Now!</strong></button>
+                    </div>
+
                 </li>
                 
-                <li>
-                    <h3>Connexion Way</h3>
-                    <div class="store-address">545 West Connexion Road, Columbia City, IN 46725</div>
-                    <a href="#" class="get-directions"><i class="fas fa-directions mr-2"></i>Get Directions</a>
-                    <button class="btn apply-now">We are Hiring - <strong>Apply Now!</strong></button>
+                <li class="d-flex">
+                    <div class="mr-3"><img src="https://via.placeholder.com/150x150" alt=""></div>
+                    <div>
+                        <h3>Connexion Way</h3>
+                        <div class="store-address">545 West Connexion Road, Columbia City, IN 46725</div>
+                        <a href="#" class="get-directions"><i class="fas fa-directions mr-2"></i>Get Directions</a>
+                        <button class="btn apply-now">We are Hiring - <strong>Apply Now!</strong></button>
+                    </div>
+
                 </li>
                 
-                <li>
-                    <h3>8051 Coldwater</h3>
-                    <div class="store-address">8051 Coldwater Road, Fort Wayne, IN 46825</div>
-                    <a href="#" class="get-directions"><i class="fas fa-directions mr-2"></i>Get Directions</a>
-                    <button class="btn apply-now">We are Hiring - <strong>Apply Now!</strong></button>
+                <li class="d-flex">
+                    <div class="mr-3"><img src="https://via.placeholder.com/150x150" alt=""></div>
+                    <div>
+                        <h3>8051 Coldwater</h3>
+                        <div class="store-address">8051 Coldwater Road, Fort Wayne, IN 46825</div>
+                        <a href="#" class="get-directions"><i class="fas fa-directions mr-2"></i>Get Directions</a>
+                        <button class="btn apply-now">We are Hiring - <strong>Apply Now!</strong></button>
+                    </div>
+
                 </li>
                 
-                <li>
-                    <h3>5767 St Joe Road</h3>
-                    <div class="store-address">5767 St, Joe Road, Fort Wayne, IN 46835</div>
-                    <a href="#" class="get-directions"><i class="fas fa-directions mr-2"></i>Get Directions</a>
-                    <button class="btn apply-now">We are Hiring - <strong>Apply Now!</strong></button>
+                <li class="d-flex">
+                    <div class="mr-3"><img src="https://via.placeholder.com/150x150" alt=""></div>
+                    <div>
+                        <h3>5767 St Joe Road</h3>
+                        <div class="store-address">5767 St, Joe Road, Fort Wayne, IN 46835</div>
+                        <a href="#" class="get-directions"><i class="fas fa-directions mr-2"></i>Get Directions</a>
+                        <button class="btn apply-now">We are Hiring - <strong>Apply Now!</strong></button>
+                    </div>
+
                 </li>
                 
-                <li>
-                    <h3>Illinois Road</h3>
-                    <div class="store-address">10096 West Illinois Road, Fort Wayne, IN 46804</div>
-                    <a href="#" class="get-directions"><i class="fas fa-directions mr-2"></i>Get Directions</a>
-                    <button class="btn apply-now">We are Hiring - <strong>Apply Now!</strong></button>
+                <li class="d-flex">
+                    <div class="mr-3"><img src="https://via.placeholder.com/150x150" alt=""></div>
+                    <div>
+                        <h3>Illinois Road</h3>
+                        <div class="store-address">10096 West Illinois Road, Fort Wayne, IN 46804</div>
+                        <a href="#" class="get-directions"><i class="fas fa-directions mr-2"></i>Get Directions</a>
+                        <button class="btn apply-now">We are Hiring - <strong>Apply Now!</strong></button>
+                    </div>
+
                 </li>
                 
-                <li>
-                    <h3>Fairfield 95 North</h3>
-                    <div class="store-address">165 Round Hill RD Fairfield, CT 06824</div>
-                    <a href="#" class="get-directions"><i class="fas fa-directions mr-2"></i>Get Directions</a>
-                    <button class="btn apply-now">We are Hiring - <strong>Apply Now!</strong></button>
+                <li class="d-flex">
+                    <div class="mr-3"><img src="https://via.placeholder.com/150x150" alt=""></div>
+                    <div>
+                        <h3>Fairfield 95 North</h3>
+                        <div class="store-address">165 Round Hill RD Fairfield, CT 06824</div>
+                        <a href="#" class="get-directions"><i class="fas fa-directions mr-2"></i>Get Directions</a>
+                        <button class="btn apply-now">We are Hiring - <strong>Apply Now!</strong></button>
+                    </div>
+
                 </li>
                 
-                <li>
-                    <h3>Metropolitan Ave</h3>
-                    <div class="store-address">1374 Metropolitan Ave, Bronx, NY, 14062</div>
-                    <a href="#" class="get-directions"><i class="fas fa-directions mr-2"></i>Get Directions</a>
-                    <button class="btn apply-now">We are Hiring - <strong>Apply Now!</strong></button>
+                <li class="d-flex">
+                    <div class="mr-3"><img src="https://via.placeholder.com/150x150" alt=""></div>
+                    <div>
+                        <h3>Metropolitan Ave</h3>
+                        <div class="store-address">1374 Metropolitan Ave, Bronx, NY, 14062</div>
+                        <a href="#" class="get-directions"><i class="fas fa-directions mr-2"></i>Get Directions</a>
+                        <button class="btn apply-now">We are Hiring - <strong>Apply Now!</strong></button>
+                    </div>
+
                 </li>
                 
             </ul>
         </div>
     </div>
-    
+
 </div>
+
 <script>
+    // { # Loading Screen # }
+    window.addEventListener("load", function (event) {
+        $(".se-pre-con").fadeOut("slow");
+    });
 
-window.addEventListener("load", function(event){
-    $(".se-pre-con").fadeOut("slow");
- });
-
-
+    // { # Map styles # }
     function initMap() {
         // Styles a map in night mode.
         var map = new google.maps.Map(document.getElementById('map'), {
@@ -220,23 +318,36 @@ window.addEventListener("load", function(event){
         });
     }
 </script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBGqRxQFGDLiXbfcZvXCrv85q9rJjNM49g&callback=initMap" async defer></script> 
-    
-
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBGqRxQFGDLiXbfcZvXCrv85q9rJjNM49g&callback=initMap" async
+    defer></script> 
     </main>
-    <!-- color card Include --> 
+    <!-- color card Include -->
     
 </body>
-<!-- build:js js/scripts.min.js -->
+<!-- build:js js/scripts-map.min.js -->
 <script src="js/bootstrap.bundle.js"></script>
 <script src="js/bootstrap-select.js"></script>
-<script src="js/jquery.mask.js"></script>
 <script src="js/float-labels.min.js"></script>
-<script src="js/switchery.js"></script>
+<script src="js/simple-scrollbar.js"></script>
 <!-- endbuild -->
 <script>
 
-// Floating label plugin
+    // Popover
+    $('.pin[data-toggle="popover"]').each(function (i, obj) {
+        $(this).popover({
+            trigger: 'focus',
+            html: true,
+            content: function content() {
+                var id = $(this).attr('id');
+                return $('#popover-' + id).html();
+            }
+        });
+    });
+    $('.popover-dismiss').popover({
+        trigger: 'focus'
+    });
+
+    // Floating label plugin
     var floatlabels = new FloatLabels('body', {
         customEvent: null,
         customLabel: null,
