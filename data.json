@@ -21,5 +21,71 @@
         {
             "day": "Saturday"
         }
+    ],
+    "location_list" : [
+        {
+            "name" : "Tournament Trail",
+            "address" : "950 Tournament Trail , Westfield, IN 46074"
+        },
+        {
+            "name" : "East 146th Street",
+            "address" : "2560 East 146th Street, Carmel, IN 46033"
+        },
+        {
+            "name" : "Lititz Pike",
+            "address" : "1242 Lititz Pike Lancaster, PA 17601"
+        },
+        {
+            "name" : "Kentucky Av / Camby",
+            "address" : "7015 S Kentucky Ave, Indianapolis, IN 46113"
+        },
+        {
+            "name" : "US 31 South",
+            "address" : "7853 US 31 South Street, Indianapolis, IN 46227"
+        },
+        {
+            "name" : "Stafford Road / Plainfield",
+            "address" : "2120 Stafford Road, Plainfield, IN 46168"
+        },
+        {
+            "name" : "Avon",
+            "address" : "9839 East US Hwy 36, Avon, IN 46123"
+        },
+        {
+            "name" : "Smith Valley",
+            "address" : "120 West Smith Valley Road, Greenwood, IN 46142"
+        },
+        {
+            "name" : "Brownsburg",
+            "address" : "13 Commerce Drive, Brownsburg, IN 46112"
+        },
+        {
+            "name" : "900 Library Plaza",
+            "address" : "900 Library Plaza, Fort Wayne, IN 46802"
+        },
+        {
+            "name" : "Connexion Way",
+            "address" : "545 West Connexion Road, Columbia City, IN 46725"
+        },
+        {
+            "name" : "8051 Coldwater",
+            "address" : "8051 Coldwater Road, Fort Wayne, IN 46825"
+        },
+        {
+            "name" : "5767 St Joe Road",
+            "address" : "5767 St, Joe Road, Fort Wayne, IN 46835"
+        },
+        {
+            "name" : "Illinois Road",
+            "address" : "10096 West Illinois Road, Fort Wayne, IN 46804"
+        },
+        {
+            "name" : "Fairfield 95 North",
+            "address" : "165 Round Hill RD Fairfield, CT 06824"
+        },
+        {
+            "name" : "Metropolitan Ave",
+            "address" : "1374 Metropolitan Ave, Bronx, NY, 14062"
+        }
     ]
 }

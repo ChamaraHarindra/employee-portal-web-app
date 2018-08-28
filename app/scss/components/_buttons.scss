@@ -44,3 +44,14 @@
     background: transparent;
     color: $white-color;
 }
+
+.my-location {
+    @include button-variant(transparent, transparent, transparent);
+    color: $primary-color;
+    box-shadow: none;
+    cursor: pointer;
+    font-weight: 500;
+    &:hover {
+        color: $purple-color;
+    }
+}

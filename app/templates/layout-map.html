@@ -16,8 +16,8 @@
 </head>
 
 <body class="mapped">
-    <!-- Header Include -->
-    {% include "partials/header.html" %}
+    <!-- Header Include --> 
+    {# {% include "partials/header.html" %} #}
 
     <main>
             <!-- body content -->
@@ -33,5 +33,20 @@
 <script src="js/float-labels.min.js"></script>
 <script src="js/switchery.js"></script>
 <!-- endbuild -->
+<script>
+
+// Floating label plugin
+    var floatlabels = new FloatLabels('body', {
+        customEvent: null,
+        customLabel: null,
+        customPlaceholder: null,
+        exclude: '.no-label',
+        inputRegex: /email|number|password|search|tel|text|url/,
+        prefix: 'fl-',
+        prioritize: 'label',
+        style: 2,
+        transform: 'input, select, textarea'
+    });
+</script>
 
 </html>

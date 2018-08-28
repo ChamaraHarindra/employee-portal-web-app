@@ -12,19 +12,69 @@
         margin: 0;
     }
 </style>
+{# Loader Screen #}
+<div class="se-pre-con"></div>
+{# Map loader div #}
 <div id="map"></div>
+{# Side filter white #}
 <div class="sidebar-filter">
-    <div class="btn-group btn-group-toggle long-list" data-toggle="buttons">
-        <label class="btn btn-outline-primary active">
-            <input type="radio" name="options" id="kpvYes" autocomplete="off" checked> Map
-        </label>
-        <label class="btn btn-outline-primary">
-            <input type="radio" name="options" id="kpvNo" autocomplete="off"> Location List
-        </label>
+    <div class="sidebar-fixed">
+         <a class="d-block mx-auto mb-4 map-logo" href="#">
+                <img alt="KPV" src="images/logo-kpv.svg" height="60"/>
+            </a>
+        {# <h1>Find Your Store</h1> #}
+        <ul class="nav map-switch" id="mapTab" role="tablist">
+            <li>
+                <a class="nav-link active" id="search-tab" data-toggle="tab" href="#search" role="tab" aria-controls="home" aria-selected="true"><i class="fas fa-map-marker mr-2"></i>Nearest Stores</a>
+            </li>
+            <li>
+                <a class="nav-link"  id="list-tab" data-toggle="tab" href="#list" role="tab" aria-controls="home" aria-selected="false"><i class="fas fa-store mr-2"></i>All Stores</a>
+            </li>
+        </ul>
     </div>
-    <h1>Find Your Store</h1>
+    <div class="tab-content px-4 pt-1" id="mapTabContent">
+        <div class="tab-pane fade show active" id="search" role="tabpanel" aria-labelledby="search-tab">
+            <div class="d-flex mb-2 mt-2">
+                <div class="form-group search-box">
+                    <label for="mapSearch">Zip, City, State</label>
+                    <input type="text" value="" name="map-search" id="mapSearch" class="form-control" placeholder="Zip, City, State" required/>
+                </div>
+                <div class="form-group search-drop">
+                    <label for="mapDistance">Distance</label>
+                    <select name="mapDistance" id="mapDistance" class="form-control" required>
+                        <option value="0" selected>5 Miles</option>
+                        <option value="1">10 Miles</option>
+                        <option value="2">15 Miles</option>
+                        <option value="3">20 Miles</option>
+                        <option value="4">25 Miles</option>
+                    </select>
+                </div>
+                <button type="button" class="search-stores" id="btnSearchStores"><i class="fas fa-search"></i></button>
+            </div>
+            <button type="button" class="my-location" id="myLocation"><i class="fas fa-map-marker-alt mr-2"></i>Get My Location</button>
+        </div>
+        <div class="tab-pane fade" id="list" role="tabpanel" aria-labelledby="list-tab">
+            <ul class="nav store-list">
+                {% for locate in location_list %}
+                <li>
+                    <h3>{{locate.name}}</h3>
+                    <div class="store-address">{{locate.address}}</div>
+                    <a href="#" class="get-directions"><i class="fas fa-directions mr-2"></i>Get Directions</a>
+                    <button class="btn apply-now">We are Hiring - <strong>Apply Now!</strong></button>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+    
 </div>
 <script>
+{# Loading Screen #}
+window.addEventListener("load", function(event){
+    $(".se-pre-con").fadeOut("slow");
+ });
+
+{# Map styles #}
     function initMap() {
         // Styles a map in night mode.
         var map = new google.maps.Map(document.getElementById('map'), {
@@ -44,5 +94,6 @@
         });
     }
 </script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBGqRxQFGDLiXbfcZvXCrv85q9rJjNM49g&callback=initMap" async
-    defer></script> {% endblock %}
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBGqRxQFGDLiXbfcZvXCrv85q9rJjNM49g&callback=initMap" async defer></script> 
+    
+{% endblock %}
