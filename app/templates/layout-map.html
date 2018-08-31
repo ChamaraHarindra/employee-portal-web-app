@@ -61,6 +61,13 @@
         style: 2,
         transform: 'input, select, textarea'
     });
+
+    // expanding sidebar 
+    $('#expandThis').on('click', function () {
+        $('.sidebar-filter').toggleClass('hide-sidebar');
+        $('.expand-button').toggleClass('fa-caret-right fa-caret-left');
+        $('.sidebar-fixed').toggleClass('hide-all');
+    })
 </script>
 
 </html>

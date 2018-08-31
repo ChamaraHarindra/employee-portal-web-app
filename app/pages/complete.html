@@ -1,0 +1,49 @@
+{% set title = 'Review Questions' %} {% set ReviewQuestions = true %}
+<!-- base layout file inheritance -->
+{% extends "layout.html" %} {% block content %}
+
+<!-- import Forms macro file -->
+{% import "macros/forms.html" as forms %}
+<!-- import Modal macro file -->
+{% import "macros/modal.html" as macroModals %}
+
+
+<div class="row">
+    <div class="col-12 col-lg-12">
+        <div class="c-card">
+            <div class="c-card__inner">
+                <div class="row">
+                    <div class="col-12">
+                        <i class="fas fa-check-circle big-congrats"></i>
+                        <h3 class="text-center">Congratulations! Your application is submitted successfully!</h3>
+                        <p class="mb-5">This is not a Pass/Fail process. This is simply a series of questions designed to determine your
+                            current attributes as compared to others in the position for which you are being considered.
+                            Questionnaire coupled with interviews and prior work experience helps to ensure a match between
+                            candidates and the company.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+<div class="row mt-5">
+    <div class="col-12 navigate-wrapper">
+
+        <a href="billing-information.html" class="btn btn-lg btn-navigate-back mt-3 mb-2">
+            <i class="fas fa-angle-double-left ml-2"></i>
+            Go to Billing Information
+
+        </a>
+        <a href="billing-information.html" class="btn btn-lg btn-navigate mt-3 mb-2">
+            <i class="fas fa-paper-plane mr-2"></i>
+            Send the Application
+
+        </a>
+    </div>
+</div>
+
+<script>
+
+</script> {% endblock %}

@@ -9,12 +9,6 @@
 // mixins
 @import 'mixins';
 
-// base styles
-@import 'base';
-
-// typography
-@import 'typography/typography';
-
 // components
 @import 'components/header';
 @import 'components/stepper';
@@ -24,4 +18,14 @@
 @import 'components/form';
 @import 'components/ios-switch';
 @import 'components/timepicker';
+@import 'components/disclaimer';
 @import 'components/slick-theme';
+
+// base styles
+@import 'base';
+@import 'map-page';
+
+// typography
+@import 'typography/typography';
+
+

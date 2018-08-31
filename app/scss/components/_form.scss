@@ -61,6 +61,39 @@ span.ml-2.small {
     align-items: center;
 }
 
+.form-group {
+    position: relative;
+    .error {
+        font-size: 13px;
+        color: $red-color;
+        margin: 5px 0 0;
+        line-height: 1;
+        display: block;
+        font-weight: 500;
+    }
+    &.has-error {
+        input,
+        select,
+        textarea {
+            border-color: $red-color;
+            &:focus {
+                box-shadow: 0 0 0 0.2rem rgba($red-color,.25)
+            }
+        }
+        &:after {
+            position: absolute;
+            right: 10px;
+            top: calc(50% - 25px);
+            content: '\f06a';
+            font-family: 'Font Awesome 5 Free';
+            font-weight: 900;
+            color: $red-color;
+            opacity: .7;
+            font-size: 20px;
+        }
+    }
+}
+
 /*!
  * Float Labels
  * @version: 3.3.5

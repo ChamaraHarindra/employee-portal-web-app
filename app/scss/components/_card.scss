@@ -13,6 +13,11 @@
     .c-card__header {
         padding: 20px;
         border-bottom: 1px solid $gray-1-color;
+        &.greeny {
+            h3 {
+                color: $green-color;;
+            }
+        }
         h3 {
             margin: 0 0 15px;
             @media(min-width: 768px) {

@@ -32,4 +32,15 @@
         </div>
         <div class="caption">Review Questions</div>
     </li>
+    <li {% if PersonalInfo %}
+    {% elif BillingInfo %}
+    {% elif ReviewQuestions %}
+    {% elif Complete %}
+    class="active"
+    {% endif %}>
+        <div class="step">
+            <i class="fas fa-check"></i>
+        </div>
+        <div class="caption">Complete</div>
+    </li>
 </ol>

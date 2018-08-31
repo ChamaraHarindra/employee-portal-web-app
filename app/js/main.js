@@ -78,12 +78,31 @@ $('.questions').slick({
   adaptiveHeight: true
 });
 
-// Time picker - Timepicki
-$(document).ready(function() {
-  $('.time_element').timepicki();
-});
 
-// iOS switch - switchery
+
+// Time picker
+var options = { 
+now: "00:00", //hh:mm 24 hour format only, defaults to current time 
+twentyFour: false, //Display 24 hour format, defaults to false 
+upArrow: 'wickedpicker__controls__control-up', //The up arrow class selector to use, for custom CSS 
+downArrow: 'wickedpicker__controls__control-down', //The down arrow class selector to use, for custom CSS 
+close: 'wickedpicker__close', //The close class selector to use, for custom CSS 
+hoverState: 'hover-state', //The hover state class to use, for custom CSS 
+title: 'Timepicker', //The Wickedpicker's title, 
+showSeconds: false, //Whether or not to show seconds, 
+secondsInterval: 1, //Change interval for seconds, defaults to 1  , 
+minutesInterval: 0, //Change interval for minutes, defaults to 1 
+beforeShow: null, //A function to be called before the Wickedpicker is shown 
+show: null, //A function to be called when the Wickedpicker is shown 
+clearable: true, //Make the picker's input clearable (has clickable "x")  
+};
+$('.timepicker').wickedpicker(options);
+
+$(document).ready(function() {
+  $('.hasWickedpicker').val('');
+})
+
+// iOS switch - switchery 
 var elem = document.querySelector('.js-switch');
 var init = new Switchery(elem, { size: 'small', color: '#4B80FD' });
 
@@ -123,3 +142,10 @@ $('#deleteExperience').on('click', function() {
     }
   })
 });
+
+
+ // Disclaimer 
+$('.hanger').on('click', function() {
+  $('.popover-disclaimer').toggleClass('popover-hide');
+  $('.arrow-toggle').toggleClass('fa-angle-up fa-angle-down');
+})

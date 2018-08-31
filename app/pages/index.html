@@ -16,7 +16,13 @@
             <div class="c-card__inner">
                 <div class="row">
                     <!-- First Name -->
-                    {{ forms.formText('col-lg-4', 'f-name', 'text', '', 'First Name', 'First Name', 'required' ) }}
+                    <div class="col-12 col-lg-4">
+                        <div class="form-group has-error">
+                            <label for="f-name">First Name</label>
+                            <input type="text" value="" name="f-name" id="f-name" class="form-control" placeholder="First Name" required/>
+                            <span class="error">Please enter your first name here</span>
+                        </div>
+                    </div>
                     <!-- Middle Name -->
                     {{ forms.formText('col-lg-4', 'm-name', 'text', '', 'Middle Name (optional)', 'Middle Name (optional)', '' ) }}
                     <!-- Last Name -->
@@ -142,10 +148,10 @@
                                         </div>
                                     </td>
                                     <td>
-                                        <input type="text" class="time_element form-control smaller" />
+                                        <input type="text" class="timepicker form-control smaller" />
                                     </td>
                                     <td>
-                                        <input type="text" class="time_element form-control smaller" />
+                                        <input type="text" class="timepicker form-control smaller" />
                                     </td>
                                 </tr>
                                 {% endfor %}
@@ -157,16 +163,16 @@
                             <label for="work" class="d-block">May we contact you at work?</label>
                             <div class="btn-group btn-group-toggle long-list" data-toggle="buttons">
                                 <label class="btn btn-outline-primary active">
-                                    <input type="radio" name="options" id="fullTime" autocomplete="off" checked> Full Time
+                                    <input type="checkbox" name="options" id="fullTime" autocomplete="off" checked> Full Time
                                 </label>
                                 <label class="btn btn-outline-primary">
-                                    <input type="radio" name="options" id="partTime" autocomplete="off"> Part Time
+                                    <input type="checkbox" name="options" id="partTime" autocomplete="off"> Part Time
                                 </label>
                                 <label class="btn btn-outline-primary">
-                                    <input type="radio" name="options" id="temporary" autocomplete="off"> Temporary
+                                    <input type="checkbox" name="options" id="temporary" autocomplete="off"> Temporary
                                 </label>
                                 <label class="btn btn-outline-primary">
-                                    <input type="radio" name="options" id="summer" autocomplete="off"> Summer
+                                    <input type="checkbox" name="options" id="summer" autocomplete="off"> Summer
                                 </label>
                             </div>
                         </div>

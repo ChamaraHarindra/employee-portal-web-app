@@ -51,7 +51,10 @@
     box-shadow: none;
     cursor: pointer;
     font-weight: 500;
-    &:hover {
-        color: $purple-color;
+    &:hover,
+    &:focus,
+    &:active {
+        color: $purple-color !important;
+        box-shadow: none !important;
     }
 }

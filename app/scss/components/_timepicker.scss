@@ -1,310 +1,94 @@
-/*!
- * Datepicker v1.0.0
- * https://fengyuanchen.github.io/datepicker
- *
- * Copyright 2014-present Chen Fengyuan
- * Released under the MIT license
- *
- * Date: 2018-08-05T03:02:13.513Z
- */
-
- .datepicker-container {
-    background-color: #fff;
-    direction: ltr;
-    font-size: 12px;
-    left: 0;
-    line-height: 30px;
-    position: fixed;
-    top: 0;
-    -ms-touch-action: none;
-    touch-action: none;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    width: 210px;
-    z-index: -1;
-    -webkit-tap-highlight-color: transparent;
-    -webkit-touch-callout: none;
-  }
-  
-  .datepicker-container::before,
-  .datepicker-container::after {
-    border: 5px solid transparent;
-    content: " ";
-    display: block;
-    height: 0;
-    position: absolute;
-    width: 0;
-  }
-  
-  .datepicker-dropdown {
-    border: 1px solid #ccc;
-    -webkit-box-shadow: 0 3px 6px #ccc;
-    box-shadow: 0 3px 6px #ccc;
-    -webkit-box-sizing: content-box;
-    box-sizing: content-box;
-    position: absolute;
-    z-index: 1;
-  }
-  
-  .datepicker-inline {
-    position: static;
-  }
-  
-  .datepicker-top-left,
-  .datepicker-top-right {
-    border-top-color: #39f;
-  }
-  
-  .datepicker-top-left::before,
-  .datepicker-top-left::after,
-  .datepicker-top-right::before,
-  .datepicker-top-right::after {
-    border-top: 0;
-    left: 10px;
-    top: -5px;
-  }
-  
-  .datepicker-top-left::before,
-  .datepicker-top-right::before {
-    border-bottom-color: #39f;
-  }
-  
-  .datepicker-top-left::after,
-  .datepicker-top-right::after {
-    border-bottom-color: #fff;
-    top: -4px;
-  }
-  
-  .datepicker-bottom-left,
-  .datepicker-bottom-right {
-    border-bottom-color: #39f;
-  }
-  
-  .datepicker-bottom-left::before,
-  .datepicker-bottom-left::after,
-  .datepicker-bottom-right::before,
-  .datepicker-bottom-right::after {
-    border-bottom: 0;
-    bottom: -5px;
-    left: 10px;
-  }
-  
-  .datepicker-bottom-left::before,
-  .datepicker-bottom-right::before {
-    border-top-color: #39f;
-  }
-  
-  .datepicker-bottom-left::after,
-  .datepicker-bottom-right::after {
-    border-top-color: #fff;
-    bottom: -4px;
-  }
-  
-  .datepicker-top-right::before,
-  .datepicker-top-right::after,
-  .datepicker-bottom-right::before,
-  .datepicker-bottom-right::after {
-    left: auto;
-    right: 10px;
-  }
-  
-  .datepicker-panel > ul {
-    margin: 0;
-    padding: 0;
-    width: 102%;
-  }
-  
-  .datepicker-panel > ul::before,
-  .datepicker-panel > ul::after {
-    content: " ";
-    display: table;
-  }
-  
-  .datepicker-panel > ul::after {
-    clear: both;
-  }
-  
-  .datepicker-panel > ul > li {
-    background-color: #fff;
-    cursor: pointer;
-    float: left;
-    height: 30px;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    text-align: center;
-    width: 30px;
-  }
-  
-  .datepicker-panel > ul > li:hover {
-    background-color: rgb(229, 242, 255);
-  }
-  
-  .datepicker-panel > ul > li.muted,
-  .datepicker-panel > ul > li.muted:hover {
-    color: #999;
-  }
-  
-  .datepicker-panel > ul > li.highlighted {
-    background-color: rgb(229, 242, 255);
-  }
-  
-  .datepicker-panel > ul > li.highlighted:hover {
-    background-color: rgb(204, 229, 255);
-  }
-  
-  .datepicker-panel > ul > li.picked,
-  .datepicker-panel > ul > li.picked:hover {
-    color: #39f;
-  }
-  
-  .datepicker-panel > ul > li.disabled,
-  .datepicker-panel > ul > li.disabled:hover {
-    background-color: #fff;
-    color: #ccc;
-    cursor: default;
-  }
-  
-  .datepicker-panel > ul > li.disabled.highlighted,
-  .datepicker-panel > ul > li.disabled:hover.highlighted {
-    background-color: rgb(229, 242, 255);
-  }
-  
-  .datepicker-panel > ul > li[data-view="years prev"],
-  .datepicker-panel > ul > li[data-view="year prev"],
-  .datepicker-panel > ul > li[data-view="month prev"],
-  .datepicker-panel > ul > li[data-view="years next"],
-  .datepicker-panel > ul > li[data-view="year next"],
-  .datepicker-panel > ul > li[data-view="month next"],
-  .datepicker-panel > ul > li[data-view="next"] {
-    font-size: 18px;
-  }
-  
-  .datepicker-panel > ul > li[data-view="years current"],
-  .datepicker-panel > ul > li[data-view="year current"],
-  .datepicker-panel > ul > li[data-view="month current"] {
-    width: 150px;
-  }
-  
-  .datepicker-panel > ul[data-view="years"] > li,
-  .datepicker-panel > ul[data-view="months"] > li {
-    height: 52.5px;
-    line-height: 52.5px;
-    width: 52.5px;
-  }
-  
-  .datepicker-panel > ul[data-view="week"] > li,
-  .datepicker-panel > ul[data-view="week"] > li:hover {
-    background-color: #fff;
-    cursor: default;
-  }
-  
-  .datepicker-hide {
-    display: none;
-  }
-  
-
-/* 
-Created on: 17 Sep, 2014, 4:29:37 PM
-Author: senthil
-*/
-
-.ti_tx,
-.mi_tx,
-.mer_tx {
-    width: 100%;
-    text-align: center;
-    margin: 10px 0;
-}
-
-.time,
-.mins,
-.meridian {
-    width: 60px;
-    float: left;
-    margin: 0;
-    font-size: 18px;
-    color: #2d2e2e;
-    font-weight: 700;
-}
-
-.time_pick {
-    .prev,
-    .next {
-        cursor: pointer;
-        // padding: 18px;
-        width: 38px;
-        height: 38px;
-        border: 1px solid #ccc;
-        margin: auto;
-        background: url(#{$img-path}arrow.png) center 12px no-repeat;
-        border-radius: 5px;
-    }
-    .next {
-        background: url(#{$img-path}arrow.png) center -30px no-repeat;
-    }
-} 
-
-.prev:hover,
-.next:hover {
-    background-color: #ccc;
-}
-
-.next {
-    background-position: 50% 150%;
-}
-
-.prev {
-    background-position: 50% -50%;
-}
-
-.time_pick {
+.wickedpicker {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  box-shadow: 5px 3px 8px rgba(0, 0, 0, 0.18);
+  background: #ececec;
+  margin: 0 auto;
+  width: 200px;
+  font-size: 14px;
+  border-radius: 5px;
+  display: none;
+  overflow: hidden;}
+  .wickedpicker__title {
     position: relative;
-}
-
-.timepicker_wrap {
-    padding: 10px;
-    border-radius: 5px;
-    z-index: 998;
-    display: none;
-    box-shadow: 2px 2px 5px 0 rgba(50, 50, 50, 0.35);
-    background: #f6f6f6;
-    border: 1px solid #ccc;
-    float: left;
+    background: #909090;
+    margin: 0 auto;
+    padding: 5px 11px 5px 15px;
+    color: #ffffff;
+    font-size: inherit;
+    font-weight: 500; }
+  .wickedpicker__close {
+    transform: translateY(-50%);
     position: absolute;
-    top: 27px;
-    min-width: 205px;
-    left: 0;
-}
+    top: 50%;
+    right: 10px;
+    color: #c5c5c5;
+    cursor: pointer; }
+    .wickedpicker__close:before {
+      content: '\f00d'; }
+  .wickedpicker__controls {
+    padding: 10px 0;
+    line-height: normal;
+    margin: 0; }
+    .wickedpicker__controls__control, .wickedpicker__controls__control--separator {
+      vertical-align: middle;
+      display: inline-block;
+      font-size: inherit;
+      margin: 0 auto;
+      width: 35px;
+      letter-spacing: 1.3px;
+      font-weight: bold; }
+      .wickedpicker__controls__control-up, .wickedpicker__controls__control-down {
+        color: #b7b7b7;
+        position: relative;
+        display: block;
+        margin: 3px auto;
+        font-size: 18px;
+        cursor: pointer; }
+      .wickedpicker__controls__control-up:before {
+        content: '\f077'; }
+      .wickedpicker__controls__control-down:after {
+        content: '\f078'; }
+      .wickedpicker__controls__control--separator {
+        width: 5px; }
 
-.arrow_top {
-    position: absolute;
-    top: -10px;
-    left: 20px;
-    background: url(#{$img-path}top_arr.png) no-repeat;
-    width: 18px;
-    height: 10px;
-    z-index: 999;
-}
+.text-center, .wickedpicker__title, .wickedpicker__controls, .wickedpicker__controls__control, .wickedpicker__controls__control--separator, .wickedpicker__controls__control-up, .wickedpicker__controls__control-down {
+  text-align: center; }
 
-input.timepicki-input {
-    background: none repeat scroll 0 0 #FFFFFF;
-    border: 1px solid #CCCCCC;
-    border-radius: 5px 5px 5px 5px;
-    float: none;
-    margin: 0;
-    text-align: center;
-    width: 70%;
-}
+.hover-state {
+  color: #3498db; }
 
-a.reset_time {
-    float: left;
-    margin-top: 5px;
-    color: #000;
-}
+.fontello:before, .wickedpicker__controls__control-up:before, .fontello-after:after, .wickedpicker__controls__control-down:after, .wickedpicker__close:before {
+  font-family: 'Font Awesome 5 Free';
+  font-style: normal;
+  font-weight: 900;
+  speak: none;
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-right: .2em;
+  text-align: center;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1em;
+  margin-left: .2em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
 
-.time_element {
-    max-width: 150px;
-}
+  .clearable-picker {
+    position: relative;
+    span {
+      position: absolute;
+      right: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 24px;
+      opacity: .3;
+      cursor: pointer;
+      &:hover {
+        opacity: .8;
+      }
+    }
+  }

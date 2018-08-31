@@ -48,7 +48,10 @@
         </ul>
     </div>
 </div>
+
+<!-- Side bar filter section starts from here -->
 <div class="sidebar-filter">
+    <button class="expand-this" id="expandThis"><i class="fas fa-caret-left expand-button"></i></button>
     <div class="sidebar-fixed">
         <a class="d-block mx-auto mb-4 map-logo" href="#">
             <img alt="KPV" src="images/logo-kpv.svg" height="60" />
@@ -67,6 +70,7 @@
     </div>
     <div class="tab-content pt-1" id="mapTabContent">
         <div class="tab-pane fade show active" id="search" role="tabpanel" aria-labelledby="search-tab">
+            <button type="button" class="my-location" id="myLocation"><i class="fas fa-map-marker-alt mr-2"></i>Get My Location</button>
             <div class="d-flex mb-2 mt-2">
                 <div class="form-group search-box">
                     <label for="mapSearch">Zip, City, State</label>
@@ -84,7 +88,7 @@
                 </div>
                 <button type="button" class="search-stores" id="btnSearchStores"><i class="fas fa-search"></i></button>
             </div>
-            <button type="button" class="my-location" id="myLocation"><i class="fas fa-map-marker-alt mr-2"></i>Get My Location</button>
+
         </div>
         <div class="tab-pane fade" id="list" role="tabpanel" aria-labelledby="list-tab" ss-container>
             <ul class="nav store-list">
