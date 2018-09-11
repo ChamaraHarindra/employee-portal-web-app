@@ -8115,7 +8115,7 @@ span.ml-2.small {
   font-size: 14px;
   line-height: 1;
   font-weight: 500;
-  color: #000000;
+  color: #4d4d4d;
   -webkit-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
   z-index: 1; }
@@ -8125,7 +8125,7 @@ span.ml-2.small {
   visibility: visible; }
 
 .fl-form .fl-has-focus label.fl-label {
-  color: #000000; }
+  color: #4d4d4d; }
 
 .fl-form .fl-is-required.fl-is-active:before {
   opacity: 0; }
@@ -8313,111 +8313,151 @@ input[type="radio"]:checked + span.customRadio::after {
   height: 40px;
   width: 40px; }
 
-.wickedpicker {
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  -webkit-box-shadow: 5px 3px 8px rgba(0, 0, 0, 0.18);
-          box-shadow: 5px 3px 8px rgba(0, 0, 0, 0.18);
-  background: #ececec;
-  margin: 0 auto;
-  width: 200px;
-  font-size: 14px;
-  border-radius: 5px;
-  display: none;
-  overflow: hidden; }
-
-.wickedpicker__title {
-  position: relative;
-  background: #909090;
-  margin: 0 auto;
-  padding: 5px 11px 5px 15px;
-  color: #ffffff;
-  font-size: inherit;
-  font-weight: 500; }
-
-.wickedpicker__close {
-  -webkit-transform: translateY(-50%);
-      -ms-transform: translateY(-50%);
-          transform: translateY(-50%);
+/*timebox*/
+.timebox-time-box {
   position: absolute;
-  top: 50%;
-  right: 10px;
-  color: #c5c5c5;
-  cursor: pointer; }
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  max-width: 400px;
+  background-color: #328bff;
+  cursor: default;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+  color: #FFF;
+  z-index: 2000000; }
 
-.wickedpicker__close:before {
-  content: '\f00d'; }
+.timebox-time-box-bk {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  background-color: #e4edfaf0;
+  z-index: 100000; }
 
-.wickedpicker__controls {
-  padding: 10px 0;
-  line-height: normal;
-  margin: 0; }
+.timebox-time-box-header {
+  font-size: 12px;
+  padding: 4px 4px; }
 
-.wickedpicker__controls__control, .wickedpicker__controls__control--separator {
-  vertical-align: middle;
-  display: inline-block;
-  font-size: inherit;
-  margin: 0 auto;
-  width: 35px;
-  letter-spacing: 1.3px;
-  font-weight: bold; }
+.timebox-time-box-hour-container {
+  float: left;
+  margin: 0px;
+  padding: 5px 0px;
+  width: 100%; }
 
-.wickedpicker__controls__control-up, .wickedpicker__controls__control-down {
-  color: #b7b7b7;
-  position: relative;
-  display: block;
-  margin: 3px auto;
-  font-size: 18px;
-  cursor: pointer; }
+.timebox-time-box-min-container {
+  float: left;
+  margin: 0px;
+  padding: 5px 0px;
+  width: 100%; }
 
-.wickedpicker__controls__control-up:before {
-  content: '\f077'; }
+.timebox-time-box-ampm-container {
+  float: left;
+  margin: 0px;
+  padding: 5px 0px;
+  width: 100%; }
 
-.wickedpicker__controls__control-down:after {
-  content: '\f078'; }
+.timebox-time-box-hour {
+  width: 100%; }
 
-.wickedpicker__controls__control--separator {
-  width: 5px; }
+.timebox-time-box-min {
+  width: 100%; }
 
-.text-center, .wickedpicker__title, .wickedpicker__controls, .wickedpicker__controls__control, .wickedpicker__controls__control--separator, .wickedpicker__controls__control-up, .wickedpicker__controls__control-down {
-  text-align: center; }
+.timebox-time-box-ampm {
+  width: 100%; }
 
-.hover-state {
-  color: #3498db; }
-
-.fontello:before, .wickedpicker__controls__control-up:before, .fontello-after:after, .wickedpicker__controls__control-down:after, .wickedpicker__close:before {
-  font-family: 'Font Awesome 5 Free';
-  font-style: normal;
-  font-weight: 900;
-  speak: none;
-  display: inline-block;
-  text-decoration: inherit;
-  width: 1em;
-  margin-right: .2em;
+.timebox-time-box-item {
+  float: left;
+  margin: 3px;
+  padding: 5px 0;
+  background-color: #e4f0ff3d;
   text-align: center;
-  font-variant: normal;
-  text-transform: none;
-  line-height: 1em;
-  margin-left: .2em;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale; }
+  width: 35px;
+  cursor: pointer;
+  -webkit-box-shadow: 0 0 0 1px #ffffff6e;
+          box-shadow: 0 0 0 1px #ffffff6e; }
 
-.clearable-picker {
-  position: relative; }
-  .clearable-picker span {
-    position: absolute;
-    right: 10px;
-    top: 50%;
-    -webkit-transform: translateY(-50%);
-        -ms-transform: translateY(-50%);
-            transform: translateY(-50%);
-    font-size: 24px;
-    opacity: .3;
-    cursor: pointer; }
-    .clearable-picker span:hover {
-      opacity: .8; }
+.timebox-time-box-ampm-item {
+  font-size: 12px; }
+
+.timebox-time-box-hour-item:hover {
+  background-color: #e4f0ff57; }
+
+.timebox-time-box-min-item:hover {
+  background-color: #e4f0ff57; }
+
+.timebox-time-box-ampm-item:hover {
+  background-color: #e4f0ff57; }
+
+.timebox-time-box-item.item-active {
+  background-color: #7bc629;
+  -webkit-box-shadow: 0 0 0 1px #ffffffe0;
+          box-shadow: 0 0 0 1px #ffffffe0; }
+
+.timebox-time-box-item.item-active:hover {
+  -webkit-filter: brightness(90%);
+          filter: brightness(90%); }
+
+.timebox-time-box-save {
+  clear: both;
+  text-align: center;
+  padding: 13px 0;
+  background-color: #2764b66e;
+  font-size: 13px;
+  cursor: pointer;
+  text-transform: uppercase; }
+
+.timebox-time-box-save:hover {
+  -webkit-filter: brightness(90%);
+          filter: brightness(90%); }
+
+.timebox-clear {
+  height: 3px;
+  clear: both; }
+
+.timebox-time-box.timebox-time-box-responsive {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  max-width: 100%;
+  background-color: #328bff;
+  cursor: default;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+  color: #FFF;
+  z-index: 2000000; }
+
+.timebox-time-box-save.timebox-time-box-responsive {
+  position: absolute;
+  left: 0px;
+  right: 0px;
+  bottom: 0px; }
+
+@media screen and (max-width: 1100px) {
+  .timebox-time-box.timebox-time-box-responsive .timebox-time-box-item {
+    margin: 3px;
+    padding: 13px 0;
+    width: 42px;
+    font-size: 16px; } }
+
+@media screen and (max-width: 500px) {
+  .timebox-time-box-hour-item:hover {
+    background-color: inherit; }
+  .timebox-time-box-min-item:hover {
+    background-color: inherit; }
+  .timebox-time-box-ampm-item:hover {
+    background-color: inherit; }
+  .timebox-time-box-item.item-active:hover {
+    -webkit-filter: brightness(100%);
+            filter: brightness(100%); }
+  .timebox-time-box.timebox-time-box-responsive .timebox-time-box-item {
+    margin: 3px;
+    padding: 8px 0;
+    width: 40px;
+    font-size: 13px; }
+  .timebox-time-box {
+    left: 0px !important; } }
 
 .datepicker-container {
   background-color: #fff;

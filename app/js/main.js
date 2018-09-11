@@ -12,7 +12,7 @@ var floatlabels = new FloatLabels('body', {
 });
 
 // Data tables
-$(document).ready(function() {
+$(document).ready(function () {
   $('.data-tables').DataTable();
 });
 
@@ -29,16 +29,45 @@ $('[data-toggle="datepicker"]').datepicker({
   pickedClass: 'picked-date'
 });
 
-$('#fromDate, #toDate').on('show.datepicker', function() {
+$('#fromDate, #toDate').on('show.datepicker', function () {
   floatlabels.rebuild();
   console.log(floatlabels);
 });
 
+// timepicker
+$(function () {
 
+  $(".timebox").each(function () {
+    var that = this;
+
+    $(that).ezTimebox({
+      "time_element": that, //this is the element ID that is used to get/set time data
+      "starting_time": $.trim($(that).attr("data-time")), //this provides the starting time in h:ma format (3:00pm)
+      // "responsive" : true,
+      "scale" : 5,
+      // "primary_color_bg" : '#ffffffbf',
+      // "secondary_color_bg" : '#009fff',
+      // "secondary_color_fg" : '#ffffff',
+      // "tertiary_color_bg" : '#76767694',
+      // "tertiary_color_fg" : '#ffffff',
+      // "save_color_bg" : '#0083ff',
+      // "save_color_fg" : '#ffffff',
+      onSave: function (v) {
+
+        $(that).text("Time: " + v);
+      }
+    });
+
+    //show box on click
+    $(that).off("click").on("click", function () {
+      $(that).ezTimebox("show"); 
+    });
+  });
+});
 
 // Jquery Masking
 
-$(document).ready(function() {
+$(document).ready(function () {
   $('.date').mask('00/00/0000');
   $('.time').mask('00:00:00');
   $('.date_time').mask('00/00/0000 00:00:00');
@@ -88,7 +117,7 @@ $('.questions').slick({
 
 
 // iOS switch - switchery 
-if ($('.switch').length){
+if ($('.switch').length) {
   var elem = document.querySelector('.js-switch');
   var init = new Switchery(elem, { size: 'small', color: '#4B80FD' });
 }
@@ -97,13 +126,13 @@ if ($('.switch').length){
 
 // sweet alert delete modal
 
-$('#deleteExperience').on('click', function() {
+$('#deleteExperience').on('click', function () {
   const swalWithBootstrapButtons = swal.mixin({
     confirmButtonClass: 'btn btn-success',
     cancelButtonClass: 'btn btn-danger mr-3',
     buttonsStyling: false,
   })
-  
+
   swalWithBootstrapButtons({
     title: 'Are you sure?',
     text: "You won't be able to revert this!",
@@ -133,8 +162,8 @@ $('#deleteExperience').on('click', function() {
 });
 
 
- // Disclaimer 
-$('.hanger').on('click', function() {
+// Disclaimer 
+$('.hanger').on('click', function () {
   $('.popover-disclaimer').toggleClass('popover-hide');
   $('.arrow-toggle').toggleClass('fa-angle-up fa-angle-down');
 })

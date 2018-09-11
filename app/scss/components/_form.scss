@@ -180,7 +180,7 @@ span.ml-2.small {
     font-size: 14px;
     line-height: 1;
     font-weight: 500;
-    color: $black-color;
+    color: lighten($black-color, 30%);
     transition: all 0.2s ease-in-out;
     z-index: 1;
 }
@@ -191,7 +191,7 @@ span.ml-2.small {
 }
 
 .fl-form .fl-has-focus label.fl-label {
-    color: $black-color;
+    color: lighten($black-color, 30%);
 }
 
 // .fl-form .fl-is-required:before {
