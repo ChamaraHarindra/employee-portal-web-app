@@ -2,6 +2,10 @@
     display: block !important;
 }
 
+.form-control:focus, .form-select .btn:focus {
+    box-shadow: 0 0 0 0.1rem rgba(0, 123, 255, 0.25)
+}
+
 // Floating Labels
 .form-group {
     position: relative;
@@ -63,14 +67,7 @@ span.ml-2.small {
 
 .form-group {
     position: relative;
-    .error {
-        font-size: 13px;
-        color: $red-color;
-        margin: 5px 0 0;
-        line-height: 1;
-        display: block;
-        font-weight: 500;
-    }
+    margin-bottom: 35px;
     &.has-error {
         input,
         select,
@@ -92,6 +89,19 @@ span.ml-2.small {
             font-size: 20px;
         }
     }
+}
+
+.error {
+    font-size: 13px;
+    color: $red-color;
+    margin: 5px 0 0;
+    line-height: 1;
+    display: block;
+    font-weight: 500;
+}
+
+.smaller {
+    font-size: 13px;
 }
 
 /*!
@@ -165,12 +175,12 @@ span.ml-2.small {
     visibility: hidden;
     display: block;
     position: absolute;
-    top: -12px;
+    top: -18px;
     left: 0;
-    font-size: 12px;
-    font-weight: 600;
+    font-size: 14px;
     line-height: 1;
-    color: lighten($black-color, 50%);
+    font-weight: 500;
+    color: $black-color;
     transition: all 0.2s ease-in-out;
     z-index: 1;
 }
@@ -181,7 +191,7 @@ span.ml-2.small {
 }
 
 .fl-form .fl-has-focus label.fl-label {
-    color: #1976D2;
+    color: $black-color;
 }
 
 // .fl-form .fl-is-required:before {

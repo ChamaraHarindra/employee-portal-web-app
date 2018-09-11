@@ -7,7 +7,7 @@ var floatlabels = new FloatLabels('body', {
   inputRegex: /email|number|password|search|tel|text|url/,
   prefix: 'fl-',
   prioritize: 'label',
-  style: 2,
+  style: 0,
   transform: 'input, select, textarea'
 });
 
@@ -25,12 +25,16 @@ $('#reviewTable').dataTable({
 // date picker
 $('[data-toggle="datepicker"]').datepicker({
   zIndex: 9999,
-  autoHide: true
+  autoHide: true,
+  pickedClass: 'picked-date'
 });
 
-$('[data-toggle="datepicker"]').on('pick.datepicker', function() {
+$('#fromDate, #toDate').on('show.datepicker', function() {
   floatlabels.rebuild();
+  console.log(floatlabels);
 });
+
+
 
 // Jquery Masking
 
@@ -70,6 +74,7 @@ $(document).ready(function() {
   $('.selectonfocus').mask('00/00/0000', { selectOnFocus: true });
 });
 
+// Review question slider
 $('.questions').slick({
   dots: true,
   infinite: true,
@@ -80,31 +85,15 @@ $('.questions').slick({
 
 
 
-// Time picker
-var options = { 
-now: "00:00", //hh:mm 24 hour format only, defaults to current time 
-twentyFour: false, //Display 24 hour format, defaults to false 
-upArrow: 'wickedpicker__controls__control-up', //The up arrow class selector to use, for custom CSS 
-downArrow: 'wickedpicker__controls__control-down', //The down arrow class selector to use, for custom CSS 
-close: 'wickedpicker__close', //The close class selector to use, for custom CSS 
-hoverState: 'hover-state', //The hover state class to use, for custom CSS 
-title: 'Timepicker', //The Wickedpicker's title, 
-showSeconds: false, //Whether or not to show seconds, 
-secondsInterval: 1, //Change interval for seconds, defaults to 1  , 
-minutesInterval: 0, //Change interval for minutes, defaults to 1 
-beforeShow: null, //A function to be called before the Wickedpicker is shown 
-show: null, //A function to be called when the Wickedpicker is shown 
-clearable: true, //Make the picker's input clearable (has clickable "x")  
-};
-$('.timepicker').wickedpicker(options);
 
-$(document).ready(function() {
-  $('.hasWickedpicker').val('');
-})
 
 // iOS switch - switchery 
-var elem = document.querySelector('.js-switch');
-var init = new Switchery(elem, { size: 'small', color: '#4B80FD' });
+if ($('.switch').length){
+  var elem = document.querySelector('.js-switch');
+  var init = new Switchery(elem, { size: 'small', color: '#4B80FD' });
+}
+
+
 
 // sweet alert delete modal
 

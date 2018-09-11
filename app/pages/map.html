@@ -31,7 +31,7 @@
                 <h3>Tournament Trail</h3>
                 <div class="store-address">950 Tournament Trail , Westfield, IN 46074</div>
                 <a href="#" class="get-directions"><i class="fas fa-directions mr-2"></i>Get Directions</a>
-                <button class="btn apply-now">We are Hiring - <strong>Apply Now!</strong></button>
+                <button class="btn apply-now w-100">We are Hiring - <strong>Apply Now!</strong></button>
             </li>
         </ul>
     </div>
@@ -43,7 +43,7 @@
                 <h3>Tournament Trail</h3>
                 <div class="store-address">950 Tournament Trail , Westfield, IN 46074</div>
                 <a href="#" class="get-directions"><i class="fas fa-directions mr-2"></i>Get Directions</a>
-                <button class="btn apply-now">We are Hiring - <strong>Apply Now!</strong></button>
+                <button class="btn apply-now w-100">We are Hiring - <strong>Apply Now!</strong></button>
             </li>
         </ul>
     </div>
@@ -88,9 +88,26 @@
                 </div>
                 <button type="button" class="search-stores" id="btnSearchStores"><i class="fas fa-search"></i></button>
             </div>
+            <div ss-container class="search-results">
+                <ul class="nav store-list">
+                    {% for locate in location_list %}
+                    <li class="d-flex">
+                        <div>
+                            <h3>{{locate.name}}</h3>
+                            <div class="store-address">{{locate.address}}</div>
+                            <a href="#" class="get-directions"><i class="fas fa-directions mr-2"></i>Get Directions</a>
+                            <button class="btn apply-now">We are Hiring - <strong>Apply Now!</strong></button>
+                        </div>
+    
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+            
 
         </div>
         <div class="tab-pane fade" id="list" role="tabpanel" aria-labelledby="list-tab" ss-container>
+                <div class="se-pre-con se-pre-con__tab"></div>
             <ul class="nav store-list">
                 {% for locate in location_list %}
                 <li class="d-flex">
@@ -115,6 +132,11 @@
     window.addEventListener("load", function (event) {
         $(".se-pre-con").fadeOut("slow");
     });
+
+    $('#list-tab').on('show.bs.tab', function (e) {
+        $(".se-pre-con__tab.se-pre-con").show('fast');
+        console.log('list-selected')
+    })
 
     // { # Map styles # }
     function initMap() {
