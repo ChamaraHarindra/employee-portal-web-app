@@ -199,7 +199,8 @@
                     <div class="col-12 col-lg-4">
                         <div class="form-group has-error">
                             <label for="f-name">First Name</label>
-                            <input type="text" value="" name="f-name" id="f-name" class="form-control" placeholder="First Name" required/>
+                            <input type="text" value="" name="f-name" id="f-name" class="form-control" placeholder="First Name"
+                                required />
                             <span class="error">Please enter your first name here</span>
                         </div>
                     </div>
@@ -208,7 +209,8 @@
 <div class="col-12 col-lg-4">
     <div class="form-group ">
         <label for="m-name">Middle Name (optional)</label>
-        <input type="text" value="" data-toggle="" name="m-name" id="m-name" class="form-control " placeholder="Middle Name (optional)" />
+        <input type="text" value="" data-toggle="" name="m-name" id="m-name" class="form-control " placeholder="Middle Name
+                    (optional)" />
     </div>
 </div>
 
@@ -235,7 +237,8 @@
 <div class="col-12 col-lg-6">
     <div class="form-group ">
         <label for="confirm-email">Confirm Email Address</label>
-        <input type="email" value="" data-toggle="" name="confirm-email" id="confirm-email" class="form-control " placeholder="Confirm Email Address" required/>
+        <input type="email" value="" data-toggle="" name="confirm-email" id="confirm-email" class="form-control " placeholder="Confirm Email
+                    Address" required/>
     </div>
 </div>
 
@@ -264,12 +267,14 @@
 <div class="col-12 col-lg-4">
     <div class="form-group mb-2">
         <label for="b-no">Business Number</label>
-        <input type="text" value="" data-toggle="" name="b-no" id="b-no" class="form-control phone" placeholder="Business Number" required/>
+        <input type="text" value="" data-toggle="" name="b-no" id="b-no" class="form-control phone" placeholder="Business
+                            Number" required/>
     </div>
 </div>
 
                         </div>
-                        <small id="phoneHelp" class="form-text text-muted customized mb-2">We need at least one Phone number to process your application</small>
+                        <small id="phoneHelp" class="form-text text-muted customized mb-2">We need at least one Phone
+                            number to process your application</small>
                     </div>
                     <div class="col-12 col-lg-3">
                         <label for="work" class="d-block">May we contact you at work?</label>
@@ -311,7 +316,8 @@
 <div class="col-12 col-lg-12">
     <div class="form-group ">
         <label for="address2">Address Line 02 (optional)</label>
-        <input type="text" value="" data-toggle="" name="address2" id="address2" class="form-control " placeholder="Address Line 02 (optional)" />
+        <input type="text" value="" data-toggle="" name="address2" id="address2" class="form-control " placeholder="Address Line
+                    02 (optional)" />
     </div>
 </div>
 
@@ -320,7 +326,8 @@
 <div class="col-12 col-lg-4">
     <div class="form-group ">
         <label for="apartment">Apartment # (optional)</label>
-        <input type="text" value="" data-toggle="" name="apartment" id="apartment" class="form-control " placeholder="Apartment # (optional)" />
+        <input type="text" value="" data-toggle="" name="apartment" id="apartment" class="form-control " placeholder="Apartment #
+                    (optional)" />
     </div>
 </div>
 
@@ -378,7 +385,7 @@
             <div class="c-card__header">
                 <h3>Postal Address</h3>
                 <div class="switch d-flex align-items-center">
-                    <input type="checkbox" class="js-switch" checked/>
+                    <input type="checkbox" class="js-switch" checked />
                     <span class="ml-2 small">Same as Home Address</span>
                 </div>
             </div>
@@ -398,7 +405,8 @@
 <div class="col-12 col-lg-12">
     <div class="form-group ">
         <label for="Postaladdress2">Address Line 02 (optional)</label>
-        <input type="text" value="" data-toggle="" name="Postaladdress2" id="Postaladdress2" class="form-control " placeholder="Address Line 02 (optional)" />
+        <input type="text" value="" data-toggle="" name="Postaladdress2" id="Postaladdress2" class="form-control " placeholder="Address
+                    Line 02 (optional)" />
     </div>
 </div>
 
@@ -407,7 +415,8 @@
 <div class="col-12 col-lg-4">
     <div class="form-group ">
         <label for="Postalapartment">Apartment # (optional)</label>
-        <input type="text" value="" data-toggle="" name="Postalapartment" id="Postalapartment" class="form-control " placeholder="Apartment # (optional)" />
+        <input type="text" value="" data-toggle="" name="Postalapartment" id="Postalapartment" class="form-control " placeholder="Apartment #
+                    (optional)" />
     </div>
 </div>
 
@@ -482,106 +491,169 @@
                                 
                                 <tr>
                                     <td>
-                                        <div class="custom-control custom-checkbox">
+                                        <div class="schedule-date">Sunday</div>
+                                        <!-- <div class="custom-control custom-checkbox">
                                             <input type="checkbox" class="custom-control-input" id="sunday">
                                             <label class="custom-control-label" for="sunday">Sunday</label>
+                                        </div> -->
+                                    </td>
+                                    <td>
+                                        <div class="time-holder time-holder--from">
+                                            <!-- <input type="text" class="timepicker form-control smaller" onkeypress="return false;" onfocus="this.select();" onmouseup="return false;"/> -->
+                                            <input type="text" class="timepicker form-control smaller"/>
+                                            <button type="buton" class="remove-value"><i class="fas fa-times"></i></button>
                                         </div>
+
                                     </td>
                                     <td>
-                                        <input type="text" class=" timebox form-control smaller" />
-                                    </td>
-                                    <td>
-                                        <input type="text" class=" timebox form-control smaller" />
+                                        <div class="time-holder time-holder--to">
+                                            <input type="text" class="timepicker form-control smaller"/>
+                                            <button type="buton" class="remove-value"><i class="fas fa-times"></i></button>
+                                        </div>
                                     </td>
                                 </tr>
                                 
                                 <tr>
                                     <td>
-                                        <div class="custom-control custom-checkbox">
+                                        <div class="schedule-date">Monday</div>
+                                        <!-- <div class="custom-control custom-checkbox">
                                             <input type="checkbox" class="custom-control-input" id="monday">
                                             <label class="custom-control-label" for="monday">Monday</label>
+                                        </div> -->
+                                    </td>
+                                    <td>
+                                        <div class="time-holder time-holder--from">
+                                            <!-- <input type="text" class="timepicker form-control smaller" onkeypress="return false;" onfocus="this.select();" onmouseup="return false;"/> -->
+                                            <input type="text" class="timepicker form-control smaller"/>
+                                            <button type="buton" class="remove-value"><i class="fas fa-times"></i></button>
                                         </div>
+
                                     </td>
                                     <td>
-                                        <input type="text" class=" timebox form-control smaller" />
-                                    </td>
-                                    <td>
-                                        <input type="text" class=" timebox form-control smaller" />
+                                        <div class="time-holder time-holder--to">
+                                            <input type="text" class="timepicker form-control smaller"/>
+                                            <button type="buton" class="remove-value"><i class="fas fa-times"></i></button>
+                                        </div>
                                     </td>
                                 </tr>
                                 
                                 <tr>
                                     <td>
-                                        <div class="custom-control custom-checkbox">
+                                        <div class="schedule-date">Tuesday</div>
+                                        <!-- <div class="custom-control custom-checkbox">
                                             <input type="checkbox" class="custom-control-input" id="tuesday">
                                             <label class="custom-control-label" for="tuesday">Tuesday</label>
+                                        </div> -->
+                                    </td>
+                                    <td>
+                                        <div class="time-holder time-holder--from">
+                                            <!-- <input type="text" class="timepicker form-control smaller" onkeypress="return false;" onfocus="this.select();" onmouseup="return false;"/> -->
+                                            <input type="text" class="timepicker form-control smaller"/>
+                                            <button type="buton" class="remove-value"><i class="fas fa-times"></i></button>
                                         </div>
+
                                     </td>
                                     <td>
-                                        <input type="text" class=" timebox form-control smaller" />
-                                    </td>
-                                    <td>
-                                        <input type="text" class=" timebox form-control smaller" />
+                                        <div class="time-holder time-holder--to">
+                                            <input type="text" class="timepicker form-control smaller"/>
+                                            <button type="buton" class="remove-value"><i class="fas fa-times"></i></button>
+                                        </div>
                                     </td>
                                 </tr>
                                 
                                 <tr>
                                     <td>
-                                        <div class="custom-control custom-checkbox">
+                                        <div class="schedule-date">Wednesday</div>
+                                        <!-- <div class="custom-control custom-checkbox">
                                             <input type="checkbox" class="custom-control-input" id="wednesday">
                                             <label class="custom-control-label" for="wednesday">Wednesday</label>
+                                        </div> -->
+                                    </td>
+                                    <td>
+                                        <div class="time-holder time-holder--from">
+                                            <!-- <input type="text" class="timepicker form-control smaller" onkeypress="return false;" onfocus="this.select();" onmouseup="return false;"/> -->
+                                            <input type="text" class="timepicker form-control smaller"/>
+                                            <button type="buton" class="remove-value"><i class="fas fa-times"></i></button>
                                         </div>
+
                                     </td>
                                     <td>
-                                        <input type="text" class=" timebox form-control smaller" />
-                                    </td>
-                                    <td>
-                                        <input type="text" class=" timebox form-control smaller" />
+                                        <div class="time-holder time-holder--to">
+                                            <input type="text" class="timepicker form-control smaller"/>
+                                            <button type="buton" class="remove-value"><i class="fas fa-times"></i></button>
+                                        </div>
                                     </td>
                                 </tr>
                                 
                                 <tr>
                                     <td>
-                                        <div class="custom-control custom-checkbox">
+                                        <div class="schedule-date">Thursday</div>
+                                        <!-- <div class="custom-control custom-checkbox">
                                             <input type="checkbox" class="custom-control-input" id="thursday">
                                             <label class="custom-control-label" for="thursday">Thursday</label>
+                                        </div> -->
+                                    </td>
+                                    <td>
+                                        <div class="time-holder time-holder--from">
+                                            <!-- <input type="text" class="timepicker form-control smaller" onkeypress="return false;" onfocus="this.select();" onmouseup="return false;"/> -->
+                                            <input type="text" class="timepicker form-control smaller"/>
+                                            <button type="buton" class="remove-value"><i class="fas fa-times"></i></button>
                                         </div>
+
                                     </td>
                                     <td>
-                                        <input type="text" class=" timebox form-control smaller" />
-                                    </td>
-                                    <td>
-                                        <input type="text" class=" timebox form-control smaller" />
+                                        <div class="time-holder time-holder--to">
+                                            <input type="text" class="timepicker form-control smaller"/>
+                                            <button type="buton" class="remove-value"><i class="fas fa-times"></i></button>
+                                        </div>
                                     </td>
                                 </tr>
                                 
                                 <tr>
                                     <td>
-                                        <div class="custom-control custom-checkbox">
+                                        <div class="schedule-date">Friday</div>
+                                        <!-- <div class="custom-control custom-checkbox">
                                             <input type="checkbox" class="custom-control-input" id="friday">
                                             <label class="custom-control-label" for="friday">Friday</label>
+                                        </div> -->
+                                    </td>
+                                    <td>
+                                        <div class="time-holder time-holder--from">
+                                            <!-- <input type="text" class="timepicker form-control smaller" onkeypress="return false;" onfocus="this.select();" onmouseup="return false;"/> -->
+                                            <input type="text" class="timepicker form-control smaller"/>
+                                            <button type="buton" class="remove-value"><i class="fas fa-times"></i></button>
                                         </div>
+
                                     </td>
                                     <td>
-                                        <input type="text" class=" timebox form-control smaller" />
-                                    </td>
-                                    <td>
-                                        <input type="text" class=" timebox form-control smaller" />
+                                        <div class="time-holder time-holder--to">
+                                            <input type="text" class="timepicker form-control smaller"/>
+                                            <button type="buton" class="remove-value"><i class="fas fa-times"></i></button>
+                                        </div>
                                     </td>
                                 </tr>
                                 
                                 <tr>
                                     <td>
-                                        <div class="custom-control custom-checkbox">
+                                        <div class="schedule-date">Saturday</div>
+                                        <!-- <div class="custom-control custom-checkbox">
                                             <input type="checkbox" class="custom-control-input" id="saturday">
                                             <label class="custom-control-label" for="saturday">Saturday</label>
+                                        </div> -->
+                                    </td>
+                                    <td>
+                                        <div class="time-holder time-holder--from">
+                                            <!-- <input type="text" class="timepicker form-control smaller" onkeypress="return false;" onfocus="this.select();" onmouseup="return false;"/> -->
+                                            <input type="text" class="timepicker form-control smaller"/>
+                                            <button type="buton" class="remove-value"><i class="fas fa-times"></i></button>
                                         </div>
+
                                     </td>
                                     <td>
-                                        <input type="text" class=" timebox form-control smaller" />
-                                    </td>
-                                    <td>
-                                        <input type="text" class=" timebox form-control smaller" />
+                                        <div class="time-holder time-holder--to">
+                                            <input type="text" class="timepicker form-control smaller"/>
+                                            <button type="buton" class="remove-value"><i class="fas fa-times"></i></button>
+                                        </div>
                                     </td>
                                 </tr>
                                 
@@ -593,7 +665,8 @@
                             <label for="work" class="d-block">May we contact you at work?</label>
                             <div class="btn-group btn-group-toggle long-list" data-toggle="buttons">
                                 <label class="btn btn-outline-primary active">
-                                    <input type="checkbox" name="options" id="fullTime" autocomplete="off" checked> Full Time
+                                    <input type="checkbox" name="options" id="fullTime" autocomplete="off" checked>
+                                    Full Time
                                 </label>
                                 <label class="btn btn-outline-primary">
                                     <input type="checkbox" name="options" id="partTime" autocomplete="off"> Part Time
@@ -640,6 +713,28 @@
             Go to Billing Information
             <i class="fas fa-angle-double-right ml-2"></i>
         </a>
+    </div>
+</div>
+<!-- Timepicker drop -->
+<div class="timepicker-drop">
+    <button class="timepicker-close"><i class="fas fa-times"></i></button>
+    <div class="time-values">
+        <input type="radio" name="time" value="01" id="1"><label for="1">1</label>
+        <input type="radio" name="time" value="02" id="2"><label for="2">2</label>
+        <input type="radio" name="time" value="03" id="3"><label for="3">3</label>
+        <input type="radio" name="time" value="04" id="4"><label for="4">4</label>
+        <input type="radio" name="time" value="05" id="5"><label for="5">5</label>
+        <input type="radio" name="time" value="06" id="6"><label for="6">6</label>
+        <input type="radio" name="time" value="07" id="7"><label for="7">7</label>
+        <input type="radio" name="time" value="08" id="8"><label for="8">8</label>
+        <input type="radio" name="time" value="09" id="9"><label for="9">9</label>
+        <input type="radio" name="time" value="10" id="10"><label for="10">10</label>
+        <input type="radio" name="time" value="11" id="11"><label for="11">11</label>
+        <input type="radio" name="time" value="12" id="12"><label for="12">12</label>      
+    </div>
+    <div class="maridian">
+          <button class="am active" type="button" disabled>AM</button>    
+          <button class="pm" disabled>PM</button>   
     </div>
 </div>
 
@@ -716,7 +811,7 @@
     </div>
 </div>
 
- 
+
 
 
 
@@ -727,7 +822,7 @@
         2018 © KPV LLC, Inc.
 </footer>
 <div class="popover-disclaimer transform">
-        <a href="#" class="hanger">Disclaimer <i class="fas fa-angle-down ml-2 arrow-toggle"></i></a>
+        <a href="javascript:void(0);" class="hanger">Disclaimer <i class="fas fa-angle-down ml-2 arrow-toggle"></i></a>
         <div class="popover__inner">
                         <h4>This Dunkin' Donuts restaurant is independently owned and operated under a franchise granted by DD Franchising LLC.</h4>
                         You are applying for work with a franchisee of Dunkin' Donuts, not Dunkin' Brands, Inc., Dunkin' Donuts or any of their affiliates. Any information you submit will be provided solely to the franchisee. If hired, the franchisee will be your only employer. Franchisees are independent business owners who are solely responsible for their own employees and set their own wage and benefit programs that can vary among franchisees.   
@@ -741,7 +836,6 @@
 <script src="js/float-labels.min.js"></script>
 <script src="js/switchery.js"></script>
 <script src="js/datepicker.js"></script>
-<script src="js/timebox.js"></script>
 <script src="js/slick.js"></script>
 <script src="js/responsive-img.js"></script>
 <script src="js/sweetalert2.all.min.js"></script>

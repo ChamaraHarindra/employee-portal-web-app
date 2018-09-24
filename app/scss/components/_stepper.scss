@@ -26,6 +26,9 @@
     position: absolute;
     width: 100%;
     top: 32px;
+    @media(max-width:500px) {
+        top: 15px;
+    }
 }
 
 .step-indicator li:after {
@@ -72,6 +75,12 @@
     position: relative;
     width: 64px;
     z-index: 1;
+    @media(max-width:500px) {
+        width: 30px;
+        height: 30px;
+        font-size: 16px;
+        line-height: 30px;
+    }
 }
 
 .step-indicator .step:hover {
@@ -81,4 +90,8 @@
 .step-indicator .caption {
     color: $gray-2-color;
     padding: 12px 16px;
+    @media(max-width:500px) {
+        font-size: 12px;
+        padding: 12px 5px;
+    }
 }

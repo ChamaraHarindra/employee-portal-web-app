@@ -11,16 +11,6 @@ var floatlabels = new FloatLabels('body', {
   transform: 'input, select, textarea'
 });
 
-// Data tables
-$(document).ready(function () {
-  $('.data-tables').DataTable();
-});
-
-$('#reviewTable').dataTable({
-  language: {
-    emptyTable: 'No Reviews added so far'
-  }
-});
 
 // date picker
 $('[data-toggle="datepicker"]').datepicker({
@@ -34,36 +24,73 @@ $('#fromDate, #toDate').on('show.datepicker', function () {
   console.log(floatlabels);
 });
 
-// timepicker
-$(function () {
-
-  $(".timebox").each(function () {
-    var that = this;
-
-    $(that).ezTimebox({
-      "time_element": that, //this is the element ID that is used to get/set time data
-      "starting_time": $.trim($(that).attr("data-time")), //this provides the starting time in h:ma format (3:00pm)
-      // "responsive" : true,
-      "scale" : 5,
-      // "primary_color_bg" : '#ffffffbf',
-      // "secondary_color_bg" : '#009fff',
-      // "secondary_color_fg" : '#ffffff',
-      // "tertiary_color_bg" : '#76767694',
-      // "tertiary_color_fg" : '#ffffff',
-      // "save_color_bg" : '#0083ff',
-      // "save_color_fg" : '#ffffff',
-      onSave: function (v) {
-
-        $(that).text("Time: " + v);
-      }
-    });
-
-    //show box on click
-    $(that).off("click").on("click", function () {
-      $(that).ezTimebox("show"); 
-    });
-  });
+// Make timepicker inputs readonly on mobile only
+var width = jQuery(window).width();
+if(width < 768) {
+  $('.schedule-date').text(function(index, currentText) {
+    return currentText.substr(0, 3);
 });
+}
+
+jQuery(".timepicker").prop('readonly', true);
+// remove value button
+$('.remove-value').on('click', function () {  
+      $(this).siblings('.timepicker').val('');
+      $(this).siblings('.timepicker-drop').hide();
+});
+
+// TImepicker
+var inputs = document.querySelectorAll('.timepicker');
+for (var i = 0; i < inputs.length; i++) {
+  inputs[i].addEventListener('focus', function () {
+    this.parentNode.appendChild(document.querySelector('.timepicker-drop'));
+  });
+}
+
+$('.timepicker').on('focus', function () {
+  var visible = $(this).closest('.time-holder').find('.timepicker-drop');
+  var checkboxes = $(this).closest('.time-holder').find(".timepicker-drop input[name='time']");
+  var buttonsM = $(this).closest('.time-holder').find(".timepicker-drop .maridian button");
+  checkboxes.prop('checked', false);
+  buttonsM.prop("disabled", true);
+  // buttonsM.removeClass('active');
+  visible.css('display', 'block');
+});
+
+
+$('.timepicker-close').on('click', function (e) {
+  e.stopPropagation();
+  var closed = $(this).closest('div.timepicker-drop');
+  // closed.find('.maridian button').removeClass('active');
+  closed.find("input[name='time']").prop('checked', false);
+  closed.hide(0);
+})
+
+
+$('.time-values input:radio').change(function () {
+  var hourInput = $(this).closest('.time-holder').find('.timepicker');
+  var timeButtons = $(this).closest('.time-holder').find('.timepicker-drop .maridian button');
+  var activeButton = $(this).closest('.time-holder').find('.timepicker-drop .maridian button.active').text();
+  timeButtons.removeAttr('disabled');
+  var hourValue = $(".time-values input[type='radio']:checked").val();
+  $(hourInput).val(hourValue + ':00 ' + activeButton);
+});
+
+$('.maridian button').on('click', function() {
+  $('.maridian button').removeClass('active');
+  $(this).addClass('active');
+  var maridianValue = $(this).text();
+  var addMaridian = $(this).closest('.time-holder').find('.timepicker');
+  var currentValue = addMaridian.val();
+    if(currentValue.length == 8) {
+      addMaridian.val(currentValue.slice(0, -2) + '' + maridianValue);
+    } else {
+      addMaridian.val(currentValue + maridianValue);
+    }
+    console.log(addMaridian.val());
+})
+
+
 
 // Jquery Masking
 

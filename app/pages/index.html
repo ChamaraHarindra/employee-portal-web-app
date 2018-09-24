@@ -19,29 +19,37 @@
                     <div class="col-12 col-lg-4">
                         <div class="form-group has-error">
                             <label for="f-name">First Name</label>
-                            <input type="text" value="" name="f-name" id="f-name" class="form-control" placeholder="First Name" required/>
+                            <input type="text" value="" name="f-name" id="f-name" class="form-control" placeholder="First Name"
+                                required />
                             <span class="error">Please enter your first name here</span>
                         </div>
                     </div>
                     <!-- Middle Name -->
-                    {{ forms.formText('col-lg-4', 'm-name', 'text', '', 'Middle Name (optional)', 'Middle Name (optional)', '' ) }}
+                    {{ forms.formText('col-lg-4', 'm-name', 'text', '', 'Middle Name (optional)', 'Middle Name
+                    (optional)', '' ) }}
                     <!-- Last Name -->
                     {{ forms.formText('col-lg-4', 'l-name', 'text', '', 'Last Name', 'Last Name', 'required' ) }}
                     <!-- Email -->
-                    {{ forms.formText('col-lg-6', 'email', 'email', '', 'Email Address', 'Email Address', 'required' ) }}
+                    {{ forms.formText('col-lg-6', 'email', 'email', '', 'Email Address', 'Email Address', 'required' )
+                    }}
                     <!-- Confirm Email -->
-                    {{ forms.formText('col-lg-6', 'confirm-email', 'email', '', 'Confirm Email Address', 'Confirm Email Address', 'required')
+                    {{ forms.formText('col-lg-6', 'confirm-email', 'email', '', 'Confirm Email Address', 'Confirm Email
+                    Address', 'required')
                     }}
                     <div class="col-12 col-lg-9">
                         <div class="row">
                             <!-- Mobile Number -->
-                            {{ forms.formText('col-lg-4', 'm-no', 'text', '', 'Mobile Number', 'Mobile Number', 'required', 'phone', 'mb-2' ) }}
+                            {{ forms.formText('col-lg-4', 'm-no', 'text', '', 'Mobile Number', 'Mobile Number',
+                            'required', 'phone', 'mb-2' ) }}
                             <!-- home Number -->
-                            {{ forms.formText('col-lg-4', 'h-no', 'text', '', 'Home Number', 'Home Number', 'required', 'phone', 'mb-2' ) }}
+                            {{ forms.formText('col-lg-4', 'h-no', 'text', '', 'Home Number', 'Home Number', 'required',
+                            'phone', 'mb-2' ) }}
                             <!-- business Number -->
-                            {{ forms.formText('col-lg-4', 'b-no', 'text', '', 'Business Number', 'Business Number','required', 'phone', 'mb-2' ) }}
+                            {{ forms.formText('col-lg-4', 'b-no', 'text', '', 'Business Number', 'Business
+                            Number','required', 'phone', 'mb-2' ) }}
                         </div>
-                        <small id="phoneHelp" class="form-text text-muted customized mb-2">We need at least one Phone number to process your application</small>
+                        <small id="phoneHelp" class="form-text text-muted customized mb-2">We need at least one Phone
+                            number to process your application</small>
                     </div>
                     <div class="col-12 col-lg-3">
                         <label for="work" class="d-block">May we contact you at work?</label>
@@ -70,19 +78,24 @@
             <div class="c-card__inner">
                 <div class="row">
                     <!-- Address Line 01 -->
-                    {{ forms.formText('col-lg-12', 'address1', 'text', '', 'Address Line 01', 'Address Line 01', 'required' ) }}
+                    {{ forms.formText('col-lg-12', 'address1', 'text', '', 'Address Line 01', 'Address Line 01',
+                    'required' ) }}
                     <!-- Address Line 02 -->
-                    {{ forms.formText('col-lg-12', 'address2', 'text', '', 'Address Line 02 (optional)', 'Address Line 02 (optional)', '' ) }}
+                    {{ forms.formText('col-lg-12', 'address2', 'text', '', 'Address Line 02 (optional)', 'Address Line
+                    02 (optional)', '' ) }}
                     <!-- Apartment No -->
-                    {{ forms.formText('col-lg-4', 'apartment', 'text', '', 'Apartment # (optional)', 'Apartment # (optional)', '' ) }}
+                    {{ forms.formText('col-lg-4', 'apartment', 'text', '', 'Apartment # (optional)', 'Apartment #
+                    (optional)', '' ) }}
                     <!-- City -->
                     {{ forms.formText('col-lg-8', 'city', 'text', '', 'City', 'City', 'required' ) }}
                     <!-- State -->
-                    {{ forms.formSelect('col-lg-8', 'state', 'state', '', 'State', 'State', 'required', 'form-select', 'State1', 'State2') }}
+                    {{ forms.formSelect('col-lg-8', 'state', 'state', '', 'State', 'State', 'required', 'form-select',
+                    'State1', 'State2') }}
                     <!-- Zipcode -->
                     {{ forms.formText('col-lg-4', 'zipCode', 'text', '', 'Zip Code', 'Zip Code', 'required' ) }}
                     <!-- Country -->
-                    {{ forms.formSelect('col-lg-12', 'country', 'country', '', 'Country', 'Country', 'required', 'form-select', 'Country 1',
+                    {{ forms.formSelect('col-lg-12', 'country', 'country', '', 'Country', 'Country', 'required',
+                    'form-select', 'Country 1',
                     'Country 2') }}
                 </div>
             </div>
@@ -94,28 +107,33 @@
             <div class="c-card__header">
                 <h3>Postal Address</h3>
                 <div class="switch d-flex align-items-center">
-                    <input type="checkbox" class="js-switch" checked/>
+                    <input type="checkbox" class="js-switch" checked />
                     <span class="ml-2 small">Same as Home Address</span>
                 </div>
             </div>
             <div class="c-card__inner">
                 <div class="row">
                     <!-- Address Line 01 -->
-                    {{ forms.formText('col-lg-12', 'Postaladdress1', 'text', '', 'Address Line 01', 'Address Line 01', 'required' ) }}
+                    {{ forms.formText('col-lg-12', 'Postaladdress1', 'text', '', 'Address Line 01', 'Address Line 01',
+                    'required' ) }}
                     <!-- Address Line 02 -->
-                    {{ forms.formText('col-lg-12', 'Postaladdress2', 'text', '', 'Address Line 02 (optional)', 'Address Line 02 (optional)',
+                    {{ forms.formText('col-lg-12', 'Postaladdress2', 'text', '', 'Address Line 02 (optional)', 'Address
+                    Line 02 (optional)',
                     '' ) }}
                     <!-- Apartment No -->
-                    {{ forms.formText('col-lg-4', 'Postalapartment', 'text', '', 'Apartment # (optional)', 'Apartment # (optional)', '' ) }}
+                    {{ forms.formText('col-lg-4', 'Postalapartment', 'text', '', 'Apartment # (optional)', 'Apartment #
+                    (optional)', '' ) }}
                     <!-- City -->
                     {{ forms.formText('col-lg-8', 'Postalcity', 'text', '', 'City', 'City', 'required' ) }}
                     <!-- State -->
-                    {{ forms.formSelect('col-lg-8', 'Postalstate', 'state', '', 'State', 'State', 'required', 'form-select', 'State1', 'State2')
+                    {{ forms.formSelect('col-lg-8', 'Postalstate', 'state', '', 'State', 'State', 'required',
+                    'form-select', 'State1', 'State2')
                     }}
                     <!-- Zipcode -->
                     {{ forms.formText('col-lg-4', 'PostalzipCode', 'text', '', 'Zip Code', 'Zip Code', 'required' ) }}
                     <!-- Country -->
-                    {{ forms.formSelect('col-lg-12', 'Postalcountry', 'country', '', 'Country', 'Country', 'required', 'form-select', 'Country
+                    {{ forms.formSelect('col-lg-12', 'Postalcountry', 'country', '', 'Country', 'Country', 'required',
+                    'form-select', 'Country
                     1', 'Country 2') }}
                 </div>
             </div>
@@ -143,16 +161,26 @@
                                 {% for schedule in week_select_table %}
                                 <tr>
                                     <td>
-                                        <div class="custom-control custom-checkbox">
+                                        <div class="schedule-date">{{ schedule.day }}</div>
+                                        <!-- <div class="custom-control custom-checkbox">
                                             <input type="checkbox" class="custom-control-input" id="{{ schedule.day | lower }}">
-                                            <label class="custom-control-label" for="{{ schedule.day | lower }}">{{ schedule.day }}</label>
+                                            <label class="custom-control-label" for="{{ schedule.day | lower }}">{{
+                                                schedule.day }}</label>
+                                        </div> -->
+                                    </td>
+                                    <td>
+                                        <div class="time-holder time-holder--from">
+                                            <!-- <input type="text" class="timepicker form-control smaller" onkeypress="return false;" onfocus="this.select();" onmouseup="return false;"/> -->
+                                            <input type="text" class="timepicker form-control smaller"/>
+                                            <button type="buton" class="remove-value"><i class="fas fa-times"></i></button>
                                         </div>
+
                                     </td>
                                     <td>
-                                        <input type="text" class=" timebox form-control smaller" />
-                                    </td>
-                                    <td>
-                                        <input type="text" class=" timebox form-control smaller" />
+                                        <div class="time-holder time-holder--to">
+                                            <input type="text" class="timepicker form-control smaller"/>
+                                            <button type="buton" class="remove-value"><i class="fas fa-times"></i></button>
+                                        </div>
                                     </td>
                                 </tr>
                                 {% endfor %}
@@ -164,7 +192,8 @@
                             <label for="work" class="d-block">May we contact you at work?</label>
                             <div class="btn-group btn-group-toggle long-list" data-toggle="buttons">
                                 <label class="btn btn-outline-primary active">
-                                    <input type="checkbox" name="options" id="fullTime" autocomplete="off" checked> Full Time
+                                    <input type="checkbox" name="options" id="fullTime" autocomplete="off" checked>
+                                    Full Time
                                 </label>
                                 <label class="btn btn-outline-primary">
                                     <input type="checkbox" name="options" id="partTime" autocomplete="off"> Part Time
@@ -213,12 +242,35 @@
         </a>
     </div>
 </div>
+<!-- Timepicker drop -->
+<div class="timepicker-drop">
+    <button class="timepicker-close"><i class="fas fa-times"></i></button>
+    <div class="time-values">
+        <input type="radio" name="time" value="01" id="1"><label for="1">1</label>
+        <input type="radio" name="time" value="02" id="2"><label for="2">2</label>
+        <input type="radio" name="time" value="03" id="3"><label for="3">3</label>
+        <input type="radio" name="time" value="04" id="4"><label for="4">4</label>
+        <input type="radio" name="time" value="05" id="5"><label for="5">5</label>
+        <input type="radio" name="time" value="06" id="6"><label for="6">6</label>
+        <input type="radio" name="time" value="07" id="7"><label for="7">7</label>
+        <input type="radio" name="time" value="08" id="8"><label for="8">8</label>
+        <input type="radio" name="time" value="09" id="9"><label for="9">9</label>
+        <input type="radio" name="time" value="10" id="10"><label for="10">10</label>
+        <input type="radio" name="time" value="11" id="11"><label for="11">11</label>
+        <input type="radio" name="time" value="12" id="12"><label for="12">12</label>      
+    </div>
+    <div class="maridian">
+          <button class="am active" type="button" disabled>AM</button>    
+          <button class="pm" disabled>PM</button>   
+    </div>
+</div>
 
 <!-- show directions modal -->
-{{ macroModals.modalPop( 'GetDirections', '#GetDirections', 'Get Directions', 'modal-lg', modal=1, 'Get Directions' ) }}
+{{ macroModals.modalPop( 'GetDirections', '#GetDirections', 'Get Directions', 'modal-lg', modal=1, 'Get Directions' )
+}}
 
 <!-- show directions modal -->
-{{ macroModals.modalPop( 'AddReviews', '#AddReviews', 'Add Reviews', 'modal-lg', modal=2, 'Add Reviews' ) }} 
+{{ macroModals.modalPop( 'AddReviews', '#AddReviews', 'Add Reviews', 'modal-lg', modal=2, 'Add Reviews' ) }}
 
 
 {% endblock

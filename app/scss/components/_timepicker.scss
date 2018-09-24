@@ -1,150 +1,131 @@
-/*timebox*/
-.timebox-time-box {
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  width: 100%;
-  max-width: 400px;
-  background-color: #328bff;
-  cursor: default;
-  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
-  color: #FFF;
-  z-index: 2000000;
+.time-holder {
+	position: relative;
 }
-.timebox-time-box-bk {
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  right: 0px;
-  bottom: 0px;
-  background-color: #e4edfaf0;
-  z-index: 100000;
-}
-.timebox-time-box-header {
-  font-size: 12px;
-  padding: 4px 4px;
-}
-.timebox-time-box-hour-container {
-  float: left;
-  margin: 0px;
-  padding: 5px 0px;
-  width: 100%;
-}
-.timebox-time-box-min-container {
-  float: left;
-  margin: 0px;
-  padding: 5px 0px;
-  width: 100%;
-}
-.timebox-time-box-ampm-container {
-  float: left;
-  margin: 0px;
-  padding: 5px 0px;
-  width: 100%;
-}
-.timebox-time-box-hour {
-  width: 100%;
-}
-.timebox-time-box-min {
-  width: 100%;
-}
-.timebox-time-box-ampm {
-  width: 100%;
-}
-.timebox-time-box-item {
-  float: left;
-  margin: 3px;
-  padding: 5px 0;
-  background-color: #e4f0ff3d;
-  text-align: center;
-  width: 35px;
-  cursor: pointer;
-  box-shadow: 0 0 0 1px #ffffff6e;
-}
-.timebox-time-box-ampm-item {
-  font-size: 12px;
-}
-.timebox-time-box-hour-item:hover {
-  background-color: #e4f0ff57;
-}
-.timebox-time-box-min-item:hover {
-  background-color: #e4f0ff57;
-}
-.timebox-time-box-ampm-item:hover {
-  background-color: #e4f0ff57;
-}
-.timebox-time-box-item.item-active {
-  background-color: #7bc629;
-  box-shadow: 0 0 0 1px #ffffffe0;
-}
-.timebox-time-box-item.item-active:hover {
-  filter: brightness(90%);
-}
-.timebox-time-box-save {
-  clear: both;
-  text-align: center;
-  padding: 13px 0;
-  background-color: #2764b66e;
-  font-size: 13px;
-  cursor: pointer;
-  text-transform: uppercase;
-}
-.timebox-time-box-save:hover {
-  filter: brightness(90%);
-}
-.timebox-clear {
-  height: 3px;
-  clear: both;
-}
-.timebox-time-box.timebox-time-box-responsive  {
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  right: 0px;
-  bottom: 0px;
-  max-width: 100%;
-  background-color: #328bff;
-  cursor: default;
-  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
-  color: #FFF;
-  z-index: 2000000;
-}
-.timebox-time-box-save.timebox-time-box-responsive{
-  position: absolute;
-  left: 0px;
-  right: 0px;
-  bottom: 0px;
-}
-@media screen and (max-width: 1100px) {
 
-  .timebox-time-box.timebox-time-box-responsive .timebox-time-box-item {
-      margin: 3px;
-      padding: 13px 0;
-      width: 42px;
-      font-size: 16px;
-  }
+.remove-value {
+    position: absolute;
+    right: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+    background: none;
+    border: none;
+    font-size: 12px;
+    opacity: .3;
+    cursor: pointer;
+    &:hover {
+        opacity: .6;
+    }
 }
-@media screen and (max-width: 500px) {
 
-  .timebox-time-box-hour-item:hover {
-      background-color: inherit;
+.timepicker[readonly] {
+    background: $white-color !important;
+}
+
+.schedule-date {
+    @media(max-width:500px) {
+        font-size: 12px;
+    }
+}
+.time-holder {
+.timepicker-drop {
+   position: absolute;
+   left: 0;
+   top: 100%;
+   width: 100%;
+   min-width: 280px;
+   padding: 20px;
+   border: 1px solid #f2f2f2;
+   z-index: 9;
+   border-radius: 3px;
+   background: $white-color;
+   display: none;
+   box-shadow: 1px 1px 9px rgba(0, 0, 0, 0.44);
+   @media(max-width:500px) {
+    min-width: 200px;
+}
+}
+&.time-holder--to {
+    .timepicker-drop {
+        @media(max-width:500px) {
+            left: auto;
+            right: 0;
+        }
+    }
+}
+}
+
+
+button.timepicker-close {
+    border: none;
+    background: none;
+    color: #353535;
+    position: absolute;
+    right: 0;
+    top: 0;
+    font-size: 18px;
+}
+
+.time-values {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.time-values input[type="radio"] {
+    position: absolute;
+    left: -99999px;
+}
+
+.time-values label {
+    width: calc(25% - 10px);
+    text-align: center;
+    padding: 5px;
+    border: 1px solid $primary-color;
+    margin: 5px;
+    cursor: pointer;
+    color: $primary-color;
+}
+
+.time-values input[type="radio"]:checked + label {
+    transition: 0.2s all ease-in-out;
+    background-color: $primary-color;
+    color: $white-color;
   }
-  .timebox-time-box-min-item:hover {
-      background-color: inherit;
-  }
-  .timebox-time-box-ampm-item:hover {
-      background-color: inherit;
-  }
-  .timebox-time-box-item.item-active:hover {
-      filter: brightness(100%);
-  }
-  .timebox-time-box.timebox-time-box-responsive .timebox-time-box-item {
-      margin: 3px;
-      padding: 8px 0;
-      width: 40px;
-      font-size: 13px;
-  }
-  .timebox-time-box {
-      left: 0px!important;
-  }
+
+  .maridian {
+    margin: 20px 0 0;
+    display: flex;
+    justify-content: center;
+}
+
+.maridian button {
+    margin: 0 5px;
+    border: 1px solid $primary-color;
+    background: none;
+    padding: 5px 10px;
+    color: $primary-color;
+    &:nth-child(1) {
+        margin-right: 0;
+        border-top-left-radius: 3px;
+        border-bottom-left-radius: 3px;
+        border-right-color: transparent;
+    }
+
+    &:nth-child(2) {
+        margin-left: 0;
+        border-top-right-radius: 3px;
+        border-bottom-right-radius: 3px;
+    }
+    &.active {
+        background: $primary-color;
+        color: $white-color;
+    }
+    &:disabled {
+        border: 1px solid lighten($primary-color, 20%);
+        color: lighten($primary-color, 20%);
+        &.active {
+            background: transparent;
+            color: lighten($primary-color, 20%);
+        }
+    }
 }
